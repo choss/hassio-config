@@ -95,7 +95,7 @@ licht:
       - service: light.turn_on
         data_template:
             entity_id:
-              - light.dimmer_1_pc_ecke
+              - light.wozi_dimmer_1_pc_ecke
               - light.wozi_dimmer_2_mara_ecke
             brightness: >
                 {% if requested_level is defined %}
