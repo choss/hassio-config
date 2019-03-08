@@ -1,3 +1,4 @@
+#!/bin/bash
 ln -s /config/secrets/hassio_secrets.yaml /config/secrets.yaml
 ln -s /config/secrets/esphome_secrets.yaml /config/esphome/secrets.yaml
 
