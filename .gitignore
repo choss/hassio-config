@@ -5,3 +5,6 @@ secrets.yaml
 .storage
 .cloud
 custom_components
+.uuid
+deps
+!.storage/lovelace
