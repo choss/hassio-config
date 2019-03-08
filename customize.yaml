@@ -1,13 +1,13 @@
-binary_sensor.neq0092622_state:
+binary_sensor.turkontakt_terasse_state:
   device_class: door
-cover.leq0132798:
+cover.rollo_wozi_mitte:
   device_class: garage
-cover.leq0132795:
+cover.rollo_wozi_rechts:
   device_class: garage
-cover.leq0132837:
+cover.rollo_wozi_tuer:
   device_class: garage
-switch.oeq2070182_2:
+switch.vorgarten_licht_2:
   friendly_name: Vorgarten Licht 2 (not working)
   hidden: true
-switch.oeq2070182_1:
+switch.vorgarten_licht_1:
   friendly_name: Vorgarten Licht

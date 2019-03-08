@@ -4,13 +4,13 @@ wohnzimmer_thermostat:
         data_template:
           entity_id: climate.neq0314214
           temperature: "{{ requested_level }}"
-          
+
 wohnzimmer_roll_tuer:
     sequence:
       - service: cover.set_cover_position
         data_template:
-            entity_id: cover.leq0132798
-            position: > 
+            entity_id: cover.rollo_wozi_tuer
+            position: >
                 {% if requested_level is defined %}
                     {{ requested_level }}
                 {% else %}
@@ -25,8 +25,8 @@ living_room_window_right:
     sequence:
       - service: cover.set_cover_position
         data_template:
-            entity_id: cover.leq0132837
-            position: > 
+            entity_id: cover.rollo_wozi_rechts
+            position: >
                 {% if requested_level is defined %}
                     {{ requested_level }}
                 {% else %}
@@ -41,8 +41,8 @@ living_room_window_left:
     sequence:
       - service: cover.set_cover_position
         data_template:
-            entity_id: cover.leq0132795
-            position: > 
+            entity_id: cover.rollo_wozi_mitte
+            position: >
                 {% if requested_level is defined %}
                     {{ requested_level }}
                 {% else %}
@@ -57,10 +57,10 @@ living_room_window:
     sequence:
       - service: cover.set_cover_position
         data_template:
-            entity_id: 
-                - cover.leq0132795
-                - cover.leq0132837
-            position: > 
+            entity_id:
+                - cover.rollo_wozi_mitte
+                - cover.rollo_wozi_rechts
+            position: >
                 {% if requested_level is defined %}
                     {{ requested_level }}
                 {% else %}
@@ -75,11 +75,11 @@ living_room_shutters:
     sequence:
       - service: cover.set_cover_position
         data_template:
-            entity_id: 
-                - cover.leq0132795
-                - cover.leq0132837
-                - cover.leq0132798
-            position: > 
+            entity_id:
+                - cover.rollo_wozi_tuer
+                - cover.rollo_wozi_mitte
+                - cover.rollo_wozi_rechts
+            position: >
                 {% if requested_level is defined %}
                     {{ requested_level }}
                 {% else %}
@@ -94,10 +94,10 @@ licht:
     sequence:
       - service: light.turn_on
         data_template:
-            entity_id: 
-              - light.jeq0193816
-              - light.jeq0626161
-            brightness: > 
+            entity_id:
+              - light.dimmer_1_pc_ecke
+              - light.wozi_dimmer_2_mara_ecke
+            brightness: >
                 {% if requested_level is defined %}
                     {{ requested_level | int | multiply(2.55) | int }}
                 {% else %}

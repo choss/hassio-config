@@ -63,7 +63,7 @@ sensor:
   - platform: template
     sensors:
         living_room_temp:
-            value_template: "{{ states.climate.neq0314214.attributes['current_temperature'] }}"
+            value_template: "{{ states.climate.heizung_wohnzimmer.attributes['current_temperature'] }}"
             unit_of_measurement: '°C'
 
 # Text to speech
@@ -131,16 +131,20 @@ remote:
 emulated_hue:
       expose_by_default: false
       entities:
-        light.jeq0193816:
+        light.wozi_dimmer_1_pc_ecke:
+            name: "PC Ecke"
             hidden: false
-        light.jeq0626161:
+        light.wozi_dimmer_2_mara_ecke:
+            name: "Mara Ecke"
             hidden: false
-        light.meq1827834:
+        light.schlafzimmer_decke:
+            name: "Schlafzimmer Decke"
             hidden: false
-        switch.jeq0097427:
+        switch.terrassenlicht:
             name: "Außenlampe"
             hidden: false
-        switch.neq0298438:
+        switch.schalter_stern:
+            name: "Stern"
             hidden: false
         script.wohnzimmer_thermostat:
             name: "Wohnzimmer Heizung"
@@ -254,19 +258,19 @@ binary_sensor:
 scene:
     - name: "bett_gehen"
       entities:
-        light.jeq0193816:
+        light.dimmer_1_pc_ecke:
             state: false
-        light.jeq0626161:
+        light.wozi_dimmer_2_mara_ecke:
             state: false
-        switch.jeq0097427:
+        switch.terrassenlicht:
             state: false
-        cover.leq0132795:
+        cover.rollo_wozi_mitte:
             state: true
             position: 0
-        cover.leq0132837:
+        cover.rollo_wozi_rechts:
             state: true
             position: 0
-        cover.leq0132798:
+        cover.rollo_wozi_tuer:
             state: true
             position: 60
 
