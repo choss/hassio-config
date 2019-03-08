@@ -2,7 +2,7 @@ secrets.yaml
 *.db
 *.log
 
-.storage
+.storage/*
 .cloud
 custom_components
 .uuid

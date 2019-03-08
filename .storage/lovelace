@@ -1,0 +1,184 @@
+{
+    "data": {
+        "config": {
+            "title": "Home",
+            "views": [
+                {
+                    "badges": [
+                        "binary_sensor.dryer",
+                        "binary_sensor.dishwasher",
+                        "binary_sensor.washing_machine",
+                        "binary_sensor.shell_steinheim_state",
+                        "binary_sensor.avia_axpress_steinheim_state",
+                        "binary_sensor.shell_erkner_state",
+                        "binary_sensor.t_erkner_state",
+                        "binary_sensor.turkontakt_terasse_state",
+                        "sensor.yr_symbol",
+                        "sensor.living_room_temp",
+                        "sensor.avia_axpress_steinheim_diesel",
+                        "sensor.avia_axpress_steinheim_e5",
+                        "sensor.t_erkner_diesel",
+                        "sensor.shell_steinheim_e5",
+                        "sensor.shell_erkner_diesel",
+                        "sensor.t_erkner_e5",
+                        "sensor.shell_steinheim_diesel",
+                        "sensor.shell_erkner_e5",
+                        "sensor.hdmi_input_selection",
+                        "sensor.flur",
+                        "sensor.openwrt_router_kbyte_sec_received",
+                        "sensor.openwrt_router_packets_received",
+                        "sensor.openwrt_router_bytes_sent",
+                        "sensor.openwrt_router_kbyte_sec_sent",
+                        "sensor.openwrt_router_packets_sec_sent",
+                        "sensor.openwrt_router_bytes_received",
+                        "sensor.openwrt_router_packets_sec_received",
+                        "sensor.openwrt_router_packets_sent",
+                        "sensor.spuelmaschine_steckdose_power",
+                        "sensor.spuelmaschine_steckdose_current",
+                        "sensor.spuelmaschine_steckdose_voltage",
+                        "sensor.spuelmaschine_steckdose_frequency",
+                        "sensor.trockner_steckdose_power",
+                        "sensor.spuelmaschine_steckdose_energy_counter",
+                        "sensor.aussensensor_humidity",
+                        "sensor.trockner_steckdose_current",
+                        "sensor.waschmaschine_steckdose_current",
+                        "sensor.trockner_steckdose_voltage",
+                        "sensor.aussensensor_temperature",
+                        "sensor.trockner_steckdose_frequency",
+                        "sensor.waschmaschine_steckdose_frequency",
+                        "sensor.waschmaschine_steckdose_energy_counter",
+                        "sensor.waschmaschine_steckdose_voltage",
+                        "sensor.trockner_steckdose_energy_counter",
+                        "sensor.waschmaschine_steckdose_power",
+                        "sun.sun"
+                    ],
+                    "cards": [
+                        {
+                            "entity": "climate.heizung_wohnzimmer",
+                            "type": "thermostat"
+                        },
+                        {
+                            "entities": [
+                                "cover.rollo_wozi_rechts",
+                                "cover.rollo_wozi_tuer",
+                                "cover.rollo_wozi_mitte"
+                            ],
+                            "title": "Cover",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "homematic.ccu"
+                            ],
+                            "title": "",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "input_select.bedroom_hdmi_switch"
+                            ],
+                            "title": "Input select",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "light.wozi_dimmer_2_mara_ecke",
+                                "light.wozi_dimmer_1_pc_ecke",
+                                "light.schlafzimmer_decke"
+                            ],
+                            "title": "Light",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.samsung_tv_remote",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.bedroom_hdmi_switch_mp",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.firetv_wohnzimmer",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.firetv_schlafzimmer",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.onkyo",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.onkyo_zone_3",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.onkyo_zone_2",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.insane_chromecast",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.vuuno",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.vuzero",
+                            "type": "media-control"
+                        },
+                        {
+                            "entities": [
+                                "scene.bett_gehen"
+                            ],
+                            "title": "Scene",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "script.living_room_window_left",
+                                "script.living_room_window",
+                                "script.living_room_shutters",
+                                "script.licht",
+                                "script.wohnzimmer_thermostat",
+                                "script.wohnzimmer_roll_tuer",
+                                "script.living_room_window_right"
+                            ],
+                            "title": "Script",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "switch.sb_test",
+                                "switch.input_5",
+                                "switch.bedroom_hmdi_switch_power",
+                                "switch.input_1",
+                                "switch.input_2",
+                                "switch.input_3",
+                                "switch.input_4",
+                                "switch.schlazi_tv_2_webradio",
+                                "switch.kizi_baerchen",
+                                "switch.schalter_stern",
+                                "switch.vorgarten_licht_1",
+                                "switch.terrassenlicht",
+                                "switch.kizi_lichterkette",
+                                "switch.schlazi_tv_1",
+                                "switch.spuelmaschine_steckdose",
+                                "switch.trockner_steckdose",
+                                "switch.waschmaschine_steckdose"
+                            ],
+                            "title": "Switch",
+                            "type": "entities"
+                        }
+                    ],
+                    "path": "default_view",
+                    "title": "Home"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}
