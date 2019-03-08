@@ -1,0 +1,13 @@
+binary_sensor.neq0092622_state:
+  device_class: door
+cover.leq0132798:
+  device_class: garage
+cover.leq0132795:
+  device_class: garage
+cover.leq0132837:
+  device_class: garage
+switch.oeq2070182_2:
+  friendly_name: Vorgarten Licht 2 (not working)
+  hidden: true
+switch.oeq2070182_1:
+  friendly_name: Vorgarten Licht

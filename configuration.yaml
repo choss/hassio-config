@@ -2,10 +2,10 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 50.1139
-  longitude: 8.9107
+  latitude: !secret location_latitude
+  longitude: !secret location_longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 0
+  elevation: !secret location_elevation
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -13,25 +13,274 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
-# Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
-
-# Show the introduction message on startup.
+# Show links to resources in log and frontend
 introduction:
+
+# show system health
+system_health:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
 #   base_url: example.duckdns.org:8123
 
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
 # Sensors
 sensor:
   # Weather prediction
   - platform: yr
+  - platform: template
+    sensors:
+        living_room_temp:
+            value_template: "{{ states.climate.neq0314214.attributes['current_temperature'] }}"
+            unit_of_measurement: '°C'
 
 # Text to speech
 tts:
   - platform: google
 
+# Cloud
+# cloud:
+
+tankerkoenig:
+  api_key: !secret tankerkoenig_api_key
+  monitored_conditions:
+    - e5
+    - diesel
+    - state
+  stations: !secret tankerkoenig_stations
+
+homematic:
+  interfaces:
+    rf:
+      host: 192.168.32.188
+      resolvenames: json
+      username: !secret homematic_username
+      password: !secret homematic_password
+    ip:
+      host: 192.168.32.188
+      port: 2010
+      resolvenames: json
+      username: !secret homematic_username
+      password: !secret homematic_password
+    groups:
+      host: 192.168.32.188
+      port: 9292
+      path: /groups
+      resolvenames: json
+      username: !secret homematic_username
+      password: !secret homematic_password
+  hosts:
+    ccu:
+      host: 192.168.32.188
+      username: !secret homematic_username
+      password: !secret homematic_password
+
+remote:
+  - platform: xiaomi_miio
+    name: "remote 1"
+    host: 192.168.32.97
+    token: !secret xiaomi_remote_01_token
+    commands:
+      turn_on_samsung:
+        command:
+          - raw:tllsNyt1am1YplBodvodBoNDudCs9BoNtoVFoNBp1DmVBAA8ADwAPAA+g0G00WhUGogFtUQCyAAUAcwF1qIA7g4ld6TaAB0AAQDewH2oIAZADqB+VNodJBPsDeQH2BjMAdgPzno=
+      turn_off_samsung:
+        command:
+          - raw:tllsNyt1am1YplBodrodBoNDvFCs9BoNsoVFoNBo95mVBoNEqN0APIADwAPAA8ACrTRaFQaiAW1RALIACQF1ATMAdaDQbvSbQAOgACAb0B2oCbADtQajQ6SCfIC7AAOAugCZgDsAKU9A
+      hdmi_one_samsung:
+        command:
+          - raw:tllsNyt1am1YplBocwodBoNDtdCs9BoNsoVFoNBo95mVBoNEqN0APIADwAPAA8ACrTRaFQaiAW1RALIABQBzADIBtAA1AQSk2gCMgImA3sANADyAbIANAFDptDpIJ9gbyAGoDaABoAss9A==
+      hdmi_two_samsung:
+        command:
+          - raw:tllsNyt1am1YplBodZodBoNDm1Cs9BoNZvFFoNBpdZqVBoNEqN0APIADwAPAA8ACr1RaFQaiAW1RALIABwCzqIMpABmAAlFoNCoNNtAB9AbyAWgHZgfwAOVRolJBPkEtQC5A7MHegAynoA==
+      toggle_power_samsung:
+        command:
+          - raw:tllsNyt1am1YplBod3odBoNDt9Cs9BoNxvFFoNBolTmdBAA8ADwAPAA+g0G00WhUGogFtUQCyAAcBN6CDSQC5gBnd6TaAByAXcDeQIzAAUD8gK2qNNodJBPkBMwI6BjgCtgGyno=
+emulated_hue:
+      expose_by_default: false
+      entities:
+        light.jeq0193816:
+            hidden: false
+        light.jeq0626161:
+            hidden: false
+        light.meq1827834:
+            hidden: false
+        switch.jeq0097427:
+            name: "Außenlampe"
+            hidden: false
+        switch.neq0298438:
+            hidden: false
+        script.wohnzimmer_thermostat:
+            name: "Wohnzimmer Heizung"
+            hidden: false
+        script.wohnzimmer_roll_tuer:
+            name: "Wohnzimmertür"
+            hidden: false
+        script.living_room_window_right:
+            name: "wozir"
+            hidden: false
+        script.living_room_window_left:
+            name: "wozil"
+            hidden: false
+        script.licht:
+            hidden: false
+        scene.bett_gehen:
+            hidden: false
+        script.living_room_shutters:
+            name: "Westseite"
+            hidden: false
+        script.living_room_window:
+            name: "Wohnzimmerfenster"
+            hidden: false
+fritzbox:
+    devices:
+      - host: 192.168.178.1
+        username: !secret fritzbox_username
+        password: !secret fritzbox_password
+
+media_player:
+    - platform: samsungtv
+      host: 192.168.32.78
+    - platform: onkyo
+      host: 192.168.32.86
+      name: onkyo
+      sources:
+        cd: "FireTV"              # tv-cd
+        video2: "Sat receiver"     # cbl/sat
+        bd: "Nintendo Switch"      # bd/dvd
+        video4: "Chromecast"       # aux
+        video3: "SteamLink"        # game
+        video6: "HTPC"             # pc
+    - platform: firetv
+      name: FireTV Wohnzimmer
+      host: 192.168.32.32
+      adbkey: "/config/secrets/adb/hassio"
+    - platform: firetv
+      name: FireTV Schlafzimmer
+      host: 192.168.32.46
+      adbkey: "/config/secrets/adb/hassio"
+    - platform: universal
+      name: "Bedroom HDMI Switch MP"
+      commands:
+        turn_on:
+          service: switch.turn_on
+          data:
+            entity_id: switch.bedroom_hmdi_switch_power
+        turn_off:
+          service: switch.turn_off
+          data:
+            entity_id: switch.bedroom_hmdi_switch_power
+        select_source:
+          service: input_select.select_option
+          data_template:
+            entity_id: input_select.bedroom_hdmi_switch
+            option: '{{ source }}'
+      attributes:
+        state: switch.bedroom_hmdi_switch_power
+        source: input_select.bedroom_hdmi_switch
+        source_list: input_select.bedroom_hdmi_switch|options
+
+switch:
+  - platform: switchbot
+    mac: !secret switchbot_01_mac
+    name: "SB Test"
+
+enigma:
+  devices:
+    - host: vuuno
+      port: 80
+      name: VuUno
+      timeout: 20
+      username: root
+      password: root
+      picon: picon
+    - host: vuzero
+      port: 80
+      name: VuZero
+      timeout: 20
+      username: root
+      password: root
+      picon: picon
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+
+binary_sensor:
+    - platform: template
+      sensors:
+        dryer:
+            value_template: "{{ states.homematic.ccu.attributes['Trockner01'] == true }}"
+            device_class: plug
+        washing_machine:
+            value_template: "{{ states.homematic.ccu.attributes['Waschmaschine01'] == true }}"
+            device_class: plug
+        dishwasher:
+            value_template: "{{ states.homematic.ccu.attributes['Spuelmaschine01'] == true }}"
+            device_class: plug
+
+scene:
+    - name: "bett_gehen"
+      entities:
+        light.jeq0193816:
+            state: false
+        light.jeq0626161:
+            state: false
+        switch.jeq0097427:
+            state: false
+        cover.leq0132795:
+            state: true
+            position: 0
+        cover.leq0132837:
+            state: true
+            position: 0
+        cover.leq0132798:
+            state: true
+            position: 60
+
+input_select:
+  bedroom_hdmi_switch:
+    name: Bedroom switch input
+    options:
+      - Fire TV
+      - SteamLink
+      - Satellite Receiver
+      - Nintendo Switch
+      - SNES
+    icon: mdi:video-switch
+
+notify:
+    - platform: discord
+      token: !secret discord_token
