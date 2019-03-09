@@ -22,7 +22,9 @@ stages:
     - mkdir -p secrets/adb
     - cp .stubs/fake_adb_key secrets/adb/hassio
     - cp .stubs/fake_adb_key.pub secrets/adb/hassio.pub
-    - wget https://github.com/panbachi/homeassistant-tankerkoenig/archive/0.2.0.zip
+    - cd scripts
+    - ./enigma.sh
+    - ./tk.sh
     - python -m homeassistant --version
   script:
     - |
