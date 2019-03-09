@@ -25,6 +25,7 @@ stages:
     - cd scripts
     - ./enigma.sh
     - ./tk.sh
+    - cd ..
     - python -m homeassistant --version
   script:
     - |
