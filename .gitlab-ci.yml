@@ -18,12 +18,18 @@ stages:
   variables:
     PYTHONPATH: "/usr/src/app:$PYTHONPATH"
   before_script:
-    - python -m homeassistant --version
+    - uname -a
     - cp -R ./.stubs/fake_hassio_secrets.yaml ./secrets.yaml
+    - apt search git
+    - cd scripts
+    - ./enigma.sh
+    - ./tk.sh
+    - cd ..
+    - python -m homeassistant --version
   script:
     - |
       python -m homeassistant \
-        --config ./config/ \
+        --config . \
         --script check_config \
         --info all
   tags:
@@ -40,7 +46,7 @@ stages:
   script:
     - |
       for file in $(find \
-        ./config/esphome \
+        ./esphome \
         -type f \
         -name "*.yaml"\
         -not -name "secrets.yaml"
