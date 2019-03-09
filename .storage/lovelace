@@ -177,77 +177,77 @@
                     "title": "All"
                 },
                 {
-    "badges": [
-        "sensor.yr_symbol",
-        "sun.sun",
-        "binary_sensor.dishwasher",
-        "binary_sensor.dryer",
-        "binary_sensor.washing_machine",
-        "sensor.aussensensor_temperature",
-        "sensor.aussensensor_humidity",
-        "sensor.living_room_temp",
-        "sensor.flur",
-        "sensor.avia_axpress_steinheim_diesel",
-        "sensor.avia_axpress_steinheim_e5",
-        "sensor.shell_steinheim_diesel",
-        "sensor.shell_steinheim_e5",
-        "sensor.shell_erkner_diesel",
-        "sensor.shell_erkner_e5",
-        "sensor.t_erkner_diesel",
-        "sensor.t_erkner_e5"
-    ],
-    "cards": [
-        {
-            "entities": [
-                {
-                    "entity": "light.wozi_dimmer_1_pc_ecke"
-                },
-                {
-                    "entity": "light.wozi_dimmer_2_mara_ecke"
-                },
-                {
-                    "entity": "switch.terrassenlicht"
-                },
-                {
-                    "entity": "climate.heizung_wohnzimmer"
-                },
-                {
-                    "entity": "cover.rollo_wozi_tuer"
-                },
-                {
-                    "entity": "cover.rollo_wozi_mitte"
-                },
-                {
-                    "entity": "cover.rollo_wozi_rechts"
-                },
-                {
-                    "entity": "scene.bett_gehen"
+                    "badges": [
+                        "sensor.yr_symbol",
+                        "sun.sun",
+                        "binary_sensor.dishwasher",
+                        "binary_sensor.dryer",
+                        "binary_sensor.washing_machine",
+                        "sensor.aussensensor_temperature",
+                        "sensor.aussensensor_humidity",
+                        "sensor.living_room_temp",
+                        "sensor.flur",
+                        "sensor.avia_axpress_steinheim_diesel",
+                        "sensor.avia_axpress_steinheim_e5",
+                        "sensor.shell_steinheim_diesel",
+                        "sensor.shell_steinheim_e5",
+                        "sensor.shell_erkner_diesel",
+                        "sensor.shell_erkner_e5",
+                        "sensor.t_erkner_diesel",
+                        "sensor.t_erkner_e5"
+                    ],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.wozi_dimmer_1_pc_ecke"
+                                },
+                                {
+                                    "entity": "light.wozi_dimmer_2_mara_ecke"
+                                },
+                                {
+                                    "entity": "switch.terrassenlicht"
+                                },
+                                {
+                                    "entity": "climate.heizung_wohnzimmer"
+                                },
+                                {
+                                    "entity": "cover.rollo_wozi_tuer"
+                                },
+                                {
+                                    "entity": "cover.rollo_wozi_mitte"
+                                },
+                                {
+                                    "entity": "cover.rollo_wozi_rechts"
+                                },
+                                {
+                                    "entity": "scene.bett_gehen"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Wohnzimmer",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.onkyo",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.firetv_wohnzimmer",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.vuuno",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.insane_chromecast",
+                            "type": "media-control"
+                        }
+                    ],
+                    "title": "Main"
                 }
-            ],
-            "show_header_toggle": false,
-            "title": "Wohnzimmer",
-            "type": "entities"
-        },
-        {
-            "entity": "media_player.onkyo",
-            "type": "media-control"
-        },
-        {
-            "entity": "media_player.firetv_wohnzimmer",
-            "type": "media-control"
-        },
-        {
-            "entity": "media_player.vuuno",
-            "type": "media-control"
-        },
-        {
-            "entity": "media_player.other_tv",
-            "type": "media-control"
-        }
-    ],
-    "title": "Main"
-}
-      ]
+            ]
         }
     },
     "key": "lovelace",
