@@ -53,6 +53,7 @@ stages:
         -not -name "secrets.yaml"
         ); do
         esphome $file config
+        esphome compile
       done
   tags:
     - shared
