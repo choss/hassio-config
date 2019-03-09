@@ -30,31 +30,31 @@ text_sensor:
         - if:
             condition:
               lambda: |-
-                return x == "input1";
+                return x == "Fire TV";
             then:
               switch.turn_on: input1
         - if:
             condition:
               lambda: |-
-                return x == "input2";
+                return x == "SteamLink";
             then:
               switch.turn_on: input2
         - if:
             condition:
               lambda: |-
-                return x == "input3";
+                return x == "Satellite Receiver";
             then:
               switch.turn_on: input3
         - if:
             condition:
               lambda: |-
-                return x == "input4";
+                return x == "Nintendo Switch";
             then:
               switch.turn_on: input4
         - if:
             condition:
               lambda: |-
-                return x == "input5";
+                return x == "SNES";
             then:
               switch.turn_on: input5
 switch:
