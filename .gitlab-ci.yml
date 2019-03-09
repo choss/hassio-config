@@ -18,12 +18,13 @@ stages:
   variables:
     PYTHONPATH: "/usr/src/app:$PYTHONPATH"
   before_script:
-    - uname -a
-    - cp -R ./.stubs/fake_hassio_secrets.yaml ./secrets.yaml
-    - apt search git
+    - cp -R .stubs/fake_hassio_secrets.yaml ./secrets.yaml
+    - mkdir -p secrets/adb
+    - cp .stubs/fake_adb_key secrets/adb/hassio
+    - cp .stubs/fake_adb_key.pub secrets/adb/hassio.pub
     - cd scripts
-    - ./enigma.sh
-    - ./tk.sh
+#    - ./enigma.sh
+#    - ./tk.sh
     - cd ..
     - python -m homeassistant --version
   script:
