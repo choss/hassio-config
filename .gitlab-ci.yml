@@ -55,7 +55,7 @@ stages:
         esphome $file config
       done
   tags:
-    - test
+    - shared
 
 # Preflight jobs
 shellcheck:
