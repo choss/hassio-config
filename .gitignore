@@ -8,3 +8,4 @@ custom_components
 .uuid
 deps
 !.storage/lovelace
+/.project
