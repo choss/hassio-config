@@ -5,4 +5,4 @@ substitutions:
   # Lower value gives lower voltage readout
   voltage_div: "955"
 
-<<: !include template_gosund_sp1.yaml
+<<: !include template_stocklike_gosund_sp1.yaml

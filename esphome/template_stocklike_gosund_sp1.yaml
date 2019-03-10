@@ -24,23 +24,31 @@ binary_sensor:
     pin:
       number: GPIO3
       inverted: true
-    name: "${plug_name}_button"
+    id: "${plug_name}_button"
+    on_click:
+      then:
+        - switch.toggle: "${plug_name}_relay"
 
 switch:
   - platform: gpio
+    id: "${plug_name}_relay"
     name: "${plug_name}_Relay"
     pin: GPIO14
-    restore_mode: ALWAYS_ON
+    restore_mode: RESTORE_DEFAULT_OFF
+    on_turn_on:
+      - switch.turn_on: ${plug_name}_led_red
+    on_turn_off:
+      - switch.turn_off: ${plug_name}_led_red
   - platform: gpio
-    name: "${plug_name}_LED_Blue"
+    id: "${plug_name}_led_blue"
     pin: GPIO1
     inverted: true
     restore_mode: ALWAYS_OFF
   - platform: gpio
-    name: "${plug_name}_LED_Red"
+    id: "${plug_name}_led_red"
     pin: GPIO13
     inverted: true
-    restore_mode: ALWAYS_OFF
+    restore_mode: RESTORE_DEFAULT_OFF
 sensor:
   - platform: hlw8012
     sel_pin:
