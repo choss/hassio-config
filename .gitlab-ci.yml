@@ -50,9 +50,10 @@ stages:
         ./esphome \
         -type f \
         -name "*.yaml"\
-        -not -name "secrets.yaml"
+        -not -name "secrets.yaml" \
         -not -name "template_*.yaml"
         ); do
+        echo working on $file
         esphome $file config
         esphome $file compile
       done
