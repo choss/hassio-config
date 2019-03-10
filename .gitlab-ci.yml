@@ -51,6 +51,7 @@ stages:
         -type f \
         -name "*.yaml"\
         -not -name "secrets.yaml"
+        -not -name "template_*.yaml"
         ); do
         esphome $file config
         esphome $file compile
