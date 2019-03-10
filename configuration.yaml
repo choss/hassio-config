@@ -259,7 +259,7 @@ binary_sensor:
 scene:
   - name: "bett_gehen"
     entities:
-      light.dimmer_1_pc_ecke:
+      light.wozi_dimmer_1_pc_ecke:
         state: false
       light.wozi_dimmer_2_mara_ecke:
         state: false
