@@ -1,5 +1,7 @@
 secrets.yaml
 *.db
+*.db-wal
+*.db-shm
 *.log
 
 .storage/*
