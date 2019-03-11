@@ -11,3 +11,5 @@ switch.vorgarten_licht_2:
   hidden: true
 switch.vorgarten_licht_1:
   friendly_name: Vorgarten Licht
+switch.steckdose_relay:
+  friendly_name: Steckdose

@@ -151,23 +151,60 @@
                         },
                         {
                             "entities": [
-                                "switch.sb_test",
-                                "switch.input_5",
-                                "switch.bedroom_hmdi_switch_power",
-                                "switch.input_1",
-                                "switch.input_2",
-                                "switch.input_3",
-                                "switch.input_4",
-                                "switch.schlazi_tv_2_webradio",
-                                "switch.kizi_baerchen",
-                                "switch.schalter_stern",
-                                "switch.vorgarten_licht_1",
-                                "switch.terrassenlicht",
-                                "switch.kizi_lichterkette",
-                                "switch.schlazi_tv_1",
-                                "switch.spuelmaschine_steckdose",
-                                "switch.trockner_steckdose",
-                                "switch.waschmaschine_steckdose"
+                                {
+                                    "entity": "switch.sb_test"
+                                },
+                                {
+                                    "entity": "switch.input_5"
+                                },
+                                {
+                                    "entity": "switch.bedroom_hmdi_switch_power"
+                                },
+                                {
+                                    "entity": "switch.input_1"
+                                },
+                                {
+                                    "entity": "switch.input_2"
+                                },
+                                {
+                                    "entity": "switch.input_3"
+                                },
+                                {
+                                    "entity": "switch.input_4"
+                                },
+                                {
+                                    "entity": "switch.schlazi_tv_2_webradio"
+                                },
+                                {
+                                    "entity": "switch.kizi_baerchen"
+                                },
+                                {
+                                    "entity": "switch.steckdose_relay"
+                                },
+                                {
+                                    "entity": "switch.schalter_stern"
+                                },
+                                {
+                                    "entity": "switch.vorgarten_licht_1"
+                                },
+                                {
+                                    "entity": "switch.terrassenlicht"
+                                },
+                                {
+                                    "entity": "switch.kizi_lichterkette"
+                                },
+                                {
+                                    "entity": "switch.heizluefter"
+                                },
+                                {
+                                    "entity": "switch.spuelmaschine_steckdose"
+                                },
+                                {
+                                    "entity": "switch.trockner_steckdose"
+                                },
+                                {
+                                    "entity": "switch.waschmaschine_steckdose"
+                                }
                             ],
                             "title": "Switch",
                             "type": "entities"
@@ -207,6 +244,9 @@
                                 },
                                 {
                                     "entity": "switch.terrassenlicht"
+                                },
+                                {
+                                    "entity": "switch.steckdose_relay"
                                 },
                                 {
                                     "entity": "climate.heizung_wohnzimmer"

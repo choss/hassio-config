@@ -168,6 +168,9 @@ emulated_hue:
     script.living_room_window:
       name: "Wohnzimmerfenster"
       hidden: false
+    switch.steckdose_relay:
+      name: Steckdose
+      hidden: false
 
 fritzbox:
   devices:
@@ -262,6 +265,8 @@ scene:
       light.wozi_dimmer_1_pc_ecke:
         state: false
       light.wozi_dimmer_2_mara_ecke:
+        state: false
+      switch.steckdose_relay:
         state: false
       switch.terrassenlicht:
         state: false
