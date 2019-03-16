@@ -1,0 +1,97 @@
+esphome:
+  name: esp_bedroom_hdmi
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Enable logging
+logger:
+  hardware_uart: UART1
+# Enable Home Assistant API
+api:
+
+web_server:
+  port: 80
+
+uart:
+  baud_rate: 19200
+  tx_pin: GPIO1
+  rx_pin: GPIO3
+
+text_sensor:
+  - platform: homeassistant
+    name: "HDMI Input Selection"
+    entity_id: input_select.bedroom_hdmi_switch
+    on_value:
+      then:
+        - if:
+            condition:
+              lambda: |-
+                return x == "Fire TV";
+            then:
+              switch.turn_on: input1
+        - if:
+            condition:
+              lambda: |-
+                return x == "SteamLink";
+            then:
+              switch.turn_on: input2
+        - if:
+            condition:
+              lambda: |-
+                return x == "Satellite Receiver";
+            then:
+              switch.turn_on: input3
+        - if:
+            condition:
+              lambda: |-
+                return x == "Nintendo Switch";
+            then:
+              switch.turn_on: input4
+        - if:
+            condition:
+              lambda: |-
+                return x == "SNES";
+            then:
+              switch.turn_on: input5
+switch:
+# just until I fix my HA config
+  - platform: template
+    name: "Bedroom HMDI switch power"
+    optimistic: true
+
+  - platform: uart
+    id: input1
+    name: "Input 1"
+    data: "sw i01\r\n"
+  - platform: uart
+    id: input2
+    name: "Input 2"
+    data: "sw i02\r\n"
+  - platform: uart
+    id: input3
+    name: "Input 3"
+    data: "sw i03\r\n"
+  - platform: uart
+    id: input4
+    name: "Input 4"
+    data: "sw i04\r\n"
+  - platform: uart
+    id: input5
+    name: "Input 5"
+    data: "sw i05\r\n"
+  - platform: uart
+    id: input6
+    name: "Input 6"
+    data: "sw i06\r\n"
+  - platform: uart
+    id: input7
+    name: "Input 7"
+    data: "sw i07\r\n"
+  - platform: uart
+    id: input8
+    name: "Input 8"
+    data: "sw i08\r\n"
