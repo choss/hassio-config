@@ -28,7 +28,15 @@ binary_sensor:
     on_click:
       then:
         - switch.toggle: "${plug_name}_relay"
-
+  - platform: template
+    name: "${plug_name}_connected_device_on"
+    lambda: |-
+      if (id(${plug_name}_Wattage).state > ${connected_device_standby_threshold}
+        && id(${plug_name}_relay).state == true) {
+              return true;
+            } else {
+              return false;
+            }
 switch:
   - platform: gpio
     id: "${plug_name}_relay"
