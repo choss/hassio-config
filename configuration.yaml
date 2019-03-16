@@ -191,6 +191,7 @@ media_player:
       video4: "Chromecast"       # aux
       video3: "SteamLink"        # game
       video6: "HTPC"             # pc
+# needs to be renamed to androidTV on 0.90
   - platform: firetv
     name: FireTV Wohnzimmer
     host: 192.168.32.32
