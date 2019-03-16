@@ -22,7 +22,7 @@ stages:
     - mkdir -p secrets/adb
     - cp .stubs/fake_adb_key secrets/adb/hassio
     - cp .stubs/fake_adb_key.pub secrets/adb/hassio.pub
-    - cd scripts
+    - cd bash_scripts
     - ./enigma.sh
     - ./tk.sh
     - cd ..
