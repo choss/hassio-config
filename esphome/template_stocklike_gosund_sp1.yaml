@@ -30,6 +30,8 @@ binary_sensor:
         - switch.toggle: "${plug_name}_relay"
   - platform: template
     name: "${plug_name}_connected_device_on"
+    filters:
+      - delayed_off: "${connected_device_off_delay}"
     lambda: |-
       if (id(${plug_name}_Wattage).state > ${connected_device_standby_threshold}
         && id(${plug_name}_relay).state == true) {
