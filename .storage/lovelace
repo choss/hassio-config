@@ -75,13 +75,6 @@
                         },
                         {
                             "entities": [
-                                "input_select.bedroom_hdmi_switch"
-                            ],
-                            "title": "Input select",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
                                 "light.wozi_dimmer_2_mara_ecke",
                                 "light.wozi_dimmer_1_pc_ecke",
                                 "light.schlafzimmer_decke"
@@ -94,7 +87,7 @@
                             "type": "media-control"
                         },
                         {
-                            "entity": "media_player.bedroom_hdmi_switch_mp",
+                            "entity": "media_player.bedroom_tv",
                             "type": "media-control"
                         },
                         {
