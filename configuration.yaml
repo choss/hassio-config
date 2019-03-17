@@ -181,26 +181,6 @@ media_player:
     name: FireTV Schlafzimmer
     host: 192.168.32.46
     adbkey: "secrets/adb/hassio"
-  - platform: universal
-    name: "Bedroom HDMI Switch MP"
-    commands:
-      turn_on:
-        service: switch.turn_on
-        data:
-          entity_id: switch.bedroom_hmdi_switch_power
-      turn_off:
-        service: switch.turn_off
-        data:
-          entity_id: switch.bedroom_hmdi_switch_power
-      select_source:
-        service: input_select.select_option
-        data_template:
-          entity_id: input_select.bedroom_hdmi_switch
-          option: '{{ source }}'
-    attributes:
-      state: switch.bedroom_hmdi_switch_power
-      source: input_select.bedroom_hdmi_switch
-      source_list: input_select.bedroom_hdmi_switch|options
 
 switch:
   - platform: switchbot
@@ -261,17 +241,6 @@ scene:
       cover.rollo_wozi_tuer:
         state: true
         position: 60
-
-input_select:
-  bedroom_hdmi_switch:
-    name: Bedroom switch input
-    options:
-      - Fire TV
-      - SteamLink
-      - Satellite Receiver
-      - Nintendo Switch
-      - SNES
-    icon: mdi:video-switch
 
 notify:
   - platform: discord

@@ -1,0 +1,11 @@
+---
+input_select:
+  bedroom_hdmi_switch:
+    name: Bedroom switch input
+    options:
+      - Fire TV
+      - SteamLink
+      - Satellite Receiver
+      - Nintendo Switch
+      - SNES
+    icon: mdi:video-switch

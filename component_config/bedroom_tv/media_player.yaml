@@ -1,0 +1,24 @@
+---
+media_player:
+- platform: universal
+  name: "Bedroom TV"
+  commands:
+    turn_on:
+      service: remote.send_command
+      data:
+        entity_id: remote.remote_2
+        command: turn_on_samsung
+    turn_off:
+      service: remote.send_command
+      data:
+        entity_id: remote.remote_2
+        command: turn_off_samsung
+    select_source:
+      service: input_select.select_option
+      data_template:
+        entity_id: input_select.bedroom_hdmi_switch
+        option: '{{ source }}'
+  attributes:
+    state: binary_sensor.bedroom_tv_power_connected_device_on
+    source: input_select.bedroom_hdmi_switch
+    source_list: input_select.bedroom_hdmi_switch|options

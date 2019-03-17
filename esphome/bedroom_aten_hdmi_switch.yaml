@@ -58,11 +58,6 @@ text_sensor:
             then:
               switch.turn_on: input5
 switch:
-# just until I fix my HA config
-  - platform: template
-    name: "Bedroom HMDI switch power"
-    optimistic: true
-
   - platform: uart
     id: input1
     name: "Input 1"
