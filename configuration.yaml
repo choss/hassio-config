@@ -13,7 +13,7 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
   # Include split out components
-  packages: !include_dir_list component_config
+  packages: !include_dir_named component_config
 
 # Show links to resources in log and frontend
 introduction:
