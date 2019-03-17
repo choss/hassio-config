@@ -1,0 +1,22 @@
+---
+remote:
+  - platform: xiaomi_miio
+    name: "remote 2"
+    host: 192.168.32.122
+    token: !secret xiaomi_remote_02_token
+    commands:
+      turn_on_samsung:
+        command:
+          - raw:tllsNyt1am1YplBodvodBoNDudCs9BoNtoVFoNBp1DmVBAA8ADwAPAA+g0G00WhUGogFtUQCyAAUAcwF1qIA7g4ld6TaAB0AAQDewH2oIAZADqB+VNodJBPsDeQH2BjMAdgPzno=
+      turn_off_samsung:
+        command:
+          - raw:tllsNyt1am1YplBodrodBoNDvFCs9BoNsoVFoNBo95mVBoNEqN0APIADwAPAA8ACrTRaFQaiAW1RALIACQF1ATMAdaDQbvSbQAOgACAb0B2oCbADtQajQ6SCfIC7AAOAugCZgDsAKU9A
+      hdmi_one_samsung:
+        command:
+          - raw:tllsNyt1am1YplBocwodBoNDtdCs9BoNsoVFoNBo95mVBoNEqN0APIADwAPAA8ACrTRaFQaiAW1RALIABQBzADIBtAA1AQSk2gCMgImA3sANADyAbIANAFDptDpIJ9gbyAGoDaABoAss9A==
+      hdmi_two_samsung:
+        command:
+          - raw:tllsNyt1am1YplBodZodBoNDm1Cs9BoNZvFFoNBpdZqVBoNEqN0APIADwAPAA8ACr1RaFQaiAW1RALIABwCzqIMpABmAAlFoNCoNNtAB9AbyAWgHZgfwAOVRolJBPkEtQC5A7MHegAynoA==
+      toggle_power_samsung:
+        command:
+          - raw:tllsNyt1am1YplBod3odBoNDt9Cs9BoNxvFFoNBolTmdBAA8ADwAPAA+g0G00WhUGogFtUQCyAAcBN6CDSQC5gBnd6TaAByAXcDeQIzAAUD8gK2qNNodJBPkBMwI6BjgCtgGyno=
