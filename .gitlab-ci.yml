@@ -161,4 +161,6 @@ esphome-dev:
   image:
     name: esphome/esphome:dev
     entrypoint: [""]
+  before_script:
+    - pip install https://github.com/esphome/esphome/archive/dev.zip
   allow_failure: true
