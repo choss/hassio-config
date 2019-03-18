@@ -41,10 +41,9 @@ stages:
   stage: esphome
   variables:
     PYTHONPATH: "/usr/src/app:$PYTHONPATH"
-  before_script:
+  script:
     - esphome dummy.yaml version
     - cp -R ./.stubs/fake_esphome_secrets.yaml ./esphome/secrets.yaml
-  script:
     - |
       for file in $(find \
         ./esphome \
