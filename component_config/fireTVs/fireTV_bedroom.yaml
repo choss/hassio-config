@@ -1,6 +1,6 @@
 ---
 media_player:
-- platform: androidtv
-  name: FireTV Schlafzimmer
-  host: 192.168.32.46
-  adbkey: "secrets/adb/hassio"
+  - platform: androidtv
+    name: FireTV Schlafzimmer
+    host: 192.168.32.46
+    adbkey: "secrets/adb/hassio"
