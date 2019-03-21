@@ -1,0 +1,6 @@
+---
+media_player:
+- platform: androidtv
+  name: FireTV Wohnzimmer
+  host: 192.168.32.32
+  adbkey: "secrets/adb/hassio"
