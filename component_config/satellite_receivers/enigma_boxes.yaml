@@ -1,0 +1,8 @@
+---
+media_player:
+  - platform: enigma2
+    host: vuuno
+    name: VuUno
+  - platform: enigma2
+    host: vuzero
+    name: VuZero

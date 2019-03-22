@@ -177,23 +177,6 @@ switch:
     mac: !secret switchbot_01_mac
     name: "SB Test"
 
-enigma:
-  devices:
-    - host: vuuno
-      port: 80
-      name: VuUno
-      timeout: 20
-      username: root
-      password: root
-      picon: picon
-    - host: vuzero
-      port: 80
-      name: VuZero
-      timeout: 20
-      username: root
-      password: root
-      picon: picon
-
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

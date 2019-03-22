@@ -23,7 +23,6 @@ stages:
     - cp .stubs/fake_adb_key secrets/adb/hassio
     - cp .stubs/fake_adb_key.pub secrets/adb/hassio.pub
     - cd bash_scripts
-    - ./enigma.sh
     - ./tk.sh
     - cd ..
     - python -m homeassistant --version
