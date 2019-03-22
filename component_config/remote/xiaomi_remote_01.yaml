@@ -4,4 +4,4 @@ remote:
     name: "remote 1"
     host: 192.168.32.97
     token: !secret xiaomi_remote_01_token
-    commands: !include commands.yaml
+    commands: !include ../../includes/xiaomi_remote_commands.yaml
