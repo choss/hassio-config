@@ -1,18 +1,19 @@
 ---
-licht:
-  sequence:
-    - service: light.turn_on
-      data_template:
-        entity_id:
-          - light.wozi_dimmer_1_pc_ecke
-          - light.wozi_dimmer_2_mara_ecke
-        brightness_pct: >
-            {% if requested_level is defined %}
-                {{ requested_level }}
-            {% else %}
-                {% if  requested_state == "on" %}
-                    40
-                {% else %}
-                    0
-                {% endif %}
-            {% endif %}
+script:
+  licht:
+    sequence:
+      - service: light.turn_on
+        data_template:
+          entity_id:
+            - light.wozi_dimmer_1_pc_ecke
+            - light.wozi_dimmer_2_mara_ecke
+          brightness_pct: >
+              {% if requested_level is defined %}
+                  {{ requested_level }}
+              {% else %}
+                  {% if  requested_state == "on" %}
+                      40
+                  {% else %}
+                      0
+                  {% endif %}
+              {% endif %}
