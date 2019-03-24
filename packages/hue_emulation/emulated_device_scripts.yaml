@@ -12,16 +12,7 @@ script:
       - service: cover.set_cover_position
         data_template:
           entity_id: cover.rollo_wozi_tuer
-          position: >
-              {% if requested_level is defined %}
-                  {{ requested_level }}
-              {% else %}
-                  {% if  requested_state == "on" %}
-                      100
-                  {% else %}
-                      0
-                  {% endif %}
-              {% endif %}
+          position: !include ../../includes/emulated_hue_cover_position.j2 
 
   living_room_window_right:
     sequence:

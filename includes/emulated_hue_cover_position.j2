@@ -1,0 +1,10 @@
+---
+{% if requested_level is defined %}
+    {{ requested_level }}
+{% else %}
+    {% if  requested_state == "on" %}
+        100
+    {% else %}
+        0
+    {% endif %}
+{% endif %}
