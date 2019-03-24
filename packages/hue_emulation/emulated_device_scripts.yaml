@@ -12,7 +12,7 @@ script:
       - service: cover.set_cover_position
         data_template:
           entity_id: cover.rollo_wozi_tuer
-          position: !include ../../includes/emulated_hue_cover_position.j2 
+          position: !include ../../includes/emulated_hue_cover_position.j2
 
   living_room_window_right:
     sequence:
