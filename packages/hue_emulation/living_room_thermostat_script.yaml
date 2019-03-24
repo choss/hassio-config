@@ -1,0 +1,8 @@
+---
+script:
+  wohnzimmer_thermostat:
+    sequence:
+      - service: climate.set_temperature
+        data_template:
+          entity_id: climate.neq0314214
+          temperature: "{{ requested_level }}"

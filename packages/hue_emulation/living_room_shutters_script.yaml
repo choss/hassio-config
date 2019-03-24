@@ -1,12 +1,4 @@
 ---
-script:
-  wohnzimmer_thermostat:
-    sequence:
-      - service: climate.set_temperature
-        data_template:
-          entity_id: climate.neq0314214
-          temperature: "{{ requested_level }}"
-
   wohnzimmer_roll_tuer:
     sequence:
       - service: cover.set_cover_position
@@ -46,21 +38,3 @@ script:
             - cover.rollo_wozi_mitte
             - cover.rollo_wozi_rechts
           position: !include ../../includes/emulated_hue_cover_position.yaml
-
-  licht:
-    sequence:
-      - service: light.turn_on
-        data_template:
-          entity_id:
-            - light.wozi_dimmer_1_pc_ecke
-            - light.wozi_dimmer_2_mara_ecke
-          brightness_pct: >
-              {% if requested_level is defined %}
-                  {{ requested_level }}
-              {% else %}
-                  {% if  requested_state == "on" %}
-                      40
-                  {% else %}
-                      0
-                  {% endif %}
-              {% endif %}
