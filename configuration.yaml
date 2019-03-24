@@ -109,50 +109,6 @@ homematic:
       username: !secret homematic_username
       password: !secret homematic_password
 
-emulated_hue:
-  expose_by_default: false
-  entities:
-    light.wozi_dimmer_1_pc_ecke:
-      name: "PC Ecke"
-      hidden: false
-    light.wozi_dimmer_2_mara_ecke:
-      name: "Mara Ecke"
-      hidden: false
-    light.schlafzimmer_decke:
-      name: "Schlafzimmer Decke"
-      hidden: false
-    switch.terrassenlicht:
-      name: "Außenlampe"
-      hidden: false
-    switch.schalter_stern:
-      name: "Stern"
-      hidden: false
-    script.wohnzimmer_thermostat:
-      name: "Wohnzimmer Heizung"
-      hidden: false
-    script.wohnzimmer_roll_tuer:
-      name: "Wohnzimmertür"
-      hidden: false
-    script.living_room_window_right:
-      name: "wozir"
-      hidden: false
-    script.living_room_window_left:
-      name: "wozil"
-      hidden: false
-    script.licht:
-      hidden: false
-    scene.bett_gehen:
-      hidden: false
-    script.living_room_shutters:
-      name: "Westseite"
-      hidden: false
-    script.living_room_window:
-      name: "Wohnzimmerfenster"
-      hidden: false
-    switch.steckdose_relay:
-      name: Steckdose
-      hidden: false
-
 fritzbox:
   devices:
     - host: 192.168.178.1
