@@ -1,40 +1,40 @@
 ---
-  wohnzimmer_roll_tuer:
-    sequence:
-      - service: cover.set_cover_position
-        data_template:
-          entity_id: cover.rollo_wozi_tuer
-          position: !include ../../includes/emulated_hue_cover_position.yaml
+wohnzimmer_roll_tuer:
+  sequence:
+    - service: cover.set_cover_position
+      data_template:
+        entity_id: cover.rollo_wozi_tuer
+        position: !include ../../includes/emulated_hue_cover_position.yaml
 
-  living_room_window_right:
-    sequence:
-      - service: cover.set_cover_position
-        data_template:
-          entity_id: cover.rollo_wozi_rechts
-          position: !include ../../includes/emulated_hue_cover_position.yaml
+living_room_window_right:
+  sequence:
+    - service: cover.set_cover_position
+      data_template:
+        entity_id: cover.rollo_wozi_rechts
+        position: !include ../../includes/emulated_hue_cover_position.yaml
 
-  living_room_window_left:
-    sequence:
-      - service: cover.set_cover_position
-        data_template:
-          entity_id: cover.rollo_wozi_mitte
-          position: !include ../../includes/emulated_hue_cover_position.yaml
+living_room_window_left:
+  sequence:
+    - service: cover.set_cover_position
+      data_template:
+        entity_id: cover.rollo_wozi_mitte
+        position: !include ../../includes/emulated_hue_cover_position.yaml
 
-  living_room_window:
-    sequence:
-      - service: cover.set_cover_position
-        data_template:
-          entity_id:
-            - cover.rollo_wozi_mitte
-            - cover.rollo_wozi_rechts
-          position: !include ../../includes/emulated_hue_cover_position.yaml
+living_room_window:
+  sequence:
+    - service: cover.set_cover_position
+      data_template:
+        entity_id:
+          - cover.rollo_wozi_mitte
+          - cover.rollo_wozi_rechts
+        position: !include ../../includes/emulated_hue_cover_position.yaml
 
-  living_room_shutters:
-    sequence:
-      - service: cover.set_cover_position
-        data_template:
-          entity_id:
-            - cover.rollo_wozi_tuer
-            - cover.rollo_wozi_mitte
-            - cover.rollo_wozi_rechts
-          position: !include ../../includes/emulated_hue_cover_position.yaml
+living_room_shutters:
+  sequence:
+    - service: cover.set_cover_position
+      data_template:
+        entity_id:
+          - cover.rollo_wozi_tuer
+          - cover.rollo_wozi_mitte
+          - cover.rollo_wozi_rechts
+        position: !include ../../includes/emulated_hue_cover_position.yaml
