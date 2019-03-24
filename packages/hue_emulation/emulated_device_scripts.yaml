@@ -19,32 +19,14 @@ script:
       - service: cover.set_cover_position
         data_template:
           entity_id: cover.rollo_wozi_rechts
-          position: >
-              {% if requested_level is defined %}
-                  {{ requested_level }}
-              {% else %}
-                  {% if  requested_state == "on" %}
-                      100
-                  {% else %}
-                      0
-                  {% endif %}
-              {% endif %}
+          position: !include ../../includes/emulated_hue_cover_position.yaml
 
   living_room_window_left:
     sequence:
       - service: cover.set_cover_position
         data_template:
           entity_id: cover.rollo_wozi_mitte
-          position: >
-              {% if requested_level is defined %}
-                  {{ requested_level }}
-              {% else %}
-                  {% if  requested_state == "on" %}
-                      100
-                  {% else %}
-                      0
-                  {% endif %}
-              {% endif %}
+          position: !include ../../includes/emulated_hue_cover_position.yaml
 
   living_room_window:
     sequence:
@@ -53,16 +35,7 @@ script:
           entity_id:
             - cover.rollo_wozi_mitte
             - cover.rollo_wozi_rechts
-          position: >
-              {% if requested_level is defined %}
-                  {{ requested_level }}
-              {% else %}
-                  {% if  requested_state == "on" %}
-                      100
-                  {% else %}
-                      0
-                  {% endif %}
-              {% endif %}
+          position: !include ../../includes/emulated_hue_cover_position.yaml
 
   living_room_shutters:
     sequence:
@@ -72,16 +45,7 @@ script:
             - cover.rollo_wozi_tuer
             - cover.rollo_wozi_mitte
             - cover.rollo_wozi_rechts
-          position: >
-              {% if requested_level is defined %}
-                  {{ requested_level }}
-              {% else %}
-                  {% if  requested_state == "on" %}
-                      100
-                  {% else %}
-                      0
-                  {% endif %}
-              {% endif %}
+          position: !include ../../includes/emulated_hue_cover_position.yaml
 
   licht:
     sequence:
