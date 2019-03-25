@@ -1,0 +1,17 @@
+---
+media_player:
+  - platform: universal
+    name: "Living room TV"
+    commands:
+      turn_on:
+        service: remote.send_command
+        data:
+          entity_id: remote.remote_1
+          command: turn_on_samsung
+      turn_off:
+        service: remote.send_command
+        data:
+          entity_id: remote.remote_1
+          command: turn_off_samsung
+    attributes:
+      state: binary_sensor.livingroom_tv_power_connected_device_on
