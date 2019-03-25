@@ -62,11 +62,6 @@ sun:
 sensor:
   # Weather prediction
   - platform: yr
-  - platform: template
-    sensors:
-      living_room_temp:
-        value_template: "{{ states.climate.heizung_wohnzimmer.attributes['current_temperature'] }}"
-        unit_of_measurement: '°C'
 
 # Text to speech
 tts:
@@ -75,102 +70,10 @@ tts:
 # Cloud
 # cloud:
 
-tankerkoenig:
-  api_key: !secret tankerkoenig_api_key
-  monitored_conditions:
-    - e5
-    - diesel
-    - state
-  stations: !secret tankerkoenig_stations
-
-homematic:
-  interfaces:
-    rf:
-      host: 192.168.32.188
-      resolvenames: json
-      username: !secret homematic_username
-      password: !secret homematic_password
-    ip:
-      host: 192.168.32.188
-      port: 2010
-      resolvenames: json
-      username: !secret homematic_username
-      password: !secret homematic_password
-    groups:
-      host: 192.168.32.188
-      port: 9292
-      path: /groups
-      resolvenames: json
-      username: !secret homematic_username
-      password: !secret homematic_password
-  hosts:
-    ccu:
-      host: 192.168.32.188
-      username: !secret homematic_username
-      password: !secret homematic_password
-
-fritzbox:
-  devices:
-    - host: 192.168.178.1
-      username: !secret fritzbox_username
-      password: !secret fritzbox_password
-
 media_player:
   - platform: samsungtv
     host: 192.168.32.78
-  - platform: onkyo
-    host: 192.168.32.86
-    name: onkyo
-    sources:
-      cd: "FireTV"              # tv-cd
-      video2: "Sat receiver"     # cbl/sat
-      bd: "Nintendo Switch"      # bd/dvd
-      video4: "Chromecast"       # aux
-      video3: "SteamLink"        # game
-      video6: "HTPC"             # pc
-switch:
-  - platform: switchbot
-    mac: !secret switchbot_01_mac
-    name: "SB Test"
 
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-
-binary_sensor:
-  - platform: template
-    sensors:
-      dryer:
-        value_template: "{{ states.homematic.ccu.attributes['Trockner01'] == true }}"
-        device_class: plug
-      washing_machine:
-        value_template: "{{ states.homematic.ccu.attributes['Waschmaschine01'] == true }}"
-        device_class: plug
-      dishwasher:
-        value_template: "{{ states.homematic.ccu.attributes['Spuelmaschine01'] == true }}"
-        device_class: plug
-
-scene:
-  - name: "bett_gehen"
-    entities:
-      light.wozi_dimmer_1_pc_ecke:
-        state: false
-      light.wozi_dimmer_2_mara_ecke:
-        state: false
-      switch.steckdose_relay:
-        state: false
-      switch.terrassenlicht:
-        state: false
-      cover.rollo_wozi_mitte:
-        state: true
-        position: 0
-      cover.rollo_wozi_rechts:
-        state: true
-        position: 0
-      cover.rollo_wozi_tuer:
-        state: true
-        position: 60
-
-notify:
-  - platform: discord
-    token: !secret discord_token

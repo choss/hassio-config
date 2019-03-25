@@ -1,0 +1,12 @@
+---
+media_player:
+  - platform: onkyo
+    host: 192.168.32.86
+    name: onkyo
+    sources:
+      cd: "FireTV"              # tv-cd
+      video2: "Sat receiver"     # cbl/sat
+      bd: "Nintendo Switch"      # bd/dvd
+      video4: "Chromecast"       # aux
+      video3: "SteamLink"        # game
+      video6: "HTPC"             # pc

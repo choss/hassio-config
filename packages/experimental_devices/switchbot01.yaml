@@ -1,0 +1,5 @@
+---
+switch:
+  - platform: switchbot
+    mac: !secret switchbot_01_mac
+    name: "SB Test"

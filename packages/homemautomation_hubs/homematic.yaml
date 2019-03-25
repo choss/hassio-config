@@ -1,0 +1,26 @@
+---
+homematic:
+  interfaces:
+    rf:
+      host: 192.168.32.188
+      resolvenames: json
+      username: !secret homematic_username
+      password: !secret homematic_password
+    ip:
+      host: 192.168.32.188
+      port: 2010
+      resolvenames: json
+      username: !secret homematic_username
+      password: !secret homematic_password
+    groups:
+      host: 192.168.32.188
+      port: 9292
+      path: /groups
+      resolvenames: json
+      username: !secret homematic_username
+      password: !secret homematic_password
+  hosts:
+    ccu:
+      host: 192.168.32.188
+      username: !secret homematic_username
+      password: !secret homematic_password

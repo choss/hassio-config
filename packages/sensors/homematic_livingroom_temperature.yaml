@@ -1,0 +1,7 @@
+---
+sensor:
+  - platform: template
+    sensors:
+      living_room_temp:
+        value_template: "{{ states.climate.heizung_wohnzimmer.attributes['current_temperature'] }}"
+        unit_of_measurement: '°C'

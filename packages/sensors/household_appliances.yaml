@@ -1,0 +1,13 @@
+---
+binary_sensor:
+  - platform: template
+    sensors:
+      dryer:
+        value_template: "{{ states.homematic.ccu.attributes['Trockner01'] == true }}"
+        device_class: plug
+      washing_machine:
+        value_template: "{{ states.homematic.ccu.attributes['Waschmaschine01'] == true }}"
+        device_class: plug
+      dishwasher:
+        value_template: "{{ states.homematic.ccu.attributes['Spuelmaschine01'] == true }}"
+        device_class: plug

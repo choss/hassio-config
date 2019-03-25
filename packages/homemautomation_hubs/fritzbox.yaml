@@ -1,0 +1,6 @@
+---
+fritzbox:
+  devices:
+    - host: 192.168.178.1
+      username: !secret fritzbox_username
+      password: !secret fritzbox_password

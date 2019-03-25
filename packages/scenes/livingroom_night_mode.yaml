@@ -1,0 +1,21 @@
+---
+scene:
+  - name: "bett_gehen"
+    entities:
+      light.wozi_dimmer_1_pc_ecke:
+        state: false
+      light.wozi_dimmer_2_mara_ecke:
+        state: false
+      switch.steckdose_relay:
+        state: false
+      switch.terrassenlicht:
+        state: false
+      cover.rollo_wozi_mitte:
+        state: true
+        position: 0
+      cover.rollo_wozi_rechts:
+        state: true
+        position: 0
+      cover.rollo_wozi_tuer:
+        state: true
+        position: 60

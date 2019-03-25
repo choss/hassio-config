@@ -1,0 +1,8 @@
+---
+tankerkoenig:
+  api_key: !secret tankerkoenig_api_key
+  monitored_conditions:
+    - e5
+    - diesel
+    - state
+  stations: !secret tankerkoenig_stations
