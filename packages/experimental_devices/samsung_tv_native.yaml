@@ -1,0 +1,4 @@
+---
+media_player:
+  - platform: samsungtv
+    host: 192.168.32.78

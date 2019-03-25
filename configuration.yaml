@@ -70,10 +70,6 @@ tts:
 # Cloud
 # cloud:
 
-media_player:
-  - platform: samsungtv
-    host: 192.168.32.78
-
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
