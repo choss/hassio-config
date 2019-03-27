@@ -24,6 +24,7 @@ stages:
     - cp .stubs/fake_adb_key.pub secrets/adb/hassio.pub
     - cd bash_scripts
     - ./tk.sh
+    - ./custom_lovelace_cards.sh
     - cd ..
     - python -m homeassistant --version
   script:
