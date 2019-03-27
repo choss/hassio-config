@@ -40,5 +40,8 @@ emulated_hue:
       name: "Wohnzimmerfenster"
       hidden: false
     switch.steckdose_relay:
-      name: Steckdose
+      name: "Steckdose"
+      hidden: false
+    light.bedroom02_cupboard:
+      name: "Pax"
       hidden: false
