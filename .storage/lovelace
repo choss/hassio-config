@@ -1,6 +1,12 @@
 {
     "data": {
         "config": {
+            "resources": [
+                {
+                    "type": "module",
+                    "url": "/local/mini-media-player-bundle.js?v=1.0.3"
+                }
+            ],
             "title": "Home",
             "views": [
                 {
@@ -201,6 +207,11 @@
                             ],
                             "title": "Switch",
                             "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.living_room_tv",
+                            "type": "custom:mini-media-player",
+                            "volume_stateless": true
                         }
                     ],
                     "path": "default_view",
@@ -254,6 +265,9 @@
                                     "entity": "cover.rollo_wozi_rechts"
                                 },
                                 {
+                                    "entity": "light.bedroom02_cupboard"
+                                },
+                                {
                                     "entity": "scene.bett_gehen"
                                 }
                             ],
@@ -263,23 +277,31 @@
                         },
                         {
                             "entity": "media_player.onkyo",
-                            "type": "media-control"
+                            "icon": "mdi:amplifier",
+                            "type": "custom:mini-media-player"
                         },
                         {
                             "entity": "media_player.firetv_wohnzimmer",
-                            "type": "media-control"
+                            "hide": {
+                                "volume": true
+                            },
+                            "icon": "mdi:fire",
+                            "type": "custom:mini-media-player"
                         },
                         {
                             "entity": "media_player.vuuno",
-                            "type": "media-control"
+                            "icon": "mdi:satellite",
+                            "type": "custom:mini-media-player"
                         },
                         {
                             "entity": "media_player.insane_chromecast",
-                            "type": "media-control"
+                            "type": "custom:mini-media-player"
                         },
                         {
                             "entity": "media_player.living_room_tv",
-                            "type": "media-control"
+                            "icon": "mdi:television",
+                            "type": "custom:mini-media-player",
+                            "volume_stateless": true
                         }
                     ],
                     "title": "Main"
