@@ -13,3 +13,5 @@ switch.vorgarten_licht_1:
   friendly_name: Vorgarten Licht
 switch.steckdose_relay:
   friendly_name: Steckdose
+light.bedroom02_cupboard:
+  friendly_name: Pax
