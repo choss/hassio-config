@@ -64,10 +64,15 @@ sensor:
       temperature:
         name: "Display temp"
         id: local_temp
+        # filters:
+        #   - calibrate_linear:
+        #     - 26.9 -> 23.7
       humidity:
         name: "Display humidity"
         id: local_humidity
-
+      #   filters:
+      #     - calibrate_linear:
+      #       - 28 -> 32
 display:
   - platform: waveshare_epaper
     cs_pin: D2
