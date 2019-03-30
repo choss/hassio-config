@@ -15,17 +15,43 @@ api:
 
 ota:
 
+status_led:
+  pin: GPIO2
+
 web_server:
 
+# deep_sleep:
+#   id: deep_sleep_1
+#   run_duration: 10s
+#   sleep_duration: 45s
+
 spi:
-  clk_pin: D1
-  mosi_pin: D0
+   clk_pin: D2
+   mosi_pin: D1
 
 font:
   - file: "assets/fonts/Roboto-Medium.ttf"
     id: roboto_20
     size: 20
     glyphs: '!"%()+,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz*'
+  - file: "assets/fonts/Roboto-Medium.ttf"
+    id: roboto_26
+    size: 26
+    glyphs: '!"%()+,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz*'
+  - file: "assets/fonts/Roboto-Medium.ttf"
+    id: roboto_18
+    size: 18
+    glyphs: '!"%()+,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz*'
+
+image:
+  - file: "assets/mdi/pine-tree_24.png"
+    id: pine_tree_24
+  - file: "assets/mdi/sofa_24.png"
+    id: sofa_24
+  - file: "assets/mdi/wall_24.png"
+    id: wall_24
+  - file: "assets/mdi/temperature-celsius_36.png"
+    id: temperature_36
 
 time:
   - platform: homeassistant
@@ -59,7 +85,7 @@ sensor:
       id: benzin
       entity_id: sensor.avia_axpress_steinheim_e5
     - platform: dht
-      pin: D6
+      pin: D7
       model: DHT22
       temperature:
         name: "Display temp"
@@ -75,20 +101,48 @@ sensor:
       #       - 28 -> 32
 display:
   - platform: waveshare_epaper
-    cs_pin: D2
-    dc_pin: D3
+    cs_pin: D3
+    dc_pin: D4
     busy_pin: D5
-    reset_pin: D4
+    reset_pin: D6
     model: 4.20in
+    update_interval: 1min
     lambda: |-
-      it.strftime(0, 0, id(roboto_20), "%H:%M", id(homeassistant_time).now());
-      it.strftime(0, 25, id(roboto_20), "%a, %d.%m", id(homeassistant_time).now());
+      // printing time and date
+      it.strftime(15, 5, id(roboto_26), "%H:%M", id(homeassistant_time).now());
+      it.strftime(10, 35, id(roboto_18), "%a, %d.%m", id(homeassistant_time).now());
+      // line after time
+      it.line(0, 65, 399, 65);
+      it.line(0, 66, 399, 66);
 
-      it.printf(0, 90, id(roboto_20), "states: WM: %d, T: %d, SM: %d, Tuer: %d",
+      // circles and symbols for the temperature
+      // outside
+      it.image(0, 70, id(temperature_36));
+
+      it.image(28, 118, id(pine_tree_24));
+      it.circle(40, 100, 30);
+      it.circle(40, 100, 31);
+
+      // living room
+      it.image(108, 118, id(sofa_24));
+      it.circle(120, 100, 30);
+      it.circle(120, 100, 31);
+
+      // local temperature
+      it.image(188, 118, id(wall_24));
+      it.circle(200, 100, 30);
+      it.circle(200, 100, 31);
+
+      // values for the temperature
+      it.printf(15, 100 , id(roboto_26), "%.1f", id(outside_temp).state);
+      it.printf(95, 100 , id(roboto_26), "%.1f", id(living_room_temp).state);
+      it.printf(175, 100 , id(roboto_26), "%.1f", id(local_temp).state);
+
+      // separator line
+
+      // test values
+      it.printf(0, 225, id(roboto_20), "states: WM: %d, T: %d, SM: %d, Tuer: %d",
               id(washing_machine).state, id(dishwasher).state, id(dryer).state, id(door).state );
 
-      it.printf(0, 120, id(roboto_20), "Temps: WZ: %.1f, D: %.1f, L: %.1f",
-              id(living_room_temp).state, id(outside_temp).state, id(local_temp).state );
-      it.printf(0, 160, id(roboto_20), "Sprit: Benzin: %.3f, Diesel: %.3f",
+      it.printf(0, 275, id(roboto_20), "Sprit: Benzin: %.3f, Diesel: %.3f",
                 id(benzin).state, id(diesel).state );
-    update_interval: 1min
