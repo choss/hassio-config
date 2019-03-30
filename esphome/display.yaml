@@ -50,8 +50,22 @@ image:
     id: sofa_24
   - file: "assets/mdi/wall_24.png"
     id: wall_24
+  - file: "assets/mdi/washing-machine_24.png"
+    id: washing_machine_24
+  - file: "assets/mdi/tumble-dryer_24.png"
+    id: tumble_dryer_24
+  - file: "assets/mdi/dishwasher_24.png"
+    id: dishwasher_24
   - file: "assets/mdi/temperature-celsius_36.png"
     id: temperature_36
+  - file: "assets/mdi/power-socket-eu_36.png"
+    id: power_socket_36
+  - file: "assets/mdi/power-plug_48.png"
+    id: power_plug_48
+  - file: "assets/mdi/power-plug-off_48.png"
+    id: power_plug_off_48
+  - file: "assets/mdi/gas-station_48.png"
+    id: gas_station_48
 
 time:
   - platform: homeassistant
@@ -112,13 +126,13 @@ display:
       it.strftime(15, 5, id(roboto_26), "%H:%M", id(homeassistant_time).now());
       it.strftime(10, 35, id(roboto_18), "%a, %d.%m", id(homeassistant_time).now());
       // line after time
+      it.line(0, 64, 399, 64);
       it.line(0, 65, 399, 65);
-      it.line(0, 66, 399, 66);
 
       // circles and symbols for the temperature
-      // outside
       it.image(0, 70, id(temperature_36));
 
+      // outside
       it.image(58, 118, id(pine_tree_24));
       it.circle(70, 100, 30);
       it.circle(70, 100, 31);
@@ -142,9 +156,39 @@ display:
       it.line(0, 144, 399, 144);
       it.line(0, 145, 399, 145);
 
-      // test values
-      it.printf(0, 225, id(roboto_20), "states: WM: %d, T: %d, SM: %d, Tuer: %d",
-              id(washing_machine).state, id(dishwasher).state, id(dryer).state, id(door).state );
+      // values for the appliance states
+      display::Image *wm = id(washing_machine).state ? id(power_plug_48) : id(power_plug_off_48);
+      display::Image *dr = id(dryer).state ? id(power_plug_48) : id(power_plug_off_48);
+      display::Image *dw = id(dishwasher).state ? id(power_plug_48) : id(power_plug_off_48);
 
-      it.printf(0, 275, id(roboto_20), "Sprit: Benzin: %.3f, Diesel: %.3f",
+      it.image(45, 155, wm);
+      it.image(125, 155, dr);
+      it.image(205, 155, dw);
+
+      // circles and symbols for the the appliance states
+      it.image(0, 150, id(power_socket_36));
+
+      // washing machine
+      it.image(58, 198, id(washing_machine_24));
+      it.circle(70, 180, 30);
+      it.circle(70, 180, 31);
+
+      // dryer
+      it.image(138, 198, id(tumble_dryer_24));
+      it.circle(150, 180, 30);
+      it.circle(150, 180, 31);
+
+      // dishwasher
+      it.image(218, 198, id(dishwasher_24));
+      it.circle(230, 180, 30);
+      it.circle(230, 180, 31);
+
+      // separator line
+      it.line(0, 224, 399, 224);
+      it.line(0, 225, 399, 225);
+
+      // circles and symbols for the the gas prices
+      it.image(0, 230, id(gas_station_48));
+
+      it.printf(100, 30, id(roboto_20), "Sprit: Benzin: %.3f, Diesel: %.3f",
                 id(benzin).state, id(diesel).state );
