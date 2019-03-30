@@ -26,8 +26,8 @@ web_server:
 #   sleep_duration: 45s
 
 spi:
-   clk_pin: D2
-   mosi_pin: D1
+ clk_pin: D2
+ mosi_pin: D1
 
 font:
   - file: "assets/fonts/Roboto-Medium.ttf"
@@ -60,6 +60,11 @@ image:
     id: temperature_36
   - file: "assets/mdi/power-socket-eu_36.png"
     id: power_socket_36
+  - file: "assets/mdi/van-passenger_24.png"
+    id: van_24
+  - file: "assets/mdi/car-side_24.png"
+    id: car_24
+# row icons
   - file: "assets/mdi/power-plug_48.png"
     id: power_plug_48
   - file: "assets/mdi/power-plug-off_48.png"
@@ -86,33 +91,34 @@ binary_sensor:
     entity_id: binary_sensor.turkontakt_terasse_state
 
 sensor:
-    - platform: homeassistant
-      id: outside_temp
-      entity_id: sensor.aussensensor_temperature
-    - platform: homeassistant
-      id: living_room_temp
-      entity_id: sensor.living_room_temp
-    - platform: homeassistant
-      id: diesel
-      entity_id: sensor.avia_axpress_steinheim_diesel
-    - platform: homeassistant
-      id: benzin
-      entity_id: sensor.avia_axpress_steinheim_e5
-    - platform: dht
-      pin: D7
-      model: DHT22
-      temperature:
-        name: "Display temp"
-        id: local_temp
-        # filters:
-        #   - calibrate_linear:
-        #     - 26.9 -> 23.7
-      humidity:
-        name: "Display humidity"
-        id: local_humidity
-      #   filters:
-      #     - calibrate_linear:
-      #       - 28 -> 32
+  - platform: homeassistant
+    id: outside_temp
+    entity_id: sensor.aussensensor_temperature
+  - platform: homeassistant
+    id: living_room_temp
+    entity_id: sensor.living_room_temp
+  - platform: homeassistant
+    id: diesel
+    entity_id: sensor.avia_axpress_steinheim_diesel
+  - platform: homeassistant
+    id: benzin
+    entity_id: sensor.avia_axpress_steinheim_e5
+  - platform: dht
+    pin: D7
+    model: DHT22
+    temperature:
+      name: "Display temp"
+      id: local_temp
+      # filters:
+      #   - calibrate_linear:
+      #     - 26.9 -> 23.7
+    humidity:
+      name: "Display humidity"
+      id: local_humidity
+    #   filters:
+    #     - calibrate_linear:
+    #       - 28 -> 32
+
 display:
   - platform: waveshare_epaper
     cs_pin: D3
@@ -125,6 +131,7 @@ display:
       // printing time and date
       it.strftime(15, 5, id(roboto_26), "%H:%M", id(homeassistant_time).now());
       it.strftime(10, 35, id(roboto_18), "%a, %d.%m", id(homeassistant_time).now());
+
       // line after time
       it.line(0, 64, 399, 64);
       it.line(0, 65, 399, 65);
@@ -153,8 +160,8 @@ display:
       it.printf(205, 100 , id(roboto_26), "%.1f", id(local_temp).state);
 
       // separator line
-      it.line(0, 144, 399, 144);
-      it.line(0, 145, 399, 145);
+      it.line(0, 144, 280, 144);
+      it.line(0, 145, 280, 145);
 
       // values for the appliance states
       display::Image *wm = id(washing_machine).state ? id(power_plug_48) : id(power_plug_off_48);
@@ -190,5 +197,22 @@ display:
       // circles and symbols for the the gas prices
       it.image(0, 230, id(gas_station_48));
 
-      it.printf(100, 30, id(roboto_20), "Sprit: Benzin: %.3f, Diesel: %.3f",
-                id(benzin).state, id(diesel).state );
+      // diesel
+      it.image(58, 278, id(van_24));
+      it.circle(70, 260, 30);
+      it.circle(70, 260, 31);
+
+      // benzin
+      it.image(138, 278, id(car_24));
+      it.circle(150, 260, 30);
+      it.circle(150, 260, 31);
+
+      // gas price values
+      it.printf(45, 260, id(roboto_20), "%.3f", id(diesel).state);
+      it.printf(125, 260, id(roboto_20), "%.3f", id(benzin).state);
+
+      // vertical line
+      it.line(279, 64, 279, 299);
+      it.line(280, 64, 280, 299);
+
+      // humidity values
