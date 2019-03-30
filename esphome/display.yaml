@@ -119,26 +119,28 @@ display:
       // outside
       it.image(0, 70, id(temperature_36));
 
-      it.image(28, 118, id(pine_tree_24));
-      it.circle(40, 100, 30);
-      it.circle(40, 100, 31);
+      it.image(58, 118, id(pine_tree_24));
+      it.circle(70, 100, 30);
+      it.circle(70, 100, 31);
 
       // living room
-      it.image(108, 118, id(sofa_24));
-      it.circle(120, 100, 30);
-      it.circle(120, 100, 31);
+      it.image(138, 118, id(sofa_24));
+      it.circle(150, 100, 30);
+      it.circle(150, 100, 31);
 
       // local temperature
-      it.image(188, 118, id(wall_24));
-      it.circle(200, 100, 30);
-      it.circle(200, 100, 31);
+      it.image(218, 118, id(wall_24));
+      it.circle(230, 100, 30);
+      it.circle(230, 100, 31);
 
       // values for the temperature
-      it.printf(15, 100 , id(roboto_26), "%.1f", id(outside_temp).state);
-      it.printf(95, 100 , id(roboto_26), "%.1f", id(living_room_temp).state);
-      it.printf(175, 100 , id(roboto_26), "%.1f", id(local_temp).state);
+      it.printf(45, 100 , id(roboto_26), "%.1f", id(outside_temp).state);
+      it.printf(125, 100 , id(roboto_26), "%.1f", id(living_room_temp).state);
+      it.printf(205, 100 , id(roboto_26), "%.1f", id(local_temp).state);
 
       // separator line
+      it.line(0, 144, 399, 144);
+      it.line(0, 145, 399, 145);
 
       // test values
       it.printf(0, 225, id(roboto_20), "states: WM: %d, T: %d, SM: %d, Tuer: %d",
