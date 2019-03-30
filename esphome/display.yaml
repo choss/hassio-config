@@ -26,8 +26,8 @@ web_server:
 #   sleep_duration: 45s
 
 spi:
- clk_pin: D2
- mosi_pin: D1
+  clk_pin: D2
+  mosi_pin: D1
 
 font:
   - file: "assets/fonts/Roboto-Medium.ttf"
