@@ -8,6 +8,10 @@ sensor:
       - summary
       - icon
       - temperature
-      - precip_intensity_max
+      - precip_probability
+      - precip_type
+      - temperature_high
+      - temperature_low
+      - uv_index
     scan_interval:
       minutes: 5
