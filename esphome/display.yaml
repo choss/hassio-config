@@ -80,6 +80,9 @@ image:
   - file: "assets/mdi/water-percent_48.png"
     id: humidity_36
     resize: 36x36
+  - file: "assets/mdi/crystal-ball_48.png"
+    id: crystal_ball
+    resize: 24x24
 
   # on/off icons
   - file: "assets/mdi/power-plug_48.png"
@@ -180,9 +183,13 @@ display:
       it.strftime(15, 5, id(roboto_26), "%H:%M", id(homeassistant_time).now());
       it.strftime(10, 35, id(roboto_18), "%a, %d.%m", id(homeassistant_time).now());
 
+      // icon for weather forecast
+      it.image(107, 43, id(crystal_ball));
+
       // line to weather forecast
-      it.line(110, 0, 115, 65);
-      it.line(109, 0, 114, 65);
+      it.line(110, 0, 110, 65);
+      it.line(109, 0, 109, 65);
+
 
       // weather forecast
       // temp_min_circle
