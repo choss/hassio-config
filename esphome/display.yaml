@@ -45,6 +45,7 @@ font:
     glyphs: '!"%()+,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz*'
 
 image:
+  # individual circle icons
   - file: "assets/mdi/pine-tree_24.png"
     id: pine_tree_24
   - file: "assets/mdi/sofa_24.png"
@@ -61,7 +62,14 @@ image:
     id: van_24
   - file: "assets/mdi/car-side_24.png"
     id: car_24
+  - file: "assets/mdi/thermometer-minus_24.png"
+    id: thermometer_minus_24
+  - file: "assets/mdi/thermometer-plus_24.png"
+    id: thermometer_plus_24
+  - file: "assets/mdi/umbrella_24.png"
+    id: umbrella_24
 
+  # category icons
   - file: "assets/mdi/temperature-celsius_36.png"
     id: temperature_36
   - file: "assets/mdi/power-socket-eu_36.png"
@@ -73,12 +81,33 @@ image:
     id: humidity_36
     resize: 36x36
 
-    # on/off icons
+  # on/off icons
   - file: "assets/mdi/power-plug_48.png"
     id: power_plug_48
   - file: "assets/mdi/power-plug-off_48.png"
     id: power_plug_off_48
 
+  # weather icons
+  - file: "assets/mdi/weather-partlycloudy_48.png"
+    id: weather_partially_cloudy
+  - file: "assets/mdi/weather-cloudy_48.png"
+    id: weather_cloudy
+  - file: "assets/mdi/cloud-question_48.png"
+    id: cloud_question
+  - file: "assets/mdi/weather-fog_48.png"
+    id: weather_fog
+  - file: "assets/mdi/weather-night_48.png"
+    id: weather_night
+  - file: "assets/mdi/weather-pouring_48.png"
+    id: weather_pouring
+  - file: "assets/mdi/weather-snowy_48.png"
+    id: weather_snowy
+  - file: "assets/mdi/weather-snowy-rainy_48.png"
+    id: weather_snowy_rain
+  - file: "assets/mdi/weather-sunny_48.png"
+    id: weather_sunny
+  - file: "assets/mdi/weather-windy-variant_48.png"
+    id: weather_windy
 
 time:
   - platform: homeassistant
@@ -114,21 +143,29 @@ sensor:
   - platform: homeassistant
     id: benzin
     entity_id: sensor.avia_axpress_steinheim_e5
+  - platform: homeassistant
+    id: forecast_temp_min
+    entity_id: sensor.dark_sky_overnight_low_temperature_0
+  - platform: homeassistant
+    id: forecast_temp_max
+    entity_id: sensor.dark_sky_daytime_high_temperature_0
+  - platform: homeassistant
+    id: forecast_precip_prob
+    entity_id: sensor.dark_sky_precip_probability_0
   - platform: dht
     pin: D7
     model: AM2302
     temperature:
       name: "Display temp"
       id: local_temp
-      # filters:
-      #   - calibrate_linear:
-      #     - 26.9 -> 23.7
     humidity:
       name: "Display humidity"
       id: local_humidity
-      #   filters:
-      #     - calibrate_linear:
-      #       - 28 -> 32
+
+text_sensor:
+  - platform: homeassistant
+    id: weather_forecast_icon
+    entity_id: sensor.dark_sky_icon_0
 
 display:
   - platform: waveshare_epaper
@@ -142,6 +179,78 @@ display:
       // printing time and date
       it.strftime(15, 5, id(roboto_26), "%H:%M", id(homeassistant_time).now());
       it.strftime(10, 35, id(roboto_18), "%a, %d.%m", id(homeassistant_time).now());
+
+      // line to weather forecast
+      it.line(110, 0, 115, 65);
+      it.line(109, 0, 114, 65);
+
+      // weather forecast
+      // temp_min_circle
+      it.image(198, 42, id(thermometer_minus_24));
+      it.circle(210, 31, 30);
+      it.circle(210, 31, 31);
+
+      // temp_max_circle
+      it.image(268, 42, id(thermometer_plus_24));
+      it.circle(280, 31, 30);
+      it.circle(280, 31, 31);
+
+      // precip probability
+      it.image(338, 42, id(umbrella_24));
+      it.circle(350, 31, 30);
+      it.circle(350, 31, 31);
+
+      // image
+      display::Image *wi = id(cloud_question);
+      std::string iconString = id(weather_forecast_icon).state;
+
+      if (iconString.compare("clear-day") == 0) {
+        wi = id(weather_sunny);
+      }
+      if (iconString.compare("clear-night") == 0) {
+        wi = id(weather_night);
+      }
+      if (iconString.compare("rain") == 0) {
+        wi = id(weather_pouring);
+      }
+      if (iconString.compare("snow") == 0) {
+        wi = id(weather_snowy);
+      }
+      if (iconString.compare("sleet") == 0) {
+        wi = id(weather_snowy_rain);
+      }
+      if (iconString.compare("wind") == 0) {
+        wi = id(weather_windy);
+      }
+      if (iconString.compare("fog") == 0) {
+        wi = id(weather_fog);
+      }
+      if (iconString.compare("cloudy") == 0) {
+        wi = id(weather_cloudy);
+      }
+      if (iconString.compare("partly-cloudy-day") == 0) {
+        wi = id(weather_partially_cloudy);
+      }
+      if (iconString.compare("partly-cloudy-night") == 0) {
+        wi = id(weather_sunny);
+      }
+
+      it.image(125, 5, wi);
+
+      // print forecast values
+      if (id(forecast_temp_min).state <= -10.0) {
+        it.printf(185, 31 , id(roboto_26), "%4.0f", id(forecast_temp_min).state);
+      } else {
+        it.printf(185, 31 , id(roboto_26), "%4.1f", id(forecast_temp_min).state);
+      }
+
+      if (id(forecast_temp_max).state <= -10.0) {
+        it.printf(255, 31 , id(roboto_26), "%4.0f", id(forecast_temp_max).state);
+      } else {
+        it.printf(255, 31 , id(roboto_26), "%4.1f", id(forecast_temp_max).state);
+      }
+
+      it.printf(325, 31 , id(roboto_26), "%2.0f %%", id(forecast_precip_prob).state);
 
       // line after time
       it.line(0, 64, 399, 64);
