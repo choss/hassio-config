@@ -53,6 +53,9 @@
                                     "entity": "switch.steckdose_relay"
                                 },
                                 {
+                                    "entity": "switch.heizluefter"
+                                },
+                                {
                                     "entity": "climate.heizung_wohnzimmer"
                                 },
                                 {

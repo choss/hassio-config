@@ -17,6 +17,9 @@ emulated_hue:
     switch.schalter_stern:
       name: "Stern"
       hidden: false
+    switch.heizluefter:
+      name: "Heizlüfter"
+      hidden: false
     script.wohnzimmer_thermostat:
       name: "Wohnzimmer Heizung"
       hidden: false
