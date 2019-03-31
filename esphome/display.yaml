@@ -171,8 +171,8 @@ display:
       } else {
         it.printf(45, 100 , id(roboto_26), "%4.1f", id(outside_temp).state);
       }
-      it.printf(125, 100 , id(roboto_26), "%.1f", id(living_room_temp).state);
-      it.printf(205, 100 , id(roboto_26), "%.1f", id(local_temp).state);
+      it.printf(125, 100 , id(roboto_26), "%4.1f", id(living_room_temp).state);
+      it.printf(205, 100 , id(roboto_26), "%4.1f", id(local_temp).state);
 
       // separator line
       it.line(0, 144, 280, 144);
@@ -223,8 +223,8 @@ display:
       it.circle(150, 260, 31);
 
       // gas price values
-      it.printf(45, 260, id(roboto_20), "%.3f", id(diesel).state);
-      it.printf(125, 260, id(roboto_20), "%.3f", id(benzin).state);
+      it.printf(45, 260, id(roboto_20), "%5.3f", id(diesel).state);
+      it.printf(125, 260, id(roboto_20), "%5.3f", id(benzin).state);
 
       // humidity symbol
       it.image(280, 70, id(humidity_36));
