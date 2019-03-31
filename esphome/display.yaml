@@ -1,3 +1,4 @@
+---
 esphome:
   name: display01
   platform: ESP8266
@@ -56,21 +57,28 @@ image:
     id: tumble_dryer_24
   - file: "assets/mdi/dishwasher_24.png"
     id: dishwasher_24
-  - file: "assets/mdi/temperature-celsius_36.png"
-    id: temperature_36
-  - file: "assets/mdi/power-socket-eu_36.png"
-    id: power_socket_36
   - file: "assets/mdi/van-passenger_24.png"
     id: van_24
   - file: "assets/mdi/car-side_24.png"
     id: car_24
-# row icons
+
+  - file: "assets/mdi/temperature-celsius_36.png"
+    id: temperature_36
+  - file: "assets/mdi/power-socket-eu_36.png"
+    id: power_socket_36
+  - file: "assets/mdi/gas-station_48.png"
+    id: gas_station_36
+    resize: 36x36
+  - file: "assets/mdi/water-percent_48.png"
+    id: humidity_36
+    resize: 36x36
+
+    # on/off icons
   - file: "assets/mdi/power-plug_48.png"
     id: power_plug_48
   - file: "assets/mdi/power-plug-off_48.png"
     id: power_plug_off_48
-  - file: "assets/mdi/gas-station_48.png"
-    id: gas_station_48
+
 
 time:
   - platform: homeassistant
@@ -95,6 +103,9 @@ sensor:
     id: outside_temp
     entity_id: sensor.aussensensor_temperature
   - platform: homeassistant
+    id: outside_humidity
+    entity_id: sensor.aussensensor_humidity
+  - platform: homeassistant
     id: living_room_temp
     entity_id: sensor.living_room_temp
   - platform: homeassistant
@@ -105,7 +116,7 @@ sensor:
     entity_id: sensor.avia_axpress_steinheim_e5
   - platform: dht
     pin: D7
-    model: DHT22
+    model: AM2302
     temperature:
       name: "Display temp"
       id: local_temp
@@ -115,9 +126,9 @@ sensor:
     humidity:
       name: "Display humidity"
       id: local_humidity
-    #   filters:
-    #     - calibrate_linear:
-    #       - 28 -> 32
+      #   filters:
+      #     - calibrate_linear:
+      #       - 28 -> 32
 
 display:
   - platform: waveshare_epaper
@@ -155,7 +166,11 @@ display:
       it.circle(230, 100, 31);
 
       // values for the temperature
-      it.printf(45, 100 , id(roboto_26), "%.1f", id(outside_temp).state);
+      if (id(outside_temp).state <= -10.0) {
+        it.printf(45, 100 , id(roboto_26), "%4.0f", id(outside_temp).state);
+      } else {
+        it.printf(45, 100 , id(roboto_26), "%4.1f", id(outside_temp).state);
+      }
       it.printf(125, 100 , id(roboto_26), "%.1f", id(living_room_temp).state);
       it.printf(205, 100 , id(roboto_26), "%.1f", id(local_temp).state);
 
@@ -195,7 +210,7 @@ display:
       it.line(0, 225, 399, 225);
 
       // circles and symbols for the the gas prices
-      it.image(0, 230, id(gas_station_48));
+      it.image(0, 230, id(gas_station_36));
 
       // diesel
       it.image(58, 278, id(van_24));
@@ -211,8 +226,23 @@ display:
       it.printf(45, 260, id(roboto_20), "%.3f", id(diesel).state);
       it.printf(125, 260, id(roboto_20), "%.3f", id(benzin).state);
 
+      // humidity symbol
+      it.image(280, 70, id(humidity_36));
+
       // vertical line
       it.line(279, 64, 279, 299);
       it.line(280, 64, 280, 299);
 
-      // humidity values
+      // humidity circles
+      // outside
+      it.image(338, 118, id(pine_tree_24));
+      it.circle(350, 100, 30);
+      it.circle(350, 100, 31);
+
+      it.image(338, 198, id(wall_24));
+      it.circle(350, 180, 30);
+      it.circle(350, 180, 31);
+
+      // values for the humidity
+      it.printf(325, 100 , id(roboto_26), "%4.1f", id(outside_humidity).state);
+      it.printf(325, 180 , id(roboto_26), "%4.1f", id(local_humidity).state);
