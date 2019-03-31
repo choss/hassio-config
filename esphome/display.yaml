@@ -307,17 +307,17 @@ display:
       it.image(0, 150, id(power_socket_36));
 
       // washing machine
-      it.image(58, 198, id(washing_machine_24));
+      it.image(58, 201, id(washing_machine_24));
       it.circle(70, 180, 30);
       it.circle(70, 180, 31);
 
       // dryer
-      it.image(138, 198, id(tumble_dryer_24));
+      it.image(138, 201, id(tumble_dryer_24));
       it.circle(150, 180, 30);
       it.circle(150, 180, 31);
 
       // dishwasher
-      it.image(218, 198, id(dishwasher_24));
+      it.image(218, 201, id(dishwasher_24));
       it.circle(230, 180, 30);
       it.circle(230, 180, 31);
 
