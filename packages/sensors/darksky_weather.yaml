@@ -1,0 +1,13 @@
+---
+sensor:
+  - platform: darksky
+    api_key: !secret darksky_token
+    forecast:
+      - 0
+    monitored_conditions:
+      - summary
+      - icon
+      - temperature
+      - precip_intensity_max
+    scan_interval:
+      minutes: 5
