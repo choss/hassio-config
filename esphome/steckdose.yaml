@@ -1,7 +1,7 @@
 substitutions:
   plug_name: "steckdose"
   # Higher value gives lower watt readout
-  current_res: "0.00221"
+  current_res: "0.0025"
   # Lower value gives lower voltage readout
   voltage_div: "955"
   connected_device_standby_threshold: "0.0"
