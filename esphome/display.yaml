@@ -190,7 +190,6 @@ display:
       it.line(110, 0, 110, 65);
       it.line(109, 0, 109, 65);
 
-
       // weather forecast
       // temp_min_circle
       it.image(198, 42, id(thermometer_minus_24));
