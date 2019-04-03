@@ -16,9 +16,6 @@ api:
 
 ota:
 
-status_led:
-  pin: GPIO2
-
 web_server:
 
 # deep_sleep:
