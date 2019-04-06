@@ -9,6 +9,10 @@
                 {
                     "type": "module",
                     "url": "/local/slider-entity-row.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/camera-card.js"
                 }
             ],
             "title": "Home",
@@ -321,6 +325,16 @@
                     ],
                     "path": "default_view",
                     "title": "All"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "camera.fosbaby",
+                            "type": "custom:camera-card"
+                        }
+                    ],
+                    "title": "Cams"
                 }
             ]
         }

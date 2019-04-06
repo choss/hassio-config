@@ -1,0 +1,7 @@
+---
+camera:
+  - platform: foscam
+    ip: fosbaby
+    name: fosbaby
+    username: !secret foscam01_user
+    password: !secret foscam01_password
