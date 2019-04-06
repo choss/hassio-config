@@ -51,13 +51,16 @@
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
-                                    "entity": "switch.terrassenlicht"
+                                    "entity": "switch.terrassenlicht",
+                                    "icon": "mdi:lightbulb"
                                 },
                                 {
-                                    "entity": "switch.steckdose_relay"
+                                    "entity": "switch.steckdose_relay",
+                                    "icon": "mdi:power-socket-eu"
                                 },
                                 {
-                                    "entity": "switch.heizluefter"
+                                    "entity": "switch.heizluefter",
+                                    "icon": "mdi:radiator"
                                 },
                                 {
                                     "entity": "climate.heizung_wohnzimmer"
@@ -80,7 +83,13 @@
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
-                                    "entity": "scene.bett_gehen"
+                                    "entity": "scene.bett_gehen",
+                                    "icon": "mdi:hotel"
+                                },
+                                {
+                                    "entity": "script.lrtv_send_ok",
+                                    "icon": "mdi:pokeball",
+                                    "name": "Living room TV - OK button"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -89,12 +98,16 @@
                         },
                         {
                             "entity": "media_player.onkyo",
+                            "hide": {
+                                "icon_state": false
+                            },
                             "icon": "mdi:amplifier",
                             "type": "custom:mini-media-player"
                         },
                         {
                             "entity": "media_player.firetv_wohnzimmer",
                             "hide": {
+                                "icon_state": false,
                                 "volume": true
                             },
                             "icon": "mdi:fire",
@@ -102,21 +115,60 @@
                         },
                         {
                             "entity": "media_player.vuuno",
+                            "hide": {
+                                "icon_state": false
+                            },
                             "icon": "mdi:satellite",
                             "type": "custom:mini-media-player"
                         },
                         {
                             "entity": "media_player.insane_chromecast",
+                            "hide": {
+                                "icon_state": false
+                            },
                             "type": "custom:mini-media-player"
                         },
                         {
                             "entity": "media_player.living_room_tv",
+                            "hide": {
+                                "controls": true,
+                                "icon_state": false
+                            },
                             "icon": "mdi:television",
                             "type": "custom:mini-media-player",
                             "volume_stateless": true
                         }
                     ],
                     "title": "Main"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entity": "camera.fosbaby",
+                                    "name": "Kinderzimmer",
+                                    "type": "custom:camera-card"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "switch.kizi_baerchen",
+                                            "name": "B\u00e4rchen"
+                                        },
+                                        {
+                                            "entity": "switch.kizi_lichterkette",
+                                            "name": "Lichterkette"
+                                        }
+                                    ],
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "title": "Cams"
                 },
                 {
                     "badges": [
@@ -324,36 +376,7 @@
                         }
                     ],
                     "path": "default_view",
-                    "title": "All"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "entity": "camera.fosbaby",
-                                    "name": "Kinderzimmer",
-                                    "type": "custom:camera-card"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "switch.kizi_baerchen",
-                                            "name": "B\u00e4rchen"
-                                        },
-                                        {
-                                            "entity": "switch.kizi_lichterkette",
-                                            "name": "Lichterkette"
-                                        }
-                                    ],
-                                    "type": "entities"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "title": "Cams"
+                    "title": "Testing"
                 }
             ]
         }

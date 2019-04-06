@@ -1,0 +1,8 @@
+---
+script:
+  lrtv_send_ok:
+    sequence:
+      - service: remote.send_command
+        data:
+          entity_id: remote.remote_1
+          command: okay_button_samsung
