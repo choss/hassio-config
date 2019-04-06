@@ -8,3 +8,7 @@ mv mini-media-player-bundle.js ../www/
 #lovelace-entity-slider
 wget https://raw.githubusercontent.com/thomasloven/lovelace-slider-entity-row/master/slider-entity-row.js
 mv slider-entity-row.js ../www/
+
+# camera-card
+wget https://raw.githubusercontent.com/custom-cards/camera-card/master/camera-card.js
+mv camera-card.js ../www/
