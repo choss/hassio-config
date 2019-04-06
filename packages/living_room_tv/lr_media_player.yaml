@@ -28,6 +28,11 @@ media_player:
         data:
           entity_id: remote.remote_1
           command: mute_toggle_samsung
+      media_play:
+        service: remote.send_command
+        data:
+          entity_id: remote.remote_1
+          command: okay_button_samsung
     attributes:
       state: binary_sensor.livingroom_tv_power_connected_device_on
       is_volume_muted: false

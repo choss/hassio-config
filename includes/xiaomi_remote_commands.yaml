@@ -23,3 +23,6 @@ volume_down_samsung:
 mute_toggle_samsung:
   command:
     - raw:tllsNyt1am1XpFBoVvodBoNCpVBs9BoNyqNZoNBpdvqVBoNDrN0u9BAA8ADwAPAAu9Umh0Gz0WhUGogBlZwCyAHOo0UBMgC4APihUGm3kAcgE2A34AtwD4oNBns9
+okay_button_samsung:
+  command:
+    - raw:tllsNyt1am1XpFBoVvodBoNCpVBs9BoNyoNZoNBpdvqVBoNBmF0u4ApAAeAB4AHgATeqTQ6DZ6LQqDUQAys4BZADmAGoBZAHmA+gC50OhUGm3kCMgH2A3oDtAIyADQB8gFzClKez0A==
