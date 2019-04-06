@@ -330,8 +330,27 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entity": "camera.fosbaby",
-                            "type": "custom:camera-card"
+                            "cards": [
+                                {
+                                    "entity": "camera.fosbaby",
+                                    "name": "Kinderzimmer",
+                                    "type": "custom:camera-card"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "switch.kizi_baerchen",
+                                            "name": "B\u00e4rchen"
+                                        },
+                                        {
+                                            "entity": "switch.kizi_lichterkette",
+                                            "name": "Lichterkette"
+                                        }
+                                    ],
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
                         }
                     ],
                     "title": "Cams"
