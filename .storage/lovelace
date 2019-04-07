@@ -42,11 +42,13 @@
                             "entities": [
                                 {
                                     "entity": "light.wozi_dimmer_1_pc_ecke",
+                                    "name": "PC Ecke",
                                     "toggle": true,
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
                                     "entity": "light.wozi_dimmer_2_mara_ecke",
+                                    "name": "Mara Ecke",
                                     "toggle": true,
                                     "type": "custom:slider-entity-row"
                                 },
@@ -57,10 +59,6 @@
                                 {
                                     "entity": "switch.steckdose_relay",
                                     "icon": "mdi:power-socket-eu"
-                                },
-                                {
-                                    "entity": "switch.heizluefter",
-                                    "icon": "mdi:radiator"
                                 },
                                 {
                                     "entity": "climate.heizung_wohnzimmer"
@@ -76,6 +74,14 @@
                                 {
                                     "entity": "cover.rollo_wozi_rechts",
                                     "type": "custom:slider-entity-row"
+                                },
+                                {
+                                    "entity": "switch.vorgarten_licht_1",
+                                    "icon": "mdi:lightbulb"
+                                },
+                                {
+                                    "entity": "switch.heizluefter",
+                                    "icon": "mdi:radiator"
                                 },
                                 {
                                     "entity": "light.bedroom02_cupboard",
@@ -95,6 +101,33 @@
                             "show_header_toggle": false,
                             "title": "Hauptger\u00e4te",
                             "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.dark_sky_summary_0d",
+                                    "name": "Weather"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_overnight_low_temperature_0d",
+                                    "name": "Low"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_daytime_high_temperature_0d",
+                                    "name": "High"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_precip_probability_0d",
+                                    "name": "Precip."
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_precip_0d",
+                                    "name": "Type"
+                                }
+                            ],
+                            "show_name": true,
+                            "title": "Forecast",
+                            "type": "glance"
                         },
                         {
                             "entity": "media_player.onkyo",
@@ -140,6 +173,57 @@
                         }
                     ],
                     "title": "Main"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entity": "media_player.bedroom_tv",
+                                    "hide": {
+                                        "controls": true,
+                                        "icon_state": false
+                                    },
+                                    "icon": "mdi:television",
+                                    "type": "custom:mini-media-player",
+                                    "volume_stateless": true
+                                },
+                                {
+                                    "entity": "media_player.firetv_schlafzimmer",
+                                    "hide": {
+                                        "icon_state": false,
+                                        "volume": true
+                                    },
+                                    "icon": "mdi:fire",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "entity": "media_player.vuzero",
+                                    "hide": {
+                                        "icon_state": false
+                                    },
+                                    "icon": "mdi:satellite",
+                                    "type": "custom:mini-media-player"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.schlafzimmer_decke",
+                                    "name": "Decke",
+                                    "toggle": true,
+                                    "type": "custom:slider-entity-row"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Schlafzimmer",
+                            "type": "entities"
+                        }
+                    ],
+                    "title": "Bedroom"
                 },
                 {
                     "badges": [],
