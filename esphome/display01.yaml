@@ -145,13 +145,13 @@ sensor:
     entity_id: sensor.avia_axpress_steinheim_e5
   - platform: homeassistant
     id: forecast_temp_min
-    entity_id: sensor.dark_sky_overnight_low_temperature_0
+    entity_id: sensor.dark_sky_overnight_low_temperature_0d
   - platform: homeassistant
     id: forecast_temp_max
-    entity_id: sensor.dark_sky_daytime_high_temperature_0
+    entity_id: sensor.dark_sky_daytime_high_temperature_0d
   - platform: homeassistant
     id: forecast_precip_prob
-    entity_id: sensor.dark_sky_precip_probability_0
+    entity_id: sensor.dark_sky_precip_probability_0d
   - platform: dht
     pin: D7
     model: AM2302
@@ -165,7 +165,7 @@ sensor:
 text_sensor:
   - platform: homeassistant
     id: weather_forecast_icon
-    entity_id: sensor.dark_sky_icon_0
+    entity_id: sensor.dark_sky_icon_0d
 
 display:
   - platform: waveshare_epaper
