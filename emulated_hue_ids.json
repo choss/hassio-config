@@ -7,6 +7,7 @@
     "14": "switch.steckdose_relay",
     "15": "light.bedroom02_cupboard",
     "16": "switch.heizluefter",
+    "17": "switch.vorgarten_licht_1",
     "2": "script.living_room_window_left",
     "3": "script.living_room_window",
     "4": "script.living_room_shutters",

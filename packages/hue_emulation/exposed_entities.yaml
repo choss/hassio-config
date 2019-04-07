@@ -48,3 +48,6 @@ emulated_hue:
     light.bedroom02_cupboard:
       name: "Pax"
       hidden: false
+    switch.vorgarten_licht_1:
+      name: "Vorgarten Licht"
+      hidden: false
