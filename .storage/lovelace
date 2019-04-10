@@ -24,6 +24,7 @@
                         "binary_sensor.dishwasher",
                         "binary_sensor.dryer",
                         "binary_sensor.washing_machine",
+                        "binary_sensor.turkontakt_terasse_state",
                         "sensor.aussensensor_temperature",
                         "sensor.aussensensor_humidity",
                         "sensor.living_room_temp",
@@ -175,8 +176,62 @@
                     "title": "Main"
                 },
                 {
+                    "badges": [
+                        "binary_sensor.turkontakt_balkon_state",
+                        "sensor.wandthermostat_nancy_temperature",
+                        "sensor.wandthermostat_nancy_humidity",
+                        "sensor.aussensensor_temperature",
+                        "sensor.aussensensor_humidity"
+                    ],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "light.bedroom02_cupboard",
+                                            "toggle": true,
+                                            "type": "custom:slider-entity-row"
+                                        },
+                                        {
+                                            "entity": "climate.wandthermostat_nancy"
+                                        }
+                                    ],
+                                    "type": "entities"
+                                },
+                                {
+                                    "entity": "media_player.n_s_echo_dot",
+                                    "hide": {
+                                        "power": true,
+                                        "source": true
+                                    },
+                                    "type": "custom:mini-media-player"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Ger\u00e4te",
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "panel": false,
+                    "title": "Bedroom N."
+                },
+                {
                     "badges": [],
                     "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.schlafzimmer_decke",
+                                    "name": "Decke",
+                                    "toggle": true,
+                                    "type": "custom:slider-entity-row"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Schlafzimmer",
+                            "type": "entities"
+                        },
                         {
                             "cards": [
                                 {
@@ -208,22 +263,9 @@
                                 }
                             ],
                             "type": "vertical-stack"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "light.schlafzimmer_decke",
-                                    "name": "Decke",
-                                    "toggle": true,
-                                    "type": "custom:slider-entity-row"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Schlafzimmer",
-                            "type": "entities"
                         }
                     ],
-                    "title": "Bedroom"
+                    "title": "Bedroom C."
                 },
                 {
                     "badges": [],

@@ -15,3 +15,5 @@ switch.steckdose_relay:
   friendly_name: Steckdose
 light.bedroom02_cupboard:
   friendly_name: Pax
+binary_sensor.turkontakt_balkon_state:
+  device_class: door
