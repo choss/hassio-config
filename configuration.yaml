@@ -15,9 +15,6 @@ homeassistant:
   # Include split out components
   packages: !include_dir_named packages/devices
 
-# Show links to resources in log and frontend
-introduction:
-
 # show system health
 system_health:
 
