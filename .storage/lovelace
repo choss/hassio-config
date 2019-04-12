@@ -171,6 +171,15 @@
                             "icon": "mdi:television",
                             "type": "custom:mini-media-player",
                             "volume_stateless": true
+                        },
+                        {
+                            "entity": "media_player.projector",
+                            "hide": {
+                                "controls": true,
+                                "icon_state": false
+                            },
+                            "icon": "mdi:projector",
+                            "type": "custom:mini-media-player"
                         }
                     ],
                     "title": "Main"
