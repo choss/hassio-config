@@ -1,18 +1,18 @@
 ---
 script:
   turn_on_projector:
-    sequence: 
+    sequence:
       - service: remote.send_command
         data:
           entity_id: remote.remote_1
           command: toggle_power_acer_p1500
   turn_off_projector:
-    sequence: 
+    sequence:
       - service: remote.send_command
         data:
           entity_id: remote.remote_1
           command: toggle_power_acer_p1500
-      - delay: 
+      - delay:
           seconds: 2
       - service: remote.send_command
         data:

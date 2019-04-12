@@ -1,7 +1,7 @@
 ---
 media_player:
   - platform: universal
-    children: 
+    children:
       - media_player.onkyo
     name: "Projector"
     commands:
