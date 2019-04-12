@@ -1,1 +1,13 @@
-[]
+- id: '1555071586293'
+  alias: Dishwasher finished
+  trigger:
+  - entity_id: binary_sensor.dishwasher
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      data:
+        type: announce
+      message: Spülmaschine ist fertig
+    service: notify.alexa_media_echo_weiss_wohnzimmer
