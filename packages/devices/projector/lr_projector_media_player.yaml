@@ -1,0 +1,13 @@
+---
+media_player:
+  - platform: universal
+    children: 
+      - media_player.onkyo
+    name: "Projector"
+    commands:
+      turn_on:
+        service: script.turn_on_projector_with_amp
+      turn_off:
+        service: script.turn_off_projector_with_amp
+    attributes:
+      state: binary_sensor.livingroom_projector_power_connected_device_on

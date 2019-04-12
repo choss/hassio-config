@@ -501,7 +501,8 @@
                             "volume_stateless": true
                         }
                     ],
-                    "path": "default_view",
+                    "panel": false,
+                    "path": "testing",
                     "title": "Testing"
                 }
             ]

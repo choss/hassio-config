@@ -1,0 +1,14 @@
+---
+script:
+  turn_on_projector_with_amp:
+    sequence: 
+      - service: script.turn_on_projector
+      - service: media_player.turn_on
+        data:
+          entity_id: media_player.onkyo
+  turn_off_projector_with_amp:
+    sequence: 
+      - service: script.turn_off_projector
+      - service: media_player.turn_off
+        data:
+          entity_id: media_player.onkyo
