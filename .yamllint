@@ -1,7 +1,6 @@
 ---
 ignore: |
-  config/ip_bans.yaml
-  config/esphomeyaml/*/
+  automations.yaml
 rules:
   braces:
     level: error
