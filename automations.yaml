@@ -46,7 +46,7 @@
   condition: []
   action:
   - data:
-      message: Spülmaschine ist fertig
+      message: Spülmaschine ist fertig! @insane
     service: notify.matrix_notify
 - id: '1555147824684'
   alias: Dryer finished (text based)
@@ -57,7 +57,7 @@
   condition: []
   action:
   - data:
-      message: Trockner ist fertig
+      message: Trockner ist fertig! @insane
     service: notify.matrix_notify
 - id: '1555147878801'
   alias: Washing machine finished (text based)
@@ -68,7 +68,7 @@
   condition: []
   action:
   - data:
-      message: Waschmaschine ist fertig
+      message: Waschmaschine ist fertig! @insane
     service: notify.matrix_notify
 - id: '1555148232966'
   alias: Matrix bot commands
