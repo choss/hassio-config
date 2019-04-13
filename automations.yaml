@@ -1,5 +1,5 @@
 - id: '1555071586293'
-  alias: Dishwasher finished
+  alias: Dishwasher finished (Alexa)
   trigger:
   - entity_id: binary_sensor.dishwasher
     platform: state
@@ -11,3 +11,74 @@
         type: announce
       message: Spülmaschine ist fertig
     service: notify.alexa_media_echo_weiss_wohnzimmer
+- id: '1555141985602'
+  alias: Washing machine finished (Alexa)
+  trigger:
+  - entity_id: binary_sensor.washing_machine
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      data:
+        type: announce
+      message: Waschmaschine ist fertig
+    service: notify.alexa_media_echo_weiss_wohnzimmer
+- id: '1555142049412'
+  alias: Dryer finished (Alexa)
+  trigger:
+  - entity_id: binary_sensor.dryer
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      data:
+        type: announce
+      message: Trockner ist fertig
+    service: notify.alexa_media_echo_weiss_wohnzimmer
+- id: '1555147661344'
+  alias: Dishwasher finished (text based)
+  trigger:
+  - entity_id: binary_sensor.dishwasher
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      message: Spülmaschine ist fertig
+    service: notify.matrix_notify
+- id: '1555147824684'
+  alias: Dryer finished (text based)
+  trigger:
+  - entity_id: binary_sensor.dryer
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      message: Trockner ist fertig
+    service: notify.matrix_notify
+- id: '1555147878801'
+  alias: Washing machine finished (text based)
+  trigger:
+  - entity_id: binary_sensor.washing_machine
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      message: Waschmaschine ist fertig
+    service: notify.matrix_notify
+- id: '1555148232966'
+  alias: Matrix bot commands
+  trigger:
+  - event_data:
+      command: my_command
+    event_type: matrix_command
+    platform: event
+  condition: []
+  action:
+  - data:
+      message: Hi
+    service: notify.matrix_notify

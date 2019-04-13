@@ -12,5 +12,5 @@ deps
 !.storage/lovelace
 /.project
 www
-
+.matrix.conf
 *.pickle

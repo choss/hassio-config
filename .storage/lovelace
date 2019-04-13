@@ -303,7 +303,7 @@
                             "type": "vertical-stack"
                         }
                     ],
-                    "title": "Cams"
+                    "title": "Bedroom M."
                 },
                 {
                     "badges": [
@@ -513,6 +513,37 @@
                     "panel": false,
                     "path": "testing",
                     "title": "Testing"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "automation.washing_machine_finished_alexa"
+                                },
+                                {
+                                    "entity": "automation.dryer_finished_alexa"
+                                },
+                                {
+                                    "entity": "automation.dishwasher_finished_alexa"
+                                },
+                                {
+                                    "entity": "automation.washing_machine_finished_text_based"
+                                },
+                                {
+                                    "entity": "automation.dryer_finished_text_based"
+                                },
+                                {
+                                    "entity": "automation.dishwasher_finished_text_based"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Automations",
+                            "type": "entities"
+                        }
+                    ],
+                    "title": "Automations"
                 }
             ]
         }
