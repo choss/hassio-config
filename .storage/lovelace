@@ -306,6 +306,73 @@
                     "title": "Bedroom M."
                 },
                 {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "cover.rollo_wozi_tuer",
+                                    "type": "custom:slider-entity-row"
+                                },
+                                {
+                                    "entity": "cover.rollo_wozi_mitte",
+                                    "type": "custom:slider-entity-row"
+                                },
+                                {
+                                    "entity": "cover.rollo_wozi_rechts",
+                                    "type": "custom:slider-entity-row"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Wohnzimmer",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "cover.bathroom",
+                                    "type": "custom:slider-entity-row"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Bathroom",
+                            "type": "entities"
+                        }
+                    ],
+                    "title": "Covers"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "automation.washing_machine_finished_alexa"
+                                },
+                                {
+                                    "entity": "automation.dryer_finished_alexa"
+                                },
+                                {
+                                    "entity": "automation.dishwasher_finished_alexa"
+                                },
+                                {
+                                    "entity": "automation.washing_machine_finished_text_based"
+                                },
+                                {
+                                    "entity": "automation.dryer_finished_text_based"
+                                },
+                                {
+                                    "entity": "automation.dishwasher_finished_text_based"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Automations",
+                            "type": "entities"
+                        }
+                    ],
+                    "title": "Automations"
+                },
+                {
                     "badges": [
                         "binary_sensor.dryer",
                         "binary_sensor.dishwasher",
@@ -513,37 +580,6 @@
                     "panel": false,
                     "path": "testing",
                     "title": "Testing"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "automation.washing_machine_finished_alexa"
-                                },
-                                {
-                                    "entity": "automation.dryer_finished_alexa"
-                                },
-                                {
-                                    "entity": "automation.dishwasher_finished_alexa"
-                                },
-                                {
-                                    "entity": "automation.washing_machine_finished_text_based"
-                                },
-                                {
-                                    "entity": "automation.dryer_finished_text_based"
-                                },
-                                {
-                                    "entity": "automation.dishwasher_finished_text_based"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Automations",
-                            "type": "entities"
-                        }
-                    ],
-                    "title": "Automations"
                 }
             ]
         }
