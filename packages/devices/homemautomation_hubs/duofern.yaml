@@ -1,4 +1,4 @@
 ---
 duofern:
-   code: !secret duofern_code
-   serial_port: /dev/ttyUSB0
+  code: !secret duofern_code
+  serial_port: /dev/ttyUSB0
