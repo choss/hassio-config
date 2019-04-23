@@ -13,5 +13,6 @@ mv slider-entity-row.js ../www/
 wget https://raw.githubusercontent.com/custom-cards/camera-card/master/camera-card.js
 mv camera-card.js ../www/
 
+# monster-card (magic entities enum)
 wget https://raw.githubusercontent.com/ciotlosm/custom-lovelace/master/monster-card/monster-card.js
 mv monster-card.js ../www/
