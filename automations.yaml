@@ -82,3 +82,30 @@
   - data:
       message: Hi
     service: notify.matrix_notify
+- id: '1556031753506'
+  alias: Bathroom cover down
+  trigger:
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: cover.bathroom
+      position: '30'
+    service: cover.set_cover_position
+- id: '1556032240161'
+  alias: Bathroom cover up
+  trigger:
+  - event: sunrise
+    platform: sun
+  - at: 09:30:00
+    platform: time
+  condition:
+  - after: sunrise
+    condition: sun
+  - after: 09:30:00
+    condition: time
+  action:
+  - data:
+      entity_id: cover.bathroom
+    service: cover.open_cover
