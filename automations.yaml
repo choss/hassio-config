@@ -91,7 +91,7 @@
   action:
   - data:
       entity_id: cover.bathroom
-      position: '30'
+      position: '45'
     service: cover.set_cover_position
 - id: '1556032240161'
   alias: Bathroom cover up
