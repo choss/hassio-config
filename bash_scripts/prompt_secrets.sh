@@ -17,6 +17,6 @@ if [ ! -f ../packages/secrets.yaml ]; then
   cat > ../packages/secrets.yaml <<EOL
 amazon_user: ${AMAZON_USER}
 amazon_password: ${AMAZON_PASS}
-gmx_email_account_password: ${EMAIL_PASS}
+email_account01_password: ${EMAIL_PASS}
 EOL
 fi
