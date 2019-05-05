@@ -1,0 +1,369 @@
+---
+esphome:
+  name: display02
+  platform: ESP32
+  board: lolin_d32
+
+substitutions:
+  clk_pin: D2
+  mosi_pin: D1
+  cs_pin: D3
+  dc_pin: D4
+  busy_pin: D5
+  reset_pin: D6
+  dht_pin: 15
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+web_server:
+
+# deep_sleep:
+#   id: deep_sleep_1
+#   run_duration: 10s
+#   sleep_duration: 45s
+
+spi:
+  clk_pin: $clk_pin
+  mosi_pin: $mosi_pin
+
+font:
+  - file: "assets/fonts/Roboto-Medium.ttf"
+    id: roboto_20
+    size: 20
+    glyphs: '!"%()+,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz*'
+  - file: "assets/fonts/Roboto-Medium.ttf"
+    id: roboto_26
+    size: 26
+    glyphs: '!"%()+,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz*'
+  - file: "assets/fonts/Roboto-Medium.ttf"
+    id: roboto_18
+    size: 18
+    glyphs: '!"%()+,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz*'
+
+image:
+  # individual circle icons
+  - file: "assets/mdi/pine-tree_24.png"
+    id: pine_tree_24
+  - file: "assets/mdi/sofa_24.png"
+    id: sofa_24
+  - file: "assets/mdi/wall_24.png"
+    id: wall_24
+  - file: "assets/mdi/washing-machine_24.png"
+    id: washing_machine_24
+  - file: "assets/mdi/tumble-dryer_24.png"
+    id: tumble_dryer_24
+  - file: "assets/mdi/dishwasher_24.png"
+    id: dishwasher_24
+  - file: "assets/mdi/van-passenger_24.png"
+    id: van_24
+  - file: "assets/mdi/car-side_24.png"
+    id: car_24
+  - file: "assets/mdi/thermometer-minus_24.png"
+    id: thermometer_minus_24
+  - file: "assets/mdi/thermometer-plus_24.png"
+    id: thermometer_plus_24
+  - file: "assets/mdi/umbrella_24.png"
+    id: umbrella_24
+
+  # category icons
+  - file: "assets/mdi/temperature-celsius_36.png"
+    id: temperature_36
+  - file: "assets/mdi/power-socket-eu_36.png"
+    id: power_socket_36
+  - file: "assets/mdi/gas-station_48.png"
+    id: gas_station_36
+    resize: 36x36
+  - file: "assets/mdi/water-percent_48.png"
+    id: humidity_36
+    resize: 36x36
+  - file: "assets/mdi/crystal-ball_48.png"
+    id: crystal_ball
+    resize: 24x24
+
+  # on/off icons
+  - file: "assets/mdi/power-plug_48.png"
+    id: power_plug_48
+  - file: "assets/mdi/power-plug-off_48.png"
+    id: power_plug_off_48
+
+  # weather icons
+  - file: "assets/mdi/weather-partlycloudy_48.png"
+    id: weather_partially_cloudy
+  - file: "assets/mdi/weather-cloudy_48.png"
+    id: weather_cloudy
+  - file: "assets/mdi/cloud-question_48.png"
+    id: cloud_question
+  - file: "assets/mdi/weather-fog_48.png"
+    id: weather_fog
+  - file: "assets/mdi/weather-night_48.png"
+    id: weather_night
+  - file: "assets/mdi/weather-pouring_48.png"
+    id: weather_pouring
+  - file: "assets/mdi/weather-snowy_48.png"
+    id: weather_snowy
+  - file: "assets/mdi/weather-snowy-rainy_48.png"
+    id: weather_snowy_rain
+  - file: "assets/mdi/weather-sunny_48.png"
+    id: weather_sunny
+  - file: "assets/mdi/weather-windy-variant_48.png"
+    id: weather_windy
+
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+binary_sensor:
+  - platform: homeassistant
+    id: dishwasher
+    entity_id: binary_sensor.dishwasher
+  - platform: homeassistant
+    id: washing_machine
+    entity_id: binary_sensor.washing_machine
+  - platform: homeassistant
+    id: dryer
+    entity_id: binary_sensor.dryer
+  - platform: homeassistant
+    id: door
+    entity_id: binary_sensor.turkontakt_terasse_state
+
+sensor:
+  - platform: homeassistant
+    id: outside_temp
+    entity_id: sensor.aussensensor_temperature
+  - platform: homeassistant
+    id: outside_humidity
+    entity_id: sensor.aussensensor_humidity
+  - platform: homeassistant
+    id: living_room_temp
+    entity_id: sensor.living_room_temp
+  - platform: homeassistant
+    id: diesel
+    entity_id: sensor.avia_axpress_steinheim_diesel
+  - platform: homeassistant
+    id: benzin
+    entity_id: sensor.avia_axpress_steinheim_e5
+  - platform: homeassistant
+    id: forecast_temp_min
+    entity_id: sensor.dark_sky_overnight_low_temperature_0d
+  - platform: homeassistant
+    id: forecast_temp_max
+    entity_id: sensor.dark_sky_daytime_high_temperature_0d
+  - platform: homeassistant
+    id: forecast_precip_prob
+    entity_id: sensor.dark_sky_precip_probability_0d
+  - platform: dht
+    pin: $dht_pin
+    model: AM2302
+    temperature:
+      name: "Display temp"
+      id: local_temp
+    humidity:
+      name: "Display humidity"
+      id: local_humidity
+
+text_sensor:
+  - platform: homeassistant
+    id: weather_forecast_icon
+    entity_id: sensor.dark_sky_icon_0d
+
+display:
+  - platform: waveshare_epaper
+    cs_pin: $cs_pin
+    dc_pin: $dc_pin
+    busy_pin: $busy_pin
+    reset_pin: $reset_pin
+    model: 4.20in
+    update_interval: 1min
+    lambda: |-
+      // printing time and date
+      it.strftime(15, 5, id(roboto_26), "%H:%M", id(homeassistant_time).now());
+      it.strftime(10, 35, id(roboto_18), "%a, %d.%m", id(homeassistant_time).now());
+
+      // icon for weather forecast
+      it.image(107, 43, id(crystal_ball));
+
+      // line to weather forecast
+      it.line(110, 0, 110, 65);
+      it.line(109, 0, 109, 65);
+
+      // weather forecast
+      // temp_min_circle
+      it.image(198, 42, id(thermometer_minus_24));
+      it.circle(210, 31, 30);
+      it.circle(210, 31, 31);
+
+      // temp_max_circle
+      it.image(268, 42, id(thermometer_plus_24));
+      it.circle(280, 31, 30);
+      it.circle(280, 31, 31);
+
+      // precip probability
+      it.image(338, 42, id(umbrella_24));
+      it.circle(350, 31, 30);
+      it.circle(350, 31, 31);
+
+      // image
+      display::Image *wi = id(cloud_question);
+      std::string iconString = id(weather_forecast_icon).state;
+
+      if (iconString.compare("clear-day") == 0) {
+        wi = id(weather_sunny);
+      }
+      if (iconString.compare("clear-night") == 0) {
+        wi = id(weather_night);
+      }
+      if (iconString.compare("rain") == 0) {
+        wi = id(weather_pouring);
+      }
+      if (iconString.compare("snow") == 0) {
+        wi = id(weather_snowy);
+      }
+      if (iconString.compare("sleet") == 0) {
+        wi = id(weather_snowy_rain);
+      }
+      if (iconString.compare("wind") == 0) {
+        wi = id(weather_windy);
+      }
+      if (iconString.compare("fog") == 0) {
+        wi = id(weather_fog);
+      }
+      if (iconString.compare("cloudy") == 0) {
+        wi = id(weather_cloudy);
+      }
+      if (iconString.compare("partly-cloudy-day") == 0) {
+        wi = id(weather_partially_cloudy);
+      }
+      if (iconString.compare("partly-cloudy-night") == 0) {
+        wi = id(weather_sunny);
+      }
+
+      it.image(125, 5, wi);
+
+      // print forecast values
+      if (id(forecast_temp_min).state <= -10.0) {
+        it.printf(185, 31 , id(roboto_26), "%4.0f", id(forecast_temp_min).state);
+      } else {
+        it.printf(185, 31 , id(roboto_26), "%4.1f", id(forecast_temp_min).state);
+      }
+
+      if (id(forecast_temp_max).state <= -10.0) {
+        it.printf(255, 31 , id(roboto_26), "%4.0f", id(forecast_temp_max).state);
+      } else {
+        it.printf(255, 31 , id(roboto_26), "%4.1f", id(forecast_temp_max).state);
+      }
+
+      it.printf(325, 31 , id(roboto_26), "%2.0f %%", id(forecast_precip_prob).state);
+
+      // line after time
+      it.line(0, 64, 399, 64);
+      it.line(0, 65, 399, 65);
+
+      // circles and symbols for the temperature
+      it.image(0, 70, id(temperature_36));
+
+      // outside
+      it.image(58, 118, id(pine_tree_24));
+      it.circle(70, 100, 30);
+      it.circle(70, 100, 31);
+
+      // living room
+      it.image(138, 118, id(sofa_24));
+      it.circle(150, 100, 30);
+      it.circle(150, 100, 31);
+
+      // local temperature
+      it.image(218, 118, id(wall_24));
+      it.circle(230, 100, 30);
+      it.circle(230, 100, 31);
+
+      // values for the temperature
+      if (id(outside_temp).state <= -10.0) {
+        it.printf(45, 100 , id(roboto_26), "%4.0f", id(outside_temp).state);
+      } else {
+        it.printf(45, 100 , id(roboto_26), "%4.1f", id(outside_temp).state);
+      }
+      it.printf(125, 100 , id(roboto_26), "%4.1f", id(living_room_temp).state);
+      it.printf(205, 100 , id(roboto_26), "%4.1f", id(local_temp).state);
+
+      // separator line
+      it.line(0, 144, 280, 144);
+      it.line(0, 145, 280, 145);
+
+      // values for the appliance states
+      display::Image *wm = id(washing_machine).state ? id(power_plug_48) : id(power_plug_off_48);
+      display::Image *dr = id(dryer).state ? id(power_plug_48) : id(power_plug_off_48);
+      display::Image *dw = id(dishwasher).state ? id(power_plug_48) : id(power_plug_off_48);
+
+      it.image(45, 155, wm);
+      it.image(125, 155, dr);
+      it.image(205, 155, dw);
+
+      // circles and symbols for the the appliance states
+      it.image(0, 150, id(power_socket_36));
+
+      // washing machine
+      it.image(58, 201, id(washing_machine_24));
+      it.circle(70, 180, 30);
+      it.circle(70, 180, 31);
+
+      // dryer
+      it.image(138, 201, id(tumble_dryer_24));
+      it.circle(150, 180, 30);
+      it.circle(150, 180, 31);
+
+      // dishwasher
+      it.image(218, 201, id(dishwasher_24));
+      it.circle(230, 180, 30);
+      it.circle(230, 180, 31);
+
+      // separator line
+      it.line(0, 224, 399, 224);
+      it.line(0, 225, 399, 225);
+
+      // circles and symbols for the the gas prices
+      it.image(0, 230, id(gas_station_36));
+
+      // diesel
+      it.image(58, 278, id(van_24));
+      it.circle(70, 260, 30);
+      it.circle(70, 260, 31);
+
+      // benzin
+      it.image(138, 278, id(car_24));
+      it.circle(150, 260, 30);
+      it.circle(150, 260, 31);
+
+      // gas price values
+      it.printf(45, 260, id(roboto_20), "%5.3f", id(diesel).state);
+      it.printf(125, 260, id(roboto_20), "%5.3f", id(benzin).state);
+
+      // humidity symbol
+      it.image(280, 70, id(humidity_36));
+
+      // vertical line
+      it.line(279, 64, 279, 299);
+      it.line(280, 64, 280, 299);
+
+      // humidity circles
+      // outside
+      it.image(338, 118, id(pine_tree_24));
+      it.circle(350, 100, 30);
+      it.circle(350, 100, 31);
+
+      it.image(338, 198, id(wall_24));
+      it.circle(350, 180, 30);
+      it.circle(350, 180, 31);
+
+      // values for the humidity
+      it.printf(325, 100 , id(roboto_26), "%4.1f", id(outside_humidity).state);
+      it.printf(325, 180 , id(roboto_26), "%4.1f", id(local_humidity).state);
