@@ -5,13 +5,13 @@ esphome:
   board: lolin_d32
 
 substitutions:
-  clk_pin: D2
-  mosi_pin: D1
-  cs_pin: D3
-  dc_pin: D4
-  busy_pin: D5
-  reset_pin: D6
-  dht_pin: 15
+  clk_pin: GPIO18
+  mosi_pin: GPIO19
+  cs_pin: GPIO17
+  dc_pin: GPIO16
+  busy_pin: GPIO2
+  reset_pin: GPIO4
+  dht_pin: GPIO15
 
 wifi:
   ssid: !secret wifi_ssid
