@@ -334,7 +334,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "cover.bathroom",
+                                    "entity": "cover.401401",
                                     "type": "custom:slider-entity-row"
                                 }
                             ],

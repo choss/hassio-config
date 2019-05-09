@@ -90,7 +90,7 @@
   condition: []
   action:
   - data:
-      entity_id: cover.bathroom
+      entity_id: cover.401401
       position: '45'
     service: cover.set_cover_position
 - id: '1556032240161'
@@ -107,5 +107,5 @@
     condition: time
   action:
   - data:
-      entity_id: cover.bathroom
+      entity_id: cover.401401
     service: cover.open_cover

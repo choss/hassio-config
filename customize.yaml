@@ -19,3 +19,6 @@ binary_sensor.turkontakt_balkon_state:
   device_class: door
 cover.bathroom:
   device_class: garage
+cover.401401:
+  device_class: garage
+  friendly_name: bathroom
