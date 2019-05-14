@@ -25,14 +25,23 @@ mqtt:
   broker: !secret mqtt_broker_ip
   username: !secret mqtt_user
   password: !secret mqtt_password
+  on_message:
+    topic: display02/ota_mode
+    then:
+      - deep_sleep.prevent: deep_sleep_1
+      - mqtt.publish:
+          topic: display02/ota_mode
+          payload: ""
+          retain: true
+
 ota:
 
 web_server:
 
-# deep_sleep:
-#   id: deep_sleep_1
-#   run_duration: 10s
-#   sleep_duration: 45s
+deep_sleep:
+  id: deep_sleep_1
+  run_duration: 5s
+  sleep_duration: 30s
 
 spi:
   clk_pin: $clk_pin
@@ -127,61 +136,72 @@ time:
 binary_sensor:
   - platform: template
     id: dishwasher
-#    entity_id: binary_sensor.dishwasher
-    lambda: return false;
+    lambda: return id(mq_dishwasher).state == "on";
   - platform: template
     id: washing_machine
-#    entity_id: binary_sensor.washing_machine
-    lambda: return false;
+    lambda: return id(mq_washing_machine).state == "on";
   - platform: template
     id: dryer
-    lambda: return false;
-#    entity_id: binary_sensor.dryer
+    lambda: return id(mq_dryer).state == "on";
 
 sensor:
   - platform: mqtt_subscribe
     id: outside_temp
-    topic: homeassistant/sensor/aussensensor_temperature
+    topic: homeassistant/sensor/aussensensor_temperature/state
   - platform: mqtt_subscribe
     id: outside_humidity
-    topic: homeassistant/sensor/aussensensor_humidity
+    topic: homeassistant/sensor/aussensensor_humidity/state
   - platform: mqtt_subscribe
     id: living_room_temp
-    topic: homeassistant/sensor/living_room_temp
+    topic: homeassistant/sensor/living_room_temp/state
   - platform: mqtt_subscribe
     id: diesel
-    topic: homeassistant/sensor/avia_axpress_steinheim_diesel
+    topic: homeassistant/sensor/avia_axpress_steinheim_diesel/state
   - platform: mqtt_subscribe
     id: benzin
-    topic: homeassistant/sensor/avia_axpress_steinheim_e5
+    topic: homeassistant/sensor/avia_axpress_steinheim_e5/state
   - platform: mqtt_subscribe
     id: forecast_temp_min
-    topic: homeassistant/sensor/dark_sky_overnight_low_temperature_0d
+    topic: homeassistant/sensor/dark_sky_overnight_low_temperature_0d/state
   - platform: mqtt_subscribe
     id: forecast_temp_max
-    topic: homeassistant/sensor/dark_sky_daytime_high_temperature_0d
+    topic: homeassistant/sensor/dark_sky_daytime_high_temperature_0d/state
   - platform: mqtt_subscribe
     id: forecast_precip_prob
-    topic: homeassistant/sensor/dark_sky_precip_probability_0d
+    topic: homeassistant/sensor/dark_sky_precip_probability_0d/state
+# published sensors
   - platform: dht
     pin: $dht_pin
     model: AM2302
     temperature:
-      name: "Display temp"
+      name: "display temp"
       id: local_temp
     humidity:
-      name: "Display humidity"
+      name: "display humidity"
       id: local_humidity
   - platform: adc
     pin: 35
-    name: "test_battery_35"
+    name: "display battery level"
     update_interval: 60s
 
 
 text_sensor:
   - platform: mqtt_subscribe
     id: weather_forecast_icon
-    topic: homeassistant/sensor/dark_sky_icon_0d
+    topic: homeassistant/sensor/dark_sky_icon_0d/state
+  - platform: mqtt_subscribe
+    id: mq_dishwasher
+    topic: homeassistant/binary_sensor/dishwasher/state
+  - platform: mqtt_subscribe
+    id: mq_washing_machine
+    topic: homeassistant/binary_sensor/washing_machine/state
+  - platform: mqtt_subscribe
+    id: mq_dryer
+    topic: homeassistant/binary_sensor/dryer/state
+
+switch:
+  - platform: restart
+    name: "Display Restart"
 
 display:
   - platform: waveshare_epaper
