@@ -121,48 +121,48 @@ image:
     id: weather_windy
 
 time:
-  - platform: homeassistant
+  - platform: sntp
     id: homeassistant_time
 
 binary_sensor:
-  - platform: homeassistant
+  - platform: template
     id: dishwasher
-    entity_id: binary_sensor.dishwasher
-  - platform: homeassistant
+#    entity_id: binary_sensor.dishwasher
+    lambda: return false;
+  - platform: template
     id: washing_machine
-    entity_id: binary_sensor.washing_machine
-  - platform: homeassistant
+#    entity_id: binary_sensor.washing_machine
+    lambda: return false;
+  - platform: template
     id: dryer
-    entity_id: binary_sensor.dryer
-  - platform: homeassistant
-    id: door
-    entity_id: binary_sensor.turkontakt_terasse_state
+    lambda: return false;
+#    entity_id: binary_sensor.dryer
 
 sensor:
-  - platform: homeassistant
+  - platform: mqtt_subscribe
     id: outside_temp
-    entity_id: sensor.aussensensor_temperature
-  - platform: homeassistant
+    topic: homeassistant/sensor/aussensensor_temperature
+  - platform: mqtt_subscribe
     id: outside_humidity
-    entity_id: sensor.aussensensor_humidity
-  - platform: homeassistant
+    topic: homeassistant/sensor/aussensensor_humidity
+  - platform: mqtt_subscribe
     id: living_room_temp
-    entity_id: sensor.living_room_temp
-  - platform: homeassistant
+    topic: homeassistant/sensor/living_room_temp
+  - platform: mqtt_subscribe
     id: diesel
-    entity_id: sensor.avia_axpress_steinheim_diesel
-  - platform: homeassistant
+    topic: homeassistant/sensor/avia_axpress_steinheim_diesel
+  - platform: mqtt_subscribe
     id: benzin
-    entity_id: sensor.avia_axpress_steinheim_e5
-  - platform: homeassistant
+    topic: homeassistant/sensor/avia_axpress_steinheim_e5
+  - platform: mqtt_subscribe
     id: forecast_temp_min
-    entity_id: sensor.dark_sky_overnight_low_temperature_0d
-  - platform: homeassistant
+    topic: homeassistant/sensor/dark_sky_overnight_low_temperature_0d
+  - platform: mqtt_subscribe
     id: forecast_temp_max
-    entity_id: sensor.dark_sky_daytime_high_temperature_0d
-  - platform: homeassistant
+    topic: homeassistant/sensor/dark_sky_daytime_high_temperature_0d
+  - platform: mqtt_subscribe
     id: forecast_precip_prob
-    entity_id: sensor.dark_sky_precip_probability_0d
+    topic: homeassistant/sensor/dark_sky_precip_probability_0d
   - platform: dht
     pin: $dht_pin
     model: AM2302
@@ -172,11 +172,16 @@ sensor:
     humidity:
       name: "Display humidity"
       id: local_humidity
+  - platform: adc
+    pin: 35
+    name: "test_battery_35"
+    update_interval: 60s
+
 
 text_sensor:
-  - platform: homeassistant
+  - platform: mqtt_subscribe
     id: weather_forecast_icon
-    entity_id: sensor.dark_sky_icon_0d
+    topic: homeassistant/sensor/dark_sky_icon_0d
 
 display:
   - platform: waveshare_epaper
