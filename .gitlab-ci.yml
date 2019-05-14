@@ -43,6 +43,7 @@ stages:
   script:
     - esphome dummy.yaml version
     - cp -R ./.stubs/fake_esphome_secrets.yaml ./esphome/secrets.yaml
+    - cp -R .stubs/fake_hassio_secrets.yaml ./secrets.yaml
     - |
       for file in $(find \
         ./esphome \
