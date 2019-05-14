@@ -1,0 +1,5 @@
+---
+mqtt:
+  broker: !secret mqtt_broker_ip
+  username: !secret mqtt_user
+  password: !secret mqtt_password

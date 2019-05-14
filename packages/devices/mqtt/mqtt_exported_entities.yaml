@@ -1,0 +1,20 @@
+---
+mqtt_statestream:
+  base_topic: homeassistant
+  publish_attributes: false
+  publish_timestamps: false
+  include:
+    entities:
+      - binary_sensor.dishwasher
+      - binary_sensor.washing_machine
+      - binary_sensor.dryer
+      - binary_sensor.turkontakt_terasse_state
+      - sensor.aussensensor_temperature
+      - sensor.aussensensor_humidity
+      - sensor.living_room_temp
+      - sensor.avia_axpress_steinheim_diesel
+      - sensor.avia_axpress_steinheim_e5
+      - sensor.dark_sky_overnight_low_temperature_0d
+      - sensor.dark_sky_daytime_high_temperature_0d
+      - sensor.dark_sky_precip_probability_0d
+      - sensor.dark_sky_icon_0d
