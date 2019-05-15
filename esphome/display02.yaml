@@ -184,7 +184,6 @@ sensor:
     name: "display battery level"
     update_interval: 60s
 
-
 text_sensor:
   - platform: mqtt_subscribe
     id: weather_forecast_icon
