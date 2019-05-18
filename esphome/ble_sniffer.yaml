@@ -1,0 +1,35 @@
+esphome:
+  name: ble_sniffer
+  platform: ESP32
+  board: esp32doit-devkit-v1
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+web_server:
+
+esp32_ble_tracker:
+  scan_interval: 150s
+
+sensor:
+  - platform: xiaomi_miflora
+    mac_address: !secret xiaomi_miflora_device01
+    temperature:
+      name: "Strawberry Temperature"
+    moisture:
+      name: "Strawberry Moisture"
+    illuminance:
+      name: "Strawberry Illuminance"
+    conductivity:
+      name: "Strawberry Soil Conductivity"
+    battery_level:
+      name: "Strawberry Battery Level"
