@@ -1,0 +1,24 @@
+---
+sensor:
+  - platform: template
+    sensors:
+      kyocera_toner_black_percentage:
+        friendly_name: "Kyocera toner black"
+        unit_of_measurement: '%'
+        value_template: "{{ states('sensor.kyocera_black_level') | float / states('sensor.kyocera_black_capacity') | float * 100.0 }}"
+        icon_template: "mdi:water"
+      kyocera_toner_cyan_percentage:
+        friendly_name: "Kyocera toner cyan"
+        unit_of_measurement: '%'
+        value_template: "{{ states('sensor.kyocera_cyan_level') | float / states('sensor.kyocera_cyan_capacity') | float * 100.0 }}"
+        icon_template: "mdi:water"
+      kyocera_toner_magenta_percentage:
+        friendly_name: "Kyocera toner magenta"
+        unit_of_measurement: '%'
+        value_template: "{{ states('sensor.kyocera_magenta_level') | float / states('sensor.kyocera_magenta_capacity') | float * 100.0 }}"
+        icon_template: "mdi:water"
+      kyocera_toner_yellow_percentage:
+        friendly_name: "Kyocera toner yellow"
+        unit_of_measurement: '%'
+        value_template: "{{ states('sensor.kyocera_yellow_level') | float / states('sensor.kyocera_yellow_capacity') | float * 100.0 }}"
+        icon_template: "mdi:water"
