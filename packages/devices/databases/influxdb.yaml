@@ -1,0 +1,7 @@
+---
+influxdb:
+  host: 192.168.32.99
+  port: 58086
+  verify_ssl: false
+  max_retries: 3
+  default_measurement: state

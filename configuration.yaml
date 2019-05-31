@@ -70,3 +70,9 @@ tts:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+
+logger:
+  default: warn
+  logs:
+    custom_components.duofern: debug
+    "/config/deps/lib/python3.7/site-packages/pyduofern/duofern_stick.py": debug

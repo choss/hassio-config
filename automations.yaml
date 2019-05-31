@@ -35,7 +35,7 @@
   - data:
       data:
         type: announce
-      message: Trockner ist fertig
+      message: Trockner ist ferting
     service: notify.alexa_media_echo_weiss_wohnzimmer
 - id: '1555147661344'
   alias: Dishwasher finished (text based)
