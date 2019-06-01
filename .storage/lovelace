@@ -426,19 +426,31 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.xiaomi_miflora_battery_level"
+                                    "entity": "sensor.strawberry_battery_level"
                                 },
                                 {
-                                    "entity": "sensor.xiaomi_miflora_illuminance"
+                                    "entity": "sensor.strawberry_illuminance"
                                 },
                                 {
-                                    "entity": "sensor.xiaomi_miflora_moisture"
+                                    "entity": "sensor.strawberry_moisture"
                                 },
                                 {
-                                    "entity": "sensor.xiaomi_miflora_soil_conductivity"
+                                    "entity": "sensor.strawberry_soil_conductivity"
                                 },
                                 {
-                                    "entity": "sensor.xiaomi_miflora_temperature"
+                                    "entity": "sensor.strawberry_temperature"
+                                },
+                                {
+                                    "entity": "sensor.kyocera_toner_black_percentage"
+                                },
+                                {
+                                    "entity": "sensor.kyocera_toner_cyan_percentage"
+                                },
+                                {
+                                    "entity": "sensor.kyocera_toner_magenta_percentage"
+                                },
+                                {
+                                    "entity": "sensor.kyocera_toner_yellow_percentage"
                                 }
                             ],
                             "show_header_toggle": false,
