@@ -1,6 +1,6 @@
 ---
 # stolen from: https://secure.n-able.com/webhelp/NC_7-2-0_Cust_en/Content/N-central/Services/Services_PrinterTonerLevel.html
-sensor: 
+sensor:
   - platform: snmp
     name: kyocera_total_pages
     host: kyocera

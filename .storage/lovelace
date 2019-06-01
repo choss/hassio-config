@@ -528,32 +528,9 @@
                                 },
                                 {
                                     "entity": "switch.input_4"
-                                },
-                                {
-                                    "entity": "switch.schlazi_tv_2_webradio"
-                                },
-                                {
-                                    "entity": "switch.kizi_baerchen"
-                                },
-                                {
-                                    "entity": "switch.steckdose_relay"
-                                },
-                                {
-                                    "entity": "switch.schalter_stern"
-                                },
-                                {
-                                    "entity": "switch.vorgarten_licht_1"
-                                },
-                                {
-                                    "entity": "switch.terrassenlicht"
-                                },
-                                {
-                                    "entity": "switch.kizi_lichterkette"
-                                },
-                                {
-                                    "entity": "switch.heizluefter"
                                 }
                             ],
+                            "show_header_toggle": false,
                             "title": "Switch",
                             "type": "entities"
                         },
