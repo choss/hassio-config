@@ -300,6 +300,10 @@
                                         {
                                             "entity": "switch.kizi_lichterkette",
                                             "name": "Lichterkette"
+                                        },
+                                        {
+                                            "entity": "cover.4055f8",
+                                            "type": "custom:slider-entity-row"
                                         }
                                     ],
                                     "type": "entities"
@@ -341,6 +345,17 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Bathroom",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "cover.4055f8",
+                                    "type": "custom:slider-entity-row"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Kinderzimmer",
                             "type": "entities"
                         }
                     ],

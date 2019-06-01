@@ -22,3 +22,6 @@ cover.bathroom:
 cover.401401:
   device_class: garage
   friendly_name: bathroom
+cover.4055f8:
+  device_class: garage
+  friendly_name: Kinderzimmer Rollladen
