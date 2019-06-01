@@ -1,3 +1,4 @@
+---
 esphome:
   name: rfidtest
   platform: ESP32
@@ -41,5 +42,5 @@ switch:
     id: led
     inverted: true
     on_turn_on:
-    - delay: 5000ms
-    - switch.turn_off: led
+      - delay: 5000ms
+      - switch.turn_off: led
