@@ -13,7 +13,7 @@ sensor:
       kyocera_remaining_pages:
         friendly_name: "Kyocera remaining pages"
         unit_of_measurement: 'pages'
-        value_template: "{{ 210 - (states('sensor.kyocera_total_pages') | int - (states('input_number.kyocera_page_freeze') | int )) }}"
+        value_template: "{{ 230 - (states('sensor.kyocera_total_pages') | int - (states('input_number.kyocera_page_freeze') | int )) }}"
         icon_template: "mdi:file"
 
 script:
