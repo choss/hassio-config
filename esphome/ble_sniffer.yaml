@@ -15,6 +15,15 @@ api:
 
 ota:
 
+time:
+  - platform: sntp
+    on_time:
+      - seconds: 0
+        minutes: 37
+        hours: 4
+        then:
+          - switch.toggle: restart_sw
+
 web_server:
 
 esp32_ble_tracker:
@@ -33,3 +42,8 @@ sensor:
       name: "Strawberry Soil Conductivity"
     battery_level:
       name: "Strawberry Battery Level"
+
+switch:
+  - platform: restart
+    id: restart_sw
+    name: "ble_sniffer restart"
