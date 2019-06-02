@@ -6,7 +6,7 @@ automation:
       event: sunset
       offset: '00:00:05'
     condition:
-      condition: template 
+      condition: template
       value_template: "{{ state_attr('cover.4055f8', 'current_position') > 60 }}"
     action:
       data:
@@ -17,7 +17,7 @@ automation:
     trigger:
       - at: '09:30:00'
         platform: time
-    condition: 
+    condition:
       - condition: template
         value_template: "{{ sensor.dark_sky_daytime_high_temperature_0d }} | float < 21.0 }}"
     action:
@@ -28,7 +28,7 @@ automation:
     trigger:
       - at: '14:30:00'
         platform: time
-    condition: 
+    condition:
       condition: template
       value_template: "{{ sensor.dark_sky_daytime_high_temperature_0d }} | float > 21.0 }}"
     action:
