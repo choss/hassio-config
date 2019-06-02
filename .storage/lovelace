@@ -503,26 +503,6 @@
                         },
                         {
                             "entities": [
-                                "scene.bett_gehen"
-                            ],
-                            "title": "Scene",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "script.living_room_window_left",
-                                "script.living_room_window",
-                                "script.living_room_shutters",
-                                "script.licht",
-                                "script.wohnzimmer_thermostat",
-                                "script.wohnzimmer_roll_tuer",
-                                "script.living_room_window_right"
-                            ],
-                            "title": "Script",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
                                 {
                                     "entity": "switch.sb_test"
                                 },
@@ -548,11 +528,6 @@
                             "show_header_toggle": false,
                             "title": "Switch",
                             "type": "entities"
-                        },
-                        {
-                            "entity": "media_player.living_room_tv",
-                            "type": "custom:mini-media-player",
-                            "volume_stateless": true
                         }
                     ],
                     "panel": false,
@@ -562,6 +537,12 @@
                 {
                     "badges": [],
                     "cards": [
+                        {
+                            "entities": [],
+                            "show_header_toggle": false,
+                            "title": "Do not touch here",
+                            "type": "entities"
+                        },
                         {
                             "entities": [
                                 {
@@ -586,9 +567,22 @@
                             "show_header_toggle": false,
                             "title": "Do not touch (always on)",
                             "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.ble_sniffer_restart"
+                                },
+                                {
+                                    "entity": "input_number.kyocera_page_freeze"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Debug / Advanced",
+                            "type": "entities"
                         }
                     ],
-                    "panel": true,
+                    "panel": false,
                     "title": "DNT"
                 }
             ]
