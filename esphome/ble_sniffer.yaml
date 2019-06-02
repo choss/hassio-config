@@ -30,6 +30,8 @@ esp32_ble_tracker:
   scan_interval: 150s
 
 sensor:
+  - platform: uptime
+    name: "ble_sniffer Uptime Sensor"
   - platform: xiaomi_miflora
     mac_address: !secret xiaomi_miflora_device01
     temperature:
