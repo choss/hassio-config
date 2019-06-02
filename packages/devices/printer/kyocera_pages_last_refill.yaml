@@ -1,0 +1,25 @@
+---
+input_number:
+  kyocera_page_freeze:
+    name: "Kyocera page counter freeze"
+    min: 0
+    max: 500000
+    mode: box
+    icon: "mdi:file-outline"
+
+sensor:
+  - platform: template
+    sensors:
+      kyocera_remaining_pages:
+        friendly_name: "Kyocera remaining pages"
+        unit_of_measurement: 'pages'
+        value_template: "{{ 210 - (states('sensor.kyocera_total_pages') | int - (states('input_number.kyocera_page_freeze') | int )) }}"
+        icon_template: "mdi:file"
+
+script:
+  kyocera_just_refilled:
+    sequence:
+      - service: input_number.set_value
+        data_template:
+          entity_id: input_number.kyocera_page_freeze
+          value: "{{ states('sensor.kyocera_total_pages') | int }}"

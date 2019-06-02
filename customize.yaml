@@ -25,3 +25,21 @@ cover.401401:
 cover.4055f8:
   device_class: garage
   friendly_name: Kinderzimmer Rollladen
+sensor.kyocera_total_pages:
+  icon: "mdi:file-outline"
+sensor.kyocera_black_capacity:
+  icon: "mdi:file"
+sensor.kyocera_black_level:
+  icon: "mdi:file"
+sensor.kyocera_yellow_capacity:
+  icon: "mdi:file"
+sensor.kyocera_yellow_level:
+  icon: "mdi:file"
+sensor.kyocera_magenta_capacity:
+  icon: "mdi:file"
+sensor.kyocera_magenta_level:
+  icon: "mdi:file"
+sensor.kyocera_cyan_capacity:
+  icon: "mdi:file"
+sensor.kyocera_cyan_level:
+  icon: "mdi:file"
