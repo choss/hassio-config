@@ -571,6 +571,9 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "sensor.ble_sniffer_uptime_sensor"
+                                },
+                                {
                                     "entity": "switch.ble_sniffer_restart"
                                 },
                                 {
