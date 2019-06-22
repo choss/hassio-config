@@ -19,7 +19,7 @@ automation:
         platform: time
     condition:
       - condition: template
-        value_template: "{{ states.sensor.dark_sky_daytime_high_temperature_0d | float < 21.0 }}"
+        value_template: "{{ states.sensor.dark_sky_daytime_high_temperature_0d.state | float < 22.0 }}"
     action:
       - data:
           entity_id: cover.4055f8
@@ -30,7 +30,7 @@ automation:
         platform: time
     condition:
       condition: template
-      value_template: "{{ states.sensor.dark_sky_daytime_high_temperature_0d | float > 21.0 }}"
+      value_template: "{{ states.sensor.dark_sky_daytime_high_temperature_0d.state | float >= 22.0 }}"
     action:
       data:
         entity_id: cover.4055f8

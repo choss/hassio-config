@@ -1,0 +1,36 @@
+---
+automation:
+  - alias: "Front cover up (holidays)"
+    trigger:
+      - at: '14:30:00'
+        platform: time
+    action:
+      data:
+        entity_id:
+          - cover.4055f8
+          - cover.401401
+      service: cover.open_cover
+  - alias: "Front cover down (holidays)"
+    trigger:
+      platform: sun
+      event: sunset
+      offset: '00:00:05'
+    action:
+      data:
+        entity_id:
+          - cover.4055f8
+          - cover.401401
+        position: '20'
+      service: cover.set_cover_position
+  - alias: "Back cover down (holidays)"
+    trigger:
+      - at: '12:30:00'
+        platform: time
+    action:
+      data:
+        entity_id:
+          - cover.rollo_wozi_mitte
+          - cover.rollo_wozi_rechts
+          - cover.rollo_wozi_tuer
+        position: '45'
+      service: cover.set_cover_position
