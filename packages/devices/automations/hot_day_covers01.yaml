@@ -32,5 +32,5 @@ automation:
           - cover.rollo_wozi_mitte
           - cover.rollo_wozi_rechts
           - cover.rollo_wozi_tuer
-        position: '45'
+        position: '40'
       service: cover.set_cover_position
