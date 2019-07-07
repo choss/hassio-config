@@ -1,6 +1,6 @@
 sensor:
   - platform: miflora
-    name: Strawberry battery 
+    name: Strawberry
     mac: !secret xiaomi_miflora_device01
     scan_interval: 2400
     monitored_conditions:
