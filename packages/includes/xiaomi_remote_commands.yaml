@@ -29,3 +29,12 @@ okay_button_samsung:
 toggle_power_acer_p1500:
   command:
     - raw:tllsNyt1am1WqFBolrodBoNDpNCs9BoNus4AhUmx1Kg0Ggzmk3eg0GsWmm0Gg0ih3Sg0GiUmyXeigLEAB4AHgARMABDAxaogDmAWlCALUBMwH0APShWelVig2yx0Oq0E
+star_fan_tower_ventilator_on:
+  command:
+    - raw:tllsNyt1am1WuVBolJodBoNDqNCs9BoN5s4AhUqz1Kg0Gg2qk3cAUr1UQBCvExoIAxgAeAB4AGzCigGVRaFQaiAG4C1AJwBX4AZ1Wh1Kz0qg0Geg
+star_fan_tower_ventilator_speed:
+  command:
+    - raw:tllsNyt1am1Wu1BolFodBoNDqdCs9BoN5u4AhUq11Kg0Gg2qk3eg0Gi1SogFFeJjQajQrvZKjRQCyAA8ADwAImAFt0WhUGogBwAv4AagASAm1VodSs9KpFBtdBoM9no
+star_fan_tower_ventilator_oscillate:
+  command:
+    - raw:tllsNyt1am1Wu1BolRodBoNDpNCs9BoN5qIAhUiz1Kg0Gg2qk3eg0GpVOmgFFWZgAIVNslRooAxAAeAB4AETEC26LQqDUQA3AOIAMwADBRMBdQIzArkC9KzQ6ld6VSKDa6DQZ7PQ
