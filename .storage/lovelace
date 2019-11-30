@@ -276,6 +276,14 @@
                                 }
                             ],
                             "type": "vertical-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "climate.heizung_schlafzimmer"
+                                }
+                            ],
+                            "type": "entities"
                         }
                     ],
                     "title": "Bedroom C."
@@ -441,7 +449,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.strawberry_battery_level"
+                                    "entity": "sensor.strawberry_battery_battery"
                                 },
                                 {
                                     "entity": "sensor.strawberry_illuminance"
@@ -578,6 +586,9 @@
                                 },
                                 {
                                     "entity": "input_number.kyocera_page_freeze"
+                                },
+                                {
+                                    "entity": "sensor.kyocera_remaining_pages"
                                 }
                             ],
                             "show_header_toggle": false,
