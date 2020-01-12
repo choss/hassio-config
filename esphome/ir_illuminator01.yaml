@@ -1,5 +1,5 @@
 substitutions:
-  plug_name: "IR Illuminator bedroom"
+  plug_name: "ir_illuminator_bedroom"
   # Higher value gives lower watt readout
   current_res: "0.0025"
   # Lower value gives lower voltage readout
