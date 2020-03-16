@@ -1,7 +1,7 @@
 ---
 tankerkoenig:
   api_key: !secret tankerkoenig_api_key
-  monitored_conditions:
+  fuel_types:
     - e5
     - diesel
     - state
