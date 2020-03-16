@@ -1,0 +1,10 @@
+substitutions:
+  plug_name: "ir_illuminator_bedroom"
+  # Higher value gives lower watt readout
+  current_res: "0.0025"
+  # Lower value gives lower voltage readout
+  voltage_div: "955"
+  connected_device_standby_threshold: "0.0"
+  connected_device_off_delay: "0ms"
+
+<<: !include template_stocklike_gosund_sp1.yaml
