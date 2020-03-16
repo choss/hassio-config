@@ -38,3 +38,12 @@ star_fan_tower_ventilator_speed:
 star_fan_tower_ventilator_oscillate:
   command:
     - raw:tllsNyt1am1Wu1BolRodBoNDpNCs9BoN5qIAhUiz1Kg0Gg2qk3eg0GpVOmgFFWZgAIVNslRooAxAAeAB4AETEC26LQqDUQA3AOIAMwADBRMBdQIzArkC9KzQ6ld6VSKDa6DQZ7PQ
+bedroom_fan_on_speed:
+  command:
+    - raw:tllsNyt1am1YrFBpdjoVBoNEmYAhUGx0KcACkAB4AHgAeAB4ACUKg1IANKjRaFQajQamAf4B
+bedroom_fan_oscillate:
+  command:
+    - raw:tllsNyt1am1VpFBsNnoVBoNEmYAhUGk2i7gCkAB4AHgAeAB4ACUKg1IANKjRaEAGVDAFIA
+bedroom_fan_off:
+  command:
+    - raw:tllsNyt1am1Vs1BsNroVBoNEmQAhUGj3i7gCkAB4AHgAeAB4ACUKg1IANKjRaEAGVDAFIA
