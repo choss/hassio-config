@@ -32,7 +32,6 @@
                         "sensor.aussensensor_temperature",
                         "sensor.aussensensor_humidity",
                         "sensor.living_room_temp",
-                        "sensor.flur",
                         "sensor.avia_axpress_steinheim_diesel",
                         "sensor.avia_axpress_steinheim_e5",
                         "sensor.shell_steinheim_diesel",
@@ -101,6 +100,10 @@
                                     "entity": "script.lrtv_send_ok",
                                     "icon": "mdi:pokeball",
                                     "name": "Living room TV - OK button"
+                                },
+                                {
+                                    "entity": "switch.jeq0463769_unused",
+                                    "icon": "mdi:meteor"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -239,6 +242,10 @@
                                     "name": "Decke",
                                     "toggle": true,
                                     "type": "custom:slider-entity-row"
+                                },
+                                {
+                                    "entity": "switch.ir_illuminator_bedroom_relay",
+                                    "name": "IR Illuminator"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -312,6 +319,9 @@
                                         {
                                             "entity": "cover.4055f8",
                                             "type": "custom:slider-entity-row"
+                                        },
+                                        {
+                                            "entity": "climate.heizung_kinderzimmer"
                                         }
                                     ],
                                     "type": "entities"
@@ -589,6 +599,21 @@
                                 },
                                 {
                                     "entity": "sensor.kyocera_remaining_pages"
+                                },
+                                {
+                                    "entity": "script.kyocera_just_refilled"
+                                },
+                                {
+                                    "entity": "sensor.kyocera_toner_black_percentage"
+                                },
+                                {
+                                    "entity": "sensor.kyocera_toner_cyan_percentage"
+                                },
+                                {
+                                    "entity": "sensor.kyocera_toner_magenta_percentage"
+                                },
+                                {
+                                    "entity": "sensor.kyocera_toner_yellow_percentage"
                                 }
                             ],
                             "show_header_toggle": false,

@@ -51,3 +51,6 @@ emulated_hue:
     switch.vorgarten_licht_1:
       name: "Vorgarten Licht"
       hidden: false
+    switch.jeq0463769_unused:
+      name: "Meteor"
+      hidden: false

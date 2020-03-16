@@ -109,3 +109,23 @@
   - data:
       entity_id: cover.401401
     service: cover.open_cover
+- id: '1576417848048'
+  alias: Meteor on
+  trigger:
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: switch.jeq0463769_unused
+    service: switch.turn_on
+- id: '1576417905727'
+  alias: Meteor off
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: switch.jeq0463769_unused
+    service: switch.turn_off

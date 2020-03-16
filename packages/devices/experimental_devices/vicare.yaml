@@ -1,0 +1,6 @@
+---
+sensor:
+  - platform: vicare
+    username: !secret vicare_username
+    password: !secret vicare_password
+    
