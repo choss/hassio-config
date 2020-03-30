@@ -139,10 +139,10 @@ sensor:
     entity_id: sensor.living_room_temp
   - platform: homeassistant
     id: diesel
-    entity_id: sensor.avia_axpress_steinheim_diesel
+    entity_id: sensor.tankerkoenig_avia_xpress_automatenstation_diesel
   - platform: homeassistant
     id: benzin
-    entity_id: sensor.avia_axpress_steinheim_e5
+    entity_id: sensor.tankerkoenig_avia_xpress_automatenstation_e5
   - platform: homeassistant
     id: forecast_temp_min
     entity_id: sensor.dark_sky_overnight_low_temperature_0d
