@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ "$1" != "build" ]; then
-  read -p 'Amazon account email: ' AMAZON_USER
-  read -sp 'Amazon account password: ' AMAZON_PASS
-  read -sp 'Email account password: ' EMAIL_PASS
+  read -rp 'Amazon account email: ' AMAZON_USER
+  read -rsp 'Amazon account password: ' AMAZON_PASS
+  read -rsp 'Email account password: ' EMAIL_PASS
 else
   AMAZON_USER='user@example.com'
   AMAZON_PASS='pass'
