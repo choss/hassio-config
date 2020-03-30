@@ -11,11 +11,11 @@ scene:
       switch.terrassenlicht:
         state: false
       cover.rollo_wozi_mitte:
-        state: true
-        position: 0
+        state: closed
+        current_position: 0
       cover.rollo_wozi_rechts:
-        state: true
-        position: 0
+        state: closed
+        current_position: 0
       cover.rollo_wozi_tuer:
-        state: true
-        position: 60
+        state: open
+        current_position: 60
