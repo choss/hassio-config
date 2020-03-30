@@ -1,45 +1,61 @@
 {
     "data": {
         "config": {
-            "resources": [
-                {
-                    "type": "module",
-                    "url": "/local/mini-media-player-bundle.js?v=1.0.3"
-                },
-                {
-                    "type": "module",
-                    "url": "/local/slider-entity-row.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/local/camera-card.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/local/monster-card.js"
-                }
-            ],
             "title": "Home",
             "views": [
                 {
                     "badges": [
-                        "sensor.yr_symbol",
-                        "sun.sun",
-                        "binary_sensor.dishwasher",
-                        "binary_sensor.dryer",
-                        "binary_sensor.washing_machine",
-                        "binary_sensor.turkontakt_terasse_state",
-                        "sensor.aussensensor_temperature",
-                        "sensor.aussensensor_humidity",
-                        "sensor.living_room_temp",
-                        "sensor.avia_axpress_steinheim_diesel",
-                        "sensor.avia_axpress_steinheim_e5",
-                        "sensor.shell_steinheim_diesel",
-                        "sensor.shell_steinheim_e5",
-                        "sensor.shell_erkner_diesel",
-                        "sensor.shell_erkner_e5",
-                        "sensor.t_erkner_diesel",
-                        "sensor.t_erkner_e5"
+                        {
+                            "entity": "sensor.yr_symbol"
+                        },
+                        {
+                            "entity": "sun.sun"
+                        },
+                        {
+                            "entity": "binary_sensor.dishwasher"
+                        },
+                        {
+                            "entity": "binary_sensor.dryer"
+                        },
+                        {
+                            "entity": "binary_sensor.washing_machine"
+                        },
+                        {
+                            "entity": "binary_sensor.turkontakt_terasse_state"
+                        },
+                        {
+                            "entity": "sensor.aussensensor_temperature"
+                        },
+                        {
+                            "entity": "sensor.aussensensor_humidity"
+                        },
+                        {
+                            "entity": "sensor.living_room_temp"
+                        },
+                        {
+                            "entity": "sensor.tankerkoenig_avia_xpress_automatenstation_diesel"
+                        },
+                        {
+                            "entity": "sensor.tankerkoenig_avia_xpress_automatenstation_e5"
+                        },
+                        {
+                            "entity": "sensor.tankerkoenig_hanau_offenbacher_landstr_diesel"
+                        },
+                        {
+                            "entity": "sensor.tankerkoenig_hanau_offenbacher_landstr_e5"
+                        },
+                        {
+                            "entity": "sensor.tankerkoenig_erkner_woltersdorfer_landstr_diesel"
+                        },
+                        {
+                            "entity": "sensor.tankerkoenig_erkner_woltersdorfer_landstr_e5"
+                        },
+                        {
+                            "entity": "sensor.tankerkoenig_t_erkner_diesel"
+                        },
+                        {
+                            "entity": "sensor.tankerkoenig_t_erkner_e5"
+                        }
                     ],
                     "cards": [
                         {
@@ -402,6 +418,22 @@
                                 ]
                             },
                             "type": "custom:monster-card"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "automation.meteor_on"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "automation.meteor_on"
+                                }
+                            ],
+                            "type": "entities"
                         }
                     ],
                     "title": "Automations"
