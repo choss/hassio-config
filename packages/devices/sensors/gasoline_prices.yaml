@@ -4,8 +4,4 @@ tankerkoenig:
   fuel_types:
     - e5
     - diesel
-  stations:
-    - '56d0212b-cfcd-405c-851d-b4edbac5e13e'
-    - '5c9571f7-3915-4dc6-864a-1aa4b8f790bb'
-    - '6a9649bc-e854-43cb-8033-b5a424dced3f'
-    - 'b8a95243-ad68-4aa8-8710-813c87cc7c6b'
+  stations: !secret tankerkoenig_stations
