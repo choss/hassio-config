@@ -43,3 +43,19 @@ sensor.kyocera_cyan_capacity:
   icon: "mdi:file"
 sensor.kyocera_cyan_level:
   icon: "mdi:file"
+sensor.tankerkoenig_avia_xpress_automatenstation_diesel:
+  friendly_name: "Avia Axpress Steinheim Diesel"
+sensor.tankerkoenig_avia_xpress_automatenstation_e5:
+  friendly_name: "Avia Axpress Steinheim Benzin"
+sensor.tankerkoenig_hanau_offenbacher_landstr_diesel:
+  friendly_name: "Shell Steinheim Diesel"
+sensor.tankerkoenig_hanau_offenbacher_landstr_e5:
+  friendly_name: "Shell Steinheim Benzin"
+sensor.tankerkoenig_erkner_woltersdorfer_landstr_diesel:
+  friendly_name: "Shell Erkner Diesel"
+sensor.tankerkoenig_erkner_woltersdorfer_landstr_e5:
+  friendly_name: "Shell Erkner Benzin"
+sensor.tankerkoenig_t_erkner_diesel:
+  friendly_name: "Shell Erkner Diesel"
+sensor.tankerkoenig_t_erkner_e5:
+  friendly_name: "T Erkner Benzin"
