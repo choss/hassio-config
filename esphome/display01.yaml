@@ -112,6 +112,7 @@ image:
 time:
   - platform: homeassistant
     id: homeassistant_time
+    timezone: Europe/Berlin
 
 binary_sensor:
   - platform: homeassistant
