@@ -132,6 +132,7 @@ image:
 time:
   - platform: sntp
     id: homeassistant_time
+    timezone: Europe/Berlin
 
 binary_sensor:
   - platform: template
