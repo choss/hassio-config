@@ -1,0 +1,53 @@
+- id: '1584384152182'
+  name: New Scene
+  entities:
+    cover.rollo_wozi_tuer:
+      current_position: 90
+      device_class: garage
+      friendly_name: Rollo_WoZi_Tuer
+      id: LEQ0132798
+      interface: rf
+      level: 0.9
+      rssi_peer: -57
+      state: open
+      supported_features: 15
+      working: 'No'
+- id: '1584384172100'
+  name: Test
+  entities:
+    cover.rollo_wozi_tuer:
+      current_position: 90
+      device_class: garage
+      friendly_name: Rollo_WoZi_Tuer
+      id: LEQ0132798
+      interface: rf
+      level: 0.9
+      rssi_peer: -57
+      state: open
+      supported_features: 15
+      working: 'No'
+- id: '1584384979454'
+  name: my_way
+  entities:
+    cover.rollo_wozi_mitte:
+      current_position: 50
+      device_class: garage
+      friendly_name: Rollo_WoZi_Mitte
+      id: LEQ0132795
+      interface: rf
+      level: 0.5
+      rssi_peer: -72
+      state: open
+      supported_features: 15
+      working: 'No'
+    cover.rollo_wozi_tuer:
+      current_position: 90
+      device_class: garage
+      friendly_name: Rollo_WoZi_Tuer
+      id: LEQ0132798
+      interface: rf
+      level: 0.9
+      rssi_peer: -62
+      state: open
+      supported_features: 15
+      working: 'No'
