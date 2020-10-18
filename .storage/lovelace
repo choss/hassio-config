@@ -120,6 +120,10 @@
                                 {
                                     "entity": "switch.jeq0463769_unused",
                                     "icon": "mdi:meteor"
+                                },
+                                {
+                                    "entity": "switch.treppenhaus_licht",
+                                    "icon": "mdi:stairs"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -340,6 +344,7 @@
                                             "entity": "climate.heizung_kinderzimmer"
                                         }
                                     ],
+                                    "show_header_toggle": false,
                                     "type": "entities"
                                 }
                             ],
