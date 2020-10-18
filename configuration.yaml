@@ -58,11 +58,6 @@ map:
 # Track the sun
 sun:
 
-# Sensors
-sensor:
-  # Weather prediction
-  - platform: yr
-
 # Text to speech
 tts:
   - platform: google_translate
