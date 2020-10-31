@@ -1,5 +1,6 @@
 ---
 emulated_hue:
+  listen_port: 80
   expose_by_default: false
   entities:
     light.wozi_dimmer_1_pc_ecke:

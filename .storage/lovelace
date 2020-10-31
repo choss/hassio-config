@@ -1,13 +1,13 @@
 {
+    "version": 1,
+    "key": "lovelace",
     "data": {
         "config": {
             "title": "Home",
             "views": [
                 {
+                    "title": "Main",
                     "badges": [
-                        {
-                            "entity": "sensor.yr_symbol"
-                        },
                         {
                             "entity": "sun.sun"
                         },
@@ -24,6 +24,9 @@
                             "entity": "binary_sensor.turkontakt_terasse_state"
                         },
                         {
+                            "entity": "binary_sensor.turkontakt_haustur_state"
+                        },
+                        {
                             "entity": "sensor.aussensensor_temperature"
                         },
                         {
@@ -37,18 +40,6 @@
                         },
                         {
                             "entity": "sensor.tankerkoenig_avia_xpress_automatenstation_e5"
-                        },
-                        {
-                            "entity": "sensor.tankerkoenig_hanau_offenbacher_landstr_diesel"
-                        },
-                        {
-                            "entity": "sensor.tankerkoenig_hanau_offenbacher_landstr_e5"
-                        },
-                        {
-                            "entity": "sensor.tankerkoenig_erkner_woltersdorfer_landstr_diesel"
-                        },
-                        {
-                            "entity": "sensor.tankerkoenig_erkner_woltersdorfer_landstr_e5"
                         },
                         {
                             "entity": "sensor.tankerkoenig_t_erkner_diesel"
@@ -166,15 +157,6 @@
                             "type": "custom:mini-media-player"
                         },
                         {
-                            "entity": "media_player.firetv_wohnzimmer",
-                            "hide": {
-                                "icon_state": false,
-                                "volume": true
-                            },
-                            "icon": "mdi:fire",
-                            "type": "custom:mini-media-player"
-                        },
-                        {
                             "entity": "media_player.vuuno",
                             "hide": {
                                 "icon_state": false
@@ -208,8 +190,7 @@
                             "icon": "mdi:projector",
                             "type": "custom:mini-media-player"
                         }
-                    ],
-                    "title": "Main"
+                    ]
                 },
                 {
                     "badges": [
@@ -321,10 +302,11 @@
                         {
                             "cards": [
                                 {
-                                    "camera_view": "live",
-                                    "entity": "camera.fosbaby",
-                                    "name": "Kinderzimmer",
-                                    "type": "custom:camera-card"
+                                    "type": "picture-glance",
+                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                                    "entities": [],
+                                    "camera_image": "camera.fosbaby",
+                                    "title": "Kids Room"
                                 },
                                 {
                                     "entities": [
@@ -401,6 +383,105 @@
                     "title": "Covers"
                 },
                 {
+                    "title": "Heatings",
+                    "path": "heatings",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.vicare_outside_temperature"
+                                },
+                                {
+                                    "entity": "sensor.aussensensor_temperature"
+                                },
+                                {
+                                    "entity": "sensor.aussensensor_humidity"
+                                }
+                            ],
+                            "title": "Outside"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "climate.heizung_bad_eg"
+                                },
+                                {
+                                    "entity": "climate.heizung_windfang"
+                                },
+                                {
+                                    "entity": "climate.heizung_kueche"
+                                },
+                                {
+                                    "entity": "climate.thermostat_kueche"
+                                },
+                                {
+                                    "entity": "climate.heizung_wohnzimmer"
+                                }
+                            ],
+                            "title": "Heating ground floor"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "climate.heizung_nancy"
+                                },
+                                {
+                                    "entity": "climate.wandthermostat_nancy"
+                                },
+                                {
+                                    "entity": "climate.heizung_kinderzimmer"
+                                },
+                                {
+                                    "entity": "climate.heizung_schlafzimmer"
+                                },
+                                {
+                                    "entity": "sensor.fritz_dect_repeater_100_1",
+                                    "name": "Schlafzimmer Dect Repeater"
+                                },
+                                {
+                                    "entity": "sensor.bad_1_og_temperature"
+                                },
+                                {
+                                    "entity": "sensor.bad_1_og_humidity"
+                                }
+                            ],
+                            "title": "Heating 1st floor"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "climate.heizung_zimmer_2_og"
+                                },
+                                {
+                                    "entity": "climate.heizung_gaestezimmer"
+                                },
+                                {
+                                    "entity": "climate.heizung_bad_2_og"
+                                }
+                            ],
+                            "title": "Heating 2nd floor"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.temperatur_kellerflur_temperature"
+                                },
+                                {
+                                    "entity": "sensor.temperatur_kellerflur_humidity"
+                                }
+                            ],
+                            "title": "Basement"
+                        }
+                    ]
+                },
+                {
+                    "title": "Automations",
                     "badges": [],
                     "cards": [
                         {
@@ -422,26 +503,9 @@
                                     }
                                 ]
                             },
-                            "type": "custom:monster-card"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "automation.meteor_on"
-                                }
-                            ],
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "automation.meteor_on"
-                                }
-                            ],
-                            "type": "entities"
+                            "type": "custom:auto-entities"
                         }
-                    ],
-                    "title": "Automations"
+                    ]
                 },
                 {
                     "badges": [
@@ -663,7 +727,5 @@
                 }
             ]
         }
-    },
-    "key": "lovelace",
-    "version": 1
+    }
 }

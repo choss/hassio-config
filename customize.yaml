@@ -1,5 +1,7 @@
 binary_sensor.turkontakt_terasse_state:
   device_class: door
+binary_sensor.turkontakt_haustur_state:
+  device_class: door
 cover.rollo_wozi_mitte:
   device_class: garage
 cover.rollo_wozi_rechts:
