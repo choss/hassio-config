@@ -47,3 +47,9 @@ bedroom_fan_oscillate:
 bedroom_fan_off:
   command:
     - raw:tllsNyt1am1Vs1BsNroVBoNEmQAhUGj3i7gCkAB4AHgAeAB4ACUKg1IANKjRaEAGVDAFIA
+starlight_on:
+  command:
+    - raw:tllsNyt1am1WqFBoM0odBoNCmlBs9BoN1s9ZoNBqEwpNBoNEuVFqNBoNotNNoNBoNpslBoNDotls9FALIADwAPAAehUai0Kg1EANrPSaGAHQC81EBNaFZ6dWKDMbHRKrQQ==
+starlight_off:
+  command:
+    - raw:tllsNyt1am1WplBokwodBoNDqtCs9BoMyqIAhU2x1IA8rpSbvQaDcKUAIVDoU2oNRoIAHgAeAB8wALqo0WhABsAWYCjADmAutCqNKo9BtdBoM9no
