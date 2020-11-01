@@ -9,6 +9,9 @@ emulated_hue:
     light.wozi_dimmer_2_mara_ecke:
       name: "Mara Ecke"
       hidden: false
+    light.living_room_light:
+      name: "Licht"
+      hidden: "false"
     light.schlafzimmer_decke:
       name: "Schlafzimmer Decke"
       hidden: false
@@ -21,19 +24,14 @@ emulated_hue:
     switch.heizluefter:
       name: "Heizlüfter"
       hidden: false
-    script.wohnzimmer_thermostat:
-      name: "Wohnzimmer Heizung"
-      hidden: false
-    script.wohnzimmer_roll_tuer:
+    cover.rollo_wozi_tuer:
       name: "Wohnzimmertür"
       hidden: false
-    script.living_room_window_right:
+    cover.rollo_wozi_rechts:
       name: "wozir"
       hidden: false
-    script.living_room_window_left:
+    cover.rollo_wozi_mitte:
       name: "wozil"
-      hidden: false
-    script.licht:
       hidden: false
     scene.bett_gehen:
       hidden: false

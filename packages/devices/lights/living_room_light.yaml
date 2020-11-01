@@ -4,7 +4,7 @@ light:
     lights:
       living_room_light:
         friendly_name: "Wohnzimmer Licht"
-        level_template: "{{ ((state_attr('light.wozi_dimmer_1_pc_ecke', 'level') + state_attr('light.wozi_dimmer_2_mara_ecke', 'level') ) / 2 * 255)| round(0) }}"
+        level_template: "{{ ((state_attr('light.wozi_dimmer_1_pc_ecke', 'level') + state_attr('light.wozi_dimmer_2_mara_ecke', 'level') ) / 2 * 255) | round(0) }}"
         value_template: "{{ is_state('light.wozi_dimmer_1_pc_ecke', 'on') or is_state('light.wozi_dimmer_2_mara_ecke', 'on') }}"
         turn_on:
           service: light.turn_on
