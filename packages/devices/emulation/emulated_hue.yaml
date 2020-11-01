@@ -15,15 +15,6 @@ emulated_hue:
     light.schlafzimmer_decke:
       name: "Schlafzimmer Decke"
       hidden: false
-    switch.terrassenlicht:
-      name: "Außenlampe"
-      hidden: false
-    switch.schalter_stern:
-      name: "Stern"
-      hidden: false
-    switch.heizluefter:
-      name: "Heizlüfter"
-      hidden: false
     cover.rollo_wozi_tuer:
       name: "Wohnzimmertür"
       hidden: false
@@ -33,13 +24,25 @@ emulated_hue:
     cover.rollo_wozi_mitte:
       name: "wozil"
       hidden: false
-    scene.bett_gehen:
-      hidden: false
     cover.living_room_shutters:
       name: "Westseite"
       hidden: false
     cover.living_room_window:
       name: "Wohnzimmerfenster"
+      hidden: false
+    light.bedroom02_cupboard:
+      name: "Pax"
+      hidden: false
+    scene.bett_gehen:
+      hidden: false
+    switch.vorgarten_licht_1:
+      name: "Vorgarten Licht"
+      hidden: false
+    switch.jeq0463769_unused:
+      name: "Meteor"
+      hidden: false
+    switch.heizluefter:
+      name: "Heizlüfter"
       hidden: false
     switch.treppenhaus_licht:
       name: "Treppenhaus"
@@ -47,12 +50,9 @@ emulated_hue:
     switch.steckdose_relay:
       name: "Steckdose"
       hidden: false
-    light.bedroom02_cupboard:
-      name: "Pax"
+    switch.terrassenlicht:
+      name: "Außenlampe"
       hidden: false
-    switch.vorgarten_licht_1:
-      name: "Vorgarten Licht"
-      hidden: false
-    switch.jeq0463769_unused:
-      name: "Meteor"
+    switch.schalter_stern:
+      name: "Stern"
       hidden: false
