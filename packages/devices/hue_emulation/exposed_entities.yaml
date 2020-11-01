@@ -35,10 +35,10 @@ emulated_hue:
       hidden: false
     scene.bett_gehen:
       hidden: false
-    script.living_room_shutters:
+    group.living_room_shutters:
       name: "Westseite"
       hidden: false
-    script.living_room_window:
+    group.living_room_window:
       name: "Wohnzimmerfenster"
       hidden: false
     switch.steckdose_relay:

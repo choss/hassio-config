@@ -1,0 +1,13 @@
+---
+cover:
+  - platform: group
+    name: living_room_window
+    entities:
+      - cover.rollo_wozi_mitte
+      - cover.rollo_wozi_rechts
+  - platform: group
+    name: living_room_shutters
+    entities:
+      - cover.rollo_wozi_tuer
+      - cover.rollo_wozi_mitte
+      - cover.rollo_wozi_rechts
