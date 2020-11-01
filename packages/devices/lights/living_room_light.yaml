@@ -1,0 +1,24 @@
+---
+light:
+  - platform: template
+    lights:
+      living_room_light:
+        level_template: "{{ ((state_attr('light.wozi_dimmer_1_pc_ecke', 'level') + state_attr('light.wozi_dimmer_2_mara_ecke', 'level') ) / 2 )| round(2) }}"
+        value_template: "{{ states('light.wozi_dimmer_1_pc_ecke') or states('light.wozi_dimmer_2_mara_ecke') }}"
+        turn_on:
+          service: light.turn_on
+          data:
+            entity_id: 
+              - light.wozi_dimmer_1_pc_ecke
+              - light.wozi_dimmer_2_mara_ecke
+            brightness_pct: 40
+        turn_off:
+          service: light.turn_off
+          data:
+            entity_id: 
+              - light.wozi_dimmer_1_pc_ecke
+              - light.wozi_dimmer_2_mara_ecke
+        set_level:
+          service: light.turn_on
+          data:
+            brightness: "{{ brightness }}"
