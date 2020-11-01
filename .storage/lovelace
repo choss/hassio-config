@@ -52,6 +52,12 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "light.living_room_light",
+                                    "toggle": true,
+                                    "type": "custom:slider-entity-row",
+                                    "icon": "mdi:sofa"
+                                },
+                                {
                                     "entity": "light.wozi_dimmer_1_pc_ecke",
                                     "name": "PC Ecke",
                                     "toggle": true,
@@ -508,152 +514,6 @@
                     ]
                 },
                 {
-                    "badges": [
-                        "binary_sensor.dryer",
-                        "binary_sensor.dishwasher",
-                        "binary_sensor.washing_machine",
-                        "binary_sensor.shell_steinheim_state",
-                        "binary_sensor.avia_axpress_steinheim_state",
-                        "binary_sensor.shell_erkner_state",
-                        "binary_sensor.t_erkner_state",
-                        "binary_sensor.turkontakt_terasse_state",
-                        "sensor.yr_symbol",
-                        "sensor.living_room_temp",
-                        "sensor.avia_axpress_steinheim_diesel",
-                        "sensor.avia_axpress_steinheim_e5",
-                        "sensor.t_erkner_diesel",
-                        "sensor.shell_steinheim_e5",
-                        "sensor.shell_erkner_diesel",
-                        "sensor.t_erkner_e5",
-                        "sensor.shell_steinheim_diesel",
-                        "sensor.shell_erkner_e5",
-                        "sensor.hdmi_input_selection",
-                        "sensor.flur",
-                        "sensor.openwrt_router_kbyte_sec_received",
-                        "sensor.openwrt_router_packets_received",
-                        "sensor.openwrt_router_bytes_sent",
-                        "sensor.openwrt_router_kbyte_sec_sent",
-                        "sensor.openwrt_router_packets_sec_sent",
-                        "sensor.openwrt_router_bytes_received",
-                        "sensor.openwrt_router_packets_sec_received",
-                        "sensor.openwrt_router_packets_sent",
-                        "sensor.spuelmaschine_steckdose_power",
-                        "sensor.spuelmaschine_steckdose_current",
-                        "sensor.spuelmaschine_steckdose_voltage",
-                        "sensor.spuelmaschine_steckdose_frequency",
-                        "sensor.trockner_steckdose_power",
-                        "sensor.spuelmaschine_steckdose_energy_counter",
-                        "sensor.aussensensor_humidity",
-                        "sensor.trockner_steckdose_current",
-                        "sensor.waschmaschine_steckdose_current",
-                        "sensor.trockner_steckdose_voltage",
-                        "sensor.aussensensor_temperature",
-                        "sensor.trockner_steckdose_frequency",
-                        "sensor.waschmaschine_steckdose_frequency",
-                        "sensor.waschmaschine_steckdose_energy_counter",
-                        "sensor.waschmaschine_steckdose_voltage",
-                        "sensor.trockner_steckdose_energy_counter",
-                        "sensor.waschmaschine_steckdose_power",
-                        "sun.sun"
-                    ],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.strawberry_battery_battery"
-                                },
-                                {
-                                    "entity": "sensor.strawberry_illuminance"
-                                },
-                                {
-                                    "entity": "sensor.strawberry_moisture"
-                                },
-                                {
-                                    "entity": "sensor.strawberry_soil_conductivity"
-                                },
-                                {
-                                    "entity": "sensor.strawberry_temperature"
-                                },
-                                {
-                                    "entity": "sensor.kyocera_toner_black_percentage"
-                                },
-                                {
-                                    "entity": "sensor.kyocera_toner_cyan_percentage"
-                                },
-                                {
-                                    "entity": "sensor.kyocera_toner_magenta_percentage"
-                                },
-                                {
-                                    "entity": "sensor.kyocera_toner_yellow_percentage"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Test Sensors",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "cover.rollo_wozi_rechts",
-                                "cover.rollo_wozi_tuer",
-                                "cover.rollo_wozi_mitte"
-                            ],
-                            "title": "Cover",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "homematic.ccu"
-                            ],
-                            "title": "",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "light.wozi_dimmer_2_mara_ecke",
-                                "light.wozi_dimmer_1_pc_ecke",
-                                "light.schlafzimmer_decke"
-                            ],
-                            "title": "Light",
-                            "type": "entities"
-                        },
-                        {
-                            "entity": "media_player.samsung_tv_remote",
-                            "type": "media-control"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.sb_test"
-                                },
-                                {
-                                    "entity": "switch.input_5"
-                                },
-                                {
-                                    "entity": "switch.bedroom_hmdi_switch_power"
-                                },
-                                {
-                                    "entity": "switch.input_1"
-                                },
-                                {
-                                    "entity": "switch.input_2"
-                                },
-                                {
-                                    "entity": "switch.input_3"
-                                },
-                                {
-                                    "entity": "switch.input_4"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Switch",
-                            "type": "entities"
-                        }
-                    ],
-                    "panel": false,
-                    "path": "testing",
-                    "title": "Testing"
-                },
-                {
                     "badges": [],
                     "cards": [
                         {
@@ -724,6 +584,27 @@
                     ],
                     "panel": false,
                     "title": "DNT"
+                },
+                {
+                    "title": "Testing",
+                    "path": "testing",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "cover.living_room_shutters"
+                                },
+                                {
+                                    "entity": "cover.living_room_window"
+                                },
+                                {
+                                    "entity": "switch.treppenhaus_licht"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
