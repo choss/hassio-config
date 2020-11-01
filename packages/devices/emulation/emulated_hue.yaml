@@ -2,6 +2,7 @@
 emulated_hue:
   listen_port: 80
   expose_by_default: false
+  lights_all_dimmable: true
   entities:
     light.wozi_dimmer_1_pc_ecke:
       name: "PC Ecke"
