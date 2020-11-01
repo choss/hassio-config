@@ -8,14 +8,14 @@ light:
         turn_on:
           service: light.turn_on
           data:
-            entity_id: 
+            entity_id:
               - light.wozi_dimmer_1_pc_ecke
               - light.wozi_dimmer_2_mara_ecke
             brightness_pct: 40
         turn_off:
           service: light.turn_off
           data:
-            entity_id: 
+            entity_id:
               - light.wozi_dimmer_1_pc_ecke
               - light.wozi_dimmer_2_mara_ecke
         set_level:
