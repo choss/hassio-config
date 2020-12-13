@@ -53,3 +53,21 @@ starlight_on:
 starlight_off:
   command:
     - raw:tllsNyt1am1WplBokwodBoNDqtCs9BoMyqIAhU2x1IA8rpSbvQaDcKUAIVDoU2oNRoIAHgAeAB8wALqo0WhABsAWYCjADmAutCqNKo9BtdBoM9no
+krinner_b_off:
+  command:
+    - raw:tllsNyt1am1VrFBrFZoVBoNErNBqNBoN2oNNAKKg0Wg0Gh1mhXeg0Gl3is0EADwAPAA8ABphTaFQbzTaJQajRbRSqrTgByptqoN3otCpNTq1EqN3otEpN3AfKp0W2VECfwJ/An8CfwJ/An8CfwJ/An+p0Kgz2eg=
+krinner_b_on_1:
+  command:
+    - raw:tllsNyt1am1VuVBq9NoVBoNEutBqNBoNxqNNoNBotNotBoNDotCu9BoNToVZoIAHgAeAB4ADTCi0Kk3mm0Sg3em0KhVWnUKg1Om2oAsqJQajVqJUajRbVSQCzu9Fo1RAn8CfwJ/An8CfwJ/An8CfwJ/An2g1Geg=
+krinner_b_on_2:
+  command:
+    - raw:tllsNyt1am1YsVBpV3oVBoNBpIAh3az2Og0GhUmrgFFM6NZwBSAA8ADwAPAAmp0GhUWg0WpUGo0Wg0G80Wz0GpAHlUaKDIVNtFJoNFqNBqQBZVGg0SkgT+BPFRAn8CfwT/An8CfqDZ57PQ==
+krinner_b_on_3:
+  command:
+    - raw:tllsNyt1am1XvVBpVZoVBoNBqYAh3So2Og0GhVmrgFFNKNZwBSAA8ADwAPAAmp0GhUWo0WhUGo0Wg0G80Wz0GpAFoDIVRtFJoNFqQBaVGg0SkgT+BPFNAn8CfwJ/AnOg0meg
+krinner_b_on_4:
+  command:
+    - raw:tllsNyt1am1YsVBpNZoVBoNDnNBqNBoMyoNNAKKg0UAQrxQrvQaDSrRWaCAB4AHgAeAA0wptCoNTptqoN3ptCoVVp1EoNRotqpN3poA5VaiVG70WhUm8gFld6LRqiBP4E/gT+BP4E/gT+BPFCoM9noA=
+krinner_b_on_5:
+  command:
+    - raw:tllsNyt1am1YpFBos4oVBoNEmNBqNBoNvqNNoNBo1ZotBoNCldCu9BoNWvFZoIAHgAeAB4ADTCm0Kg3mm0Sg3em0KhVWnUSg1Gm2oAsgByq1EqN3otEpIBZ3ei0aogT+BP4E/gT+BP4E9UGigA==
