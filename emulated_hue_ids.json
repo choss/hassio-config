@@ -16,5 +16,6 @@
     "15": "switch.schalter_stern",
     "16": "switch.vorgarten_licht_1",
     "17": "switch.terrassenlicht",
-    "18": "switch.treppenhaus_licht"
+    "18": "switch.treppenhaus_licht",
+    "19": "script.turn_off_living_room_lights"
 }

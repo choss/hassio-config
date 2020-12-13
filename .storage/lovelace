@@ -121,6 +121,10 @@
                                 {
                                     "entity": "switch.treppenhaus_licht",
                                     "icon": "mdi:stairs"
+                                },
+                                {
+                                    "entity": "light.living_room_bulb01",
+                                    "icon": "mdi:rounded-corner"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -195,6 +199,17 @@
                             },
                             "icon": "mdi:projector",
                             "type": "custom:mini-media-player"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "automation.turn_on_light_on_motion"
+                                },
+                                {
+                                    "entity": "automation.mara_warning_off"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -240,7 +255,12 @@
                     "title": "Bedroom N."
                 },
                 {
-                    "badges": [],
+                    "title": "Bedroom C.",
+                    "badges": [
+                        {
+                            "entity": "binary_sensor.fenster_schlafzimmer_rechts_state"
+                        }
+                    ],
                     "cards": [
                         {
                             "entities": [
@@ -299,8 +319,7 @@
                             ],
                             "type": "entities"
                         }
-                    ],
-                    "title": "Bedroom C."
+                    ]
                 },
                 {
                     "badges": [],
@@ -601,8 +620,21 @@
                                 },
                                 {
                                     "entity": "switch.treppenhaus_licht"
+                                },
+                                {
+                                    "entity": "script.turn_off_living_room_lights"
+                                },
+                                {
+                                    "entity": "sensor.tradfri_motion_sensor_01"
+                                },
+                                {
+                                    "entity": "binary_sensor.tradfri_motion_sensor_01"
                                 }
                             ]
+                        },
+                        {
+                            "type": "light",
+                            "entity": "light.tradfri_bulb"
                         }
                     ]
                 }

@@ -1,1 +1,18 @@
----
+turn_off_living_room_lights:
+  alias: Turn off living room lights
+  sequence:
+  - service: remote.send_command
+    data:
+      command: starlight_off
+    entity_id: remote.remote_1
+  - scene: scene.bett_gehen
+  mode: single
+  icon: mdi:weather-night
+turn_starlight_on:
+  alias: Turn starlight on
+  sequence:
+  - service: remote.send_command
+    data:
+      command: starlight_on
+    entity_id: remote.remote_1
+  mode: single

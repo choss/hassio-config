@@ -129,3 +129,36 @@
   - data:
       entity_id: switch.jeq0463769_unused
     service: switch.turn_off
+- id: '1607873437066'
+  alias: Mara warning 1 (turn on light)
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 9d95a55f3c5311eb8cc08bd225275d27
+    entity_id: binary_sensor.tradfri_motion_sensor_01
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      brightness_pct: 80
+      color_name: green
+    entity_id: light.living_room_bulb01
+  mode: single
+- id: '1607873478722'
+  alias: Mara warning 2 (turn off light)
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 9d95a55f3c5311eb8cc08bd225275d27
+    entity_id: binary_sensor.tradfri_motion_sensor_01
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 778fa2f50ecc3b5c5814a04dded34f4b
+    entity_id: light.living_room_bulb01
+    domain: light
+  mode: single

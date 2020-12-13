@@ -1,3 +1,5 @@
+binary_sensor.tradfri_motion_sensor_01:
+  device_class: motion
 binary_sensor.turkontakt_terasse_state:
   device_class: door
 binary_sensor.turkontakt_haustur_state:

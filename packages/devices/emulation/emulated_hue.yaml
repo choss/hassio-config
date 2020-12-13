@@ -37,6 +37,9 @@ emulated_hue:
     scene.bett_gehen:
       name: "Bett gehen"
       hidden: false
+    script.turn_off_living_room_lights:
+      name: "Bett gehen2"
+      hidden: false
     switch.vorgarten_licht_1:
       name: "Vorgarten Licht"
       hidden: false

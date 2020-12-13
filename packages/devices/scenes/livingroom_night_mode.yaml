@@ -6,6 +6,8 @@ scene:
         state: false
       light.wozi_dimmer_2_mara_ecke:
         state: false
+      light.living_room_bulb01:
+        state: false
       switch.steckdose_relay:
         state: false
       switch.terrassenlicht:
