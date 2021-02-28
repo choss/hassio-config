@@ -61,3 +61,6 @@ emulated_hue:
     switch.schalter_stern:
       name: "Stern"
       hidden: false
+    cover.markise:
+      name: "Markise"
+      hidden: false

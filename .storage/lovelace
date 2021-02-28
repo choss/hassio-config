@@ -93,6 +93,10 @@
                                     "type": "custom:slider-entity-row"
                                 },
                                 {
+                                    "entity": "cover.markise",
+                                    "type": "custom:slider-entity-row"
+                                },
+                                {
                                     "entity": "switch.vorgarten_licht_1",
                                     "icon": "mdi:lightbulb"
                                 },
@@ -208,8 +212,15 @@
                                 },
                                 {
                                     "entity": "automation.mara_warning_off"
+                                },
+                                {
+                                    "entity": "automation.mara_warning_3_alexa"
                                 }
                             ]
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.fire_tv_4k_wz"
                         }
                     ]
                 },
@@ -629,12 +640,14 @@
                                 },
                                 {
                                     "entity": "binary_sensor.tradfri_motion_sensor_01"
+                                },
+                                {
+                                    "entity": "sensor.bad_1_og_temperature"
+                                },
+                                {
+                                    "entity": "sensor.bad_1_og_humidity"
                                 }
                             ]
-                        },
-                        {
-                            "type": "light",
-                            "entity": "light.tradfri_bulb"
                         }
                     ]
                 }

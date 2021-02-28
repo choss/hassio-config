@@ -162,3 +162,20 @@
     entity_id: light.living_room_bulb01
     domain: light
   mode: single
+- id: '1607880929423'
+  alias: Mara warning 3 (Alexa)
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 9d95a55f3c5311eb8cc08bd225275d27
+    entity_id: binary_sensor.tradfri_motion_sensor_01
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.alexa_echo_weiss_wohnzimmer
+    data:
+      message: Es gibt interessante Bewegungen im ersten Stock
+      data:
+        type: announce
+  mode: single
