@@ -1,0 +1,27 @@
+---
+sensor:
+  - platform: template
+    sensors:
+      today_forecast_temp_max:
+        friendly_name: "today forecast temp (max)"
+        value_template: "{{ state_attr('weather.dwd_weather_hanau', 'forecast')[0].temperature | float }}"
+      today_forecast_temp_min:
+        friendly_name: "today forecast temp (min)"
+        value_template: "{{ state_attr('weather.dwd_weather_hanau', 'forecast')[0].templow | float }}"
+      today_forecast_precip_prob:
+        friendly_name: "today forecast precip %"
+        value_template: "{{ state_attr('weather.dwd_weather_hanau', 'forecast')[0].precipitation_probability | float }}"
+      today_forecast_icon:
+        friendly_name: "today forecast icon"
+        value_template: "{{ states('weather.dwd_weather_hanau') }}"
+
+binary_sensor:
+  - platform: template
+    sensors:
+      warm_day_realtime:
+        friendly_name: "Warm day today"
+        value_template: "{{ states('sensor.today_forecast_temp_max') | float > 23 }}"
+
+input_boolean:
+  warm_day_fixed:
+    name: "Warm day today (var)"

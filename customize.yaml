@@ -64,4 +64,4 @@ sensor.tankerkoenig_t_erkner_diesel:
 sensor.tankerkoenig_t_erkner_e5:
   friendly_name: "T Erkner Benzin"
 cover.markise:
-  device_class: awning
+  device_class: shade

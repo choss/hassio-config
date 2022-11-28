@@ -1,0 +1,3 @@
+---
+vicare:
+  client_id: !secret vicare_client_id

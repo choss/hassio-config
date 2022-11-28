@@ -45,9 +45,33 @@
     to: 'off'
   condition: []
   action:
-  - data:
-      message: Spülmaschine ist fertig! @insane
-    service: notify.matrix_notify
+  - service: notify.telgram_clay
+    data:
+      title: Spülmaschine fettig
+      message: 'Hallo,
+
+        ich bin deine Spülmaschine. Ich wäre jetzt fertig.
+
+
+        LG
+
+        Deine Spülmaschine
+
+        '
+  - service: notify.telgram_nancy
+    data:
+      title: Spülmaschine fettig
+      message: 'Hallo,
+
+        ich bin deine Spülmaschine. Ich wäre jetzt fertig.
+
+
+        LG
+
+        Deine Spülmaschine
+
+        '
+  mode: single
 - id: '1555147824684'
   alias: Dryer finished (text based)
   trigger:
@@ -56,9 +80,33 @@
     to: 'off'
   condition: []
   action:
-  - data:
-      message: Trockner ist fertig! @insane
-    service: notify.matrix_notify
+  - service: notify.telgram_clay
+    data:
+      title: Trockner ferting
+      message: 'Hallo,
+
+        ich bin dein Trockner. Ich wäre jetzt ferting.
+
+
+        LG
+
+        Dein Trockner
+
+        '
+  - service: notify.telgram_nancy
+    data:
+      title: Trockner ferting
+      message: 'Hallo,
+
+        ich bin dein Trockner. Ich wäre jetzt ferting.
+
+
+        LG
+
+        Dein Trockner
+
+        '
+  mode: single
 - id: '1555147878801'
   alias: Washing machine finished (text based)
   trigger:
@@ -67,9 +115,33 @@
     to: 'off'
   condition: []
   action:
-  - data:
-      message: Waschmaschine ist fertig! @insane
-    service: notify.matrix_notify
+  - service: notify.telgram_clay
+    data:
+      title: Waschmaschine fertig
+      message: 'Hallo,
+
+        ich bin deine Waschmaschine. Ich wäre jetzt fertig.
+
+
+        LG
+
+        Deine Waschmaschine
+
+        '
+  - service: notify.telgram_nancy
+    data:
+      title: Waschmaschine fertig
+      message: 'Hallo,
+
+        ich bin deine Waschmaschine. Ich wäre jetzt fertig.
+
+
+        LG
+
+        Deine Waschmaschine
+
+        '
+  mode: single
 - id: '1555148232966'
   alias: Matrix bot commands
   trigger:
@@ -109,26 +181,6 @@
   - data:
       entity_id: cover.401401
     service: cover.open_cover
-- id: '1576417848048'
-  alias: Meteor on
-  trigger:
-  - event: sunset
-    platform: sun
-  condition: []
-  action:
-  - data:
-      entity_id: switch.jeq0463769_unused
-    service: switch.turn_on
-- id: '1576417905727'
-  alias: Meteor off
-  trigger:
-  - event: sunrise
-    platform: sun
-  condition: []
-  action:
-  - data:
-      entity_id: switch.jeq0463769_unused
-    service: switch.turn_off
 - id: '1607873437066'
   alias: Mara warning 1 (turn on light)
   description: ''
@@ -178,4 +230,39 @@
       message: Es gibt interessante Bewegungen im ersten Stock
       data:
         type: announce
+  mode: single
+- id: '1616251001045'
+  alias: Set warm_day_fixed
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:30
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.warm_day_realtime
+        state: 'off'
+      sequence:
+      - service: input_boolean.turn_off
+        target:
+          entity_id: input_boolean.warm_day_fixed
+    default:
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.warm_day_fixed
+  mode: single
+- id: '1637646141951'
+  alias: Vorgarten aus bei Sonnenaufgang
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: +00:05:00
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.vorgarten_licht_1
   mode: single

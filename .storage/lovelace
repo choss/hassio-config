@@ -119,10 +119,6 @@
                                     "name": "Living room TV - OK button"
                                 },
                                 {
-                                    "entity": "switch.jeq0463769_unused",
-                                    "icon": "mdi:meteor"
-                                },
-                                {
                                     "entity": "switch.treppenhaus_licht",
                                     "icon": "mdi:stairs"
                                 },
@@ -221,6 +217,11 @@
                         {
                             "type": "media-control",
                             "entity": "media_player.fire_tv_4k_wz"
+                        },
+                        {
+                            "type": "weather-forecast",
+                            "entity": "weather.dwd_weather_hanau",
+                            "show_forecast": true
                         }
                     ]
                 },
@@ -424,6 +425,10 @@
                     "badges": [],
                     "cards": [
                         {
+                            "type": "weather-forecast",
+                            "entity": "weather.dwd_weather_hanau"
+                        },
+                        {
                             "type": "entities",
                             "entities": [
                                 {
@@ -571,6 +576,11 @@
                                 },
                                 {
                                     "entity": "switch.livingroom_tv_power_relay"
+                                },
+                                {
+                                    "entity": "switch.jeq0463769_unused",
+                                    "icon": "mdi:fridge",
+                                    "name": "Terrassenk\u00fchlschrank"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -646,6 +656,12 @@
                                 },
                                 {
                                     "entity": "sensor.bad_1_og_humidity"
+                                },
+                                {
+                                    "entity": "input_boolean.warm_day_fixed"
+                                },
+                                {
+                                    "entity": "binary_sensor.warm_day_realtime"
                                 }
                             ]
                         }

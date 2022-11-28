@@ -51,3 +51,11 @@
       state: open
       supported_features: 15
       working: 'No'
+- id: '1635017985623'
+  name: New Scene
+  entities:
+    light.living_room_light:
+      brightness: 96
+      friendly_name: Wohnzimmer Licht
+      supported_features: 1
+      state: 'on'

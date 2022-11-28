@@ -15,6 +15,9 @@ homeassistant:
   # Include split out components
   packages: !include_dir_named packages/devices
 
+# load default integrations
+default_config:
+
 # show system health
 system_health:
 
@@ -65,6 +68,7 @@ tts:
 # Cloud
 # cloud:
 
+# other config
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

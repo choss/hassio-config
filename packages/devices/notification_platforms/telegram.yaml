@@ -1,0 +1,15 @@
+---
+telegram_bot:
+  - platform: polling
+    api_key: 1902181103:AAGv_blMuG3QlcnR4Fy6oZl9J7rMGkUbB8Q
+    allowed_chat_ids:
+      - 557461707
+      - 1586972705
+
+notify:
+  - platform: telegram
+    name: telgram_clay
+    chat_id: 557461707
+  - platform: telegram
+    name: telgram_nancy
+    chat_id: 1586972705

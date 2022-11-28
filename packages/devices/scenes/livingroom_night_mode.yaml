@@ -1,17 +1,17 @@
 ---
-scene:
+scene old:
   - name: "bett_gehen"
     entities:
       light.wozi_dimmer_1_pc_ecke:
-        state: false
+        state: "off"
       light.wozi_dimmer_2_mara_ecke:
-        state: false
+        state: "off"
       light.living_room_bulb01:
-        state: false
+        state: "off"
       switch.steckdose_relay:
-        state: false
+        state: "off"
       switch.terrassenlicht:
-        state: false
+        state: "off"
       cover.rollo_wozi_mitte:
         state: closed
         current_position: 0
@@ -21,3 +21,6 @@ scene:
       cover.rollo_wozi_tuer:
         state: open
         current_position: 60
+      cover.markise:
+        state: open
+        current_position: 100
